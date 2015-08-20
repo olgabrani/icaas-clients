@@ -14,30 +14,30 @@ export default DS.Model.extend({
 
 
 	// quotas info
-	diskspace_user_usage: DS.attr('number'),
-	diskspace_user_limit: DS.attr('number'),
-	diskspace_project_usage: DS.attr('number'),
-	diskspace_project_limit: DS.attr('number'),
+	vm_user_usage: DS.attr('number'),
+	vm_user_limit: DS.attr('number'),
+	vm_project_usage: DS.attr('number'),
+	vm_project_limit: DS.attr('number'),
 
-	diskspace_taken_by_others: function() {
-		var project_usage = this.get('diskspace_project_usage');
-		var user_usage =  this.get('diskspace_user_usage');
+	vm_taken_by_others: function() {
+		var project_usage = this.get('vm_project_usage');
+		var user_usage =  this.get('vm_user_usage');
 
 		return project_usage - user_usage;
-	}.property('diskspace_project_usage', 'diskspace_user_usage'),
+	}.property('vm_project_usage', 'vm_user_usage'),
 
-	diskspace_effective_limit: function() {
+	vm_effective_limit: function() {
 
-		var limit = this.get('diskspace_user_limit');
-		var project_limit = this.get('diskspace_project_limit');
-		var taken_by_others = this.get('diskspace_taken_by_others');
+		var limit = this.get('vm_user_limit');
+		var project_limit = this.get('vm_project_limit');
+		var taken_by_others = this.get('vm_taken_by_others');
 		return Math.min(limit, project_limit - taken_by_others);
-	}.property('diskspace_user_limit', 'diskspace_project_limit', 'diskspace_taken_by_others'),
+	}.property('vm_user_limit', 'vm_project_limit', 'diskspace_taken_by_others'),
 
-	diskspace_free_space: function() {
-		var limit = this.get('diskspace_effective_limit');
-		var usage = this.get('diskspace_user_usage')
+	vm_free: function() {
+		var limit = this.get('vm_effective_limit');
+		var usage = this.get('vm_user_usage')
 
 		return limit - usage;
-	}.property('diskspace_effective_limit')
+	}.property('vm_effective_limit')
 });

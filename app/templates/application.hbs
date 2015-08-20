@@ -42,6 +42,12 @@
             {{e.detail}}
         </div>
     {{/each}}
+    <h2>Quotas</h2>
+        <ul>
+            {{#each controller.projects as |project|}}
+                <li><strong>{{project.human_name}}</strong> Available VMs: {{project.vm_free}}</li>
+            {{/each}}
+        </ul>
 
     <h2>Builds list</h2>
     <div class="row">
