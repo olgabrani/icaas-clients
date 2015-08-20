@@ -1,0 +1,12 @@
+<div class="panel">
+    <a {{action "hide"}} class="right" title="Hide details">{{fa-icon "close"}}</a>
+    <h4>Build details:</h4>
+    <ul>
+        <li><strong>ID</strong> {{model.id}}</li>
+        <li><strong>Name</strong> {{model.name}}</li>
+        <li><strong>Status</strong> {{model.status}}</li>
+        <li><strong>Created</strong> {{moment-from-now model.created}}</li>
+        <li><strong>Updated</strong> {{moment-from-now model.updated}}</li>
+    </ul>
+    {{outlet}}
+</div>

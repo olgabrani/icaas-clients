@@ -1,3 +1,62 @@
-<h2 id="title">Welcome to Ember</h2>
+<div class="row">
+    <h1>IcaaS</h1>
+    <p>ICaaS is a Python Flask application meant to provide the functionality of snf-image-creator as a service, through the use of Synnefo VMs.</p>
+    <p>For the time being, it only works on Bitnami images.</p>
 
-{{outlet}}
+   
+    <h2>Create a new build</h2>
+    <form class="clearfix">
+      <div class="row">
+        <div class="small-3 columns">
+          <label for="name" class="right">Name</label>
+        </div>
+        <div class="small-9 columns">
+            {{input type="text" value=name id="name"}}
+        </div>
+      </div>
+      <div class="row">
+        <div class="small-3 columns">
+          <label for="url" class="right">Bitnami url</label>
+        </div>
+        <div class="small-9 columns">
+            {{input type="url" value=url id="url"}}
+        </div>
+      </div>
+      <div class="row right">
+        <button type="submit small" {{action 'createBuild'}}>Create build</button>
+      </div>
+
+
+    </form>
+    {{#if controller.loading}}
+        <div class="text-center">{{fa-icon "fa-refresh" spin=true}}</div>
+    {{/if}}
+    {{#each controller.errorCreation.errors as |e|}}
+        <div class="alert-box alert">
+            <a {{action 'hideErrors'}} title="Hide errors" class="right">{{fa-icon "fa-close"}}</a>
+            {{e.detail}}
+        </div>
+    {{/each}}
+    <h2>Projects list</h2>
+    <ul>
+        {{#each controller.projects as |project|}}
+            <li>{{project.human_name}}</li>
+        {{/each}}
+    </ul>
+
+    <h2>Builds list</h2>
+    <div class="row">
+        <div class="columns small-3">
+            <ul>
+               {{#each controller.model as |build|}}
+                    <li>{{#link-to "build" build.id}}{{build.name}}{{/link-to}}</li>
+                {{/each}}
+            </ul>
+        </div>
+        <div class="columns small-9">
+            {{outlet}}
+        </div>
+    </div>
+ 
+
+</div>
