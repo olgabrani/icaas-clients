@@ -9,18 +9,21 @@ export default Ember.Controller.extend({
     return this.store.find('project', {'state': 'active'});
   }.property(),
 
+  project: null,
+
   actions: {
     'createBuild': function(){
       var self = this;
       var url = this.get('url');
       var name = this.get('name');
+      var project = this.get('project');
 
       var build = this.store.createRecord('build', {
         'url': url,
         'name': name,
         'log': 'pithos/log',
         'image': 'pithos/image',
-        'project': 'uuid_123'
+        'project': project,
 
       });
       this.set('loading', true);
@@ -35,6 +38,7 @@ export default Ember.Controller.extend({
       this.set('loading', false);
       this.set('url', null);
       this.set('name', null);
+      this.set('project', null);
     },
     'hideErrors': function(){
       this.set('errorCreation', null);

@@ -6,27 +6,32 @@
    
     <h2>Create a new build</h2>
     <form class="clearfix">
-      <div class="row">
-        <div class="small-3 columns">
-          <label for="name" class="right">Name</label>
+        <div class="row">
+            <div class="small-3 columns">
+                <label for="name" class="right">Name</label>
+            </div>
+            <div class="small-9 columns">
+                {{input type="text" value=name id="name"}}
+            </div>
         </div>
-        <div class="small-9 columns">
-            {{input type="text" value=name id="name"}}
+        <div class="row">
+            <div class="small-3 columns">
+                <label for="url" class="right">Bitnami url</label>
+            </div>
+            <div class="small-9 columns">
+                {{input type="url" value=url id="url"}}
+            </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="small-3 columns">
-          <label for="url" class="right">Bitnami url</label>
+        <div class="row">
+            {{view "select" content=projects
+                            optionValuePath="content.id"
+                            optionLabelPath="content.human_name"
+                            prompt="Select a project"
+                            value=project}}
         </div>
-        <div class="small-9 columns">
-            {{input type="url" value=url id="url"}}
+        <div class="row right">
+            <button type="submit small" {{action 'createBuild'}}>Create build</button>
         </div>
-      </div>
-      <div class="row right">
-        <button type="submit small" {{action 'createBuild'}}>Create build</button>
-      </div>
-
-
     </form>
     {{#if controller.loading}}
         <div class="text-center">{{fa-icon "fa-refresh" spin=true}}</div>
@@ -37,12 +42,6 @@
             {{e.detail}}
         </div>
     {{/each}}
-    <h2>Projects list</h2>
-    <ul>
-        {{#each controller.projects as |project|}}
-            <li>{{project.human_name}}</li>
-        {{/each}}
-    </ul>
 
     <h2>Builds list</h2>
     <div class="row">
