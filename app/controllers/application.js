@@ -17,11 +17,12 @@ export default Ember.Controller.extend({
       var url = this.get('url');
       var name = this.get('name');
       var project = this.get('project');
+      var t = Date.now();
 
       var build = this.store.createRecord('build', {
         'url': url,
         'name': name,
-        'log': 'pithos/log',
+        'log': 'pithos/log'+t,
         'image': 'pithos/image',
         'project': project,
 
