@@ -5,7 +5,7 @@ export default DS.RESTAdapter.extend({
   headers: function(){
     return {
      "Content-Type": "application/json",
-     "X-auth-token": "123token",
+     "X-auth-token": this.get('settings.token'),
     };
   }.property(),
 
