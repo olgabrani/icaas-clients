@@ -9,6 +9,11 @@ export default Ember.Controller.extend({
     return this.store.find('project', {'state': 'active'});
   }.property(),
 
+  containers: function(){
+    return this.store.find('container', {'format': 'json'});
+  }.property(),
+
+
   project: null,
 
   actions: {
@@ -17,13 +22,14 @@ export default Ember.Controller.extend({
       var url = this.get('url');
       var name = this.get('name');
       var project = this.get('project');
+      var container = this.get('container');
       var t = Date.now();
 
       var build = this.store.createRecord('build', {
         'url': url,
         'name': name,
         'log': 'pithos/log'+t,
-        'image': 'pithos/image',
+        'image': container+'/builds/',
         'project': project,
 
       });
