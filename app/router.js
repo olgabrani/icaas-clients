@@ -10,6 +10,7 @@ Router.map(function() {
     this.resource('build', { path: '/:build_id' });
   });
 
+  this.route('login');
   // temporary route
   this.route('mocks');
 });

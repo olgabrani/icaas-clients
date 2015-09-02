@@ -1,0 +1,13 @@
+<form>
+    <div class="row">
+        <div class="small-3 columns">
+            <label for="token" class="right">Token</label>
+        </div>
+        <div class="small-9 columns">
+            {{input type="url" value=token id="token"}}
+        </div>
+    </div>
+    <div class="row">
+        <button {{action 'login'}}>Login</button>
+    </div>
+</form>
