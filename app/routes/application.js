@@ -4,8 +4,9 @@ export default Ember.Route.extend({
 
   beforeModel: function() {
     var c = this.get('cookie');
-    if (c && c.getCookie('token')) {
+    if (c && c.getCookie('token') && c.getCookie('uuid')) {
       this.get('settings').set('token', c.getCookie('token'));
+      this.get('settings').set('uuid', c.getCookie('uuid'));
     } else {
       this.transitionTo('login'); 
     }

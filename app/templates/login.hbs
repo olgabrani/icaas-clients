@@ -4,10 +4,18 @@
             <label for="token" class="right">Token</label>
         </div>
         <div class="small-9 columns">
-            {{input type="url" value=token id="token"}}
+            {{input value=token id="token"}}
         </div>
     </div>
     <div class="row">
-        <button {{action 'login'}}>Login</button>
+        <button {{action 'tryLogin'}}>Login</button>
+    </div>
+    <div class="row">
+        {{#if error}}
+            <div class="alert-box alert">
+                <a {{action 'hideErrors'}} title="Hide errors" class="right">{{fa-icon "fa-close"}}</a>
+                {{errorMsg}}
+            </div>
+        {{/if}}
     </div>
 </form>

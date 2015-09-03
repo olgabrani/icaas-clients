@@ -2,7 +2,6 @@ import Ember from 'ember';
 
 export default Ember.Object.extend({
   setCookie: function(key, value, options) {
-    debugger;
     return new Ember.RSVP.Promise(function(resolve, reject) {
       try {
         $.cookie(key, value, options);

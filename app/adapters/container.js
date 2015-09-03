@@ -9,7 +9,7 @@ export default DS.RESTAdapter.extend({
   }.property(),
 
   pathForType: function(){
-   return this.get('settings.uuid');
+    return this.get('settings.uuid');
   },
 
 
