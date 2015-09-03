@@ -21,8 +21,9 @@ export default Ember.Controller.extend({
       this.set('error', false);
       this.set('errorMsg', null);
       var c = this.get('cookie');
-      c.setCookie('token', this.get('settings.token'));
-      c.setCookie('uuid', this.get('settings.user.id'));
+      c.setCookie('token', this.get('settings.tokenInfo.token.id'));
+      c.setCookie('uuid', this.get('settings.tokenInfo.user.id'));
+      c.setCookie('username', this.get('settings.tokenInfo.user.name'));
       this.transitionTo('application');
     },
     
@@ -37,8 +38,7 @@ export default Ember.Controller.extend({
         type: 'json',
         data: JSON.stringify({auth:{token:{id: token}}})
       }).then(function(data) {
-        self.get('settings').set('user', data.response.access.user);
-        self.get('settings').set('token', data.response.access.token.id);
+        self.get('settings').set('tokenInfo', data.response.access);
         self.send('success');
       }, function(err){
         self.set('error', true);
