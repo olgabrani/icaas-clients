@@ -1,1 +1,83 @@
-mocks
+<div class="row">
+	
+	<header class="text-center header">
+		<h1>
+			ICAAS
+		</h1>
+	</header>
+	{{!-- <div class="contain-to-grid"> --}}
+		
+	<div class="top-bar">
+	  <section class="search small-6 large-5 columns">
+		  <form>
+				<input type="text" placeholder="Search builds...">
+				<label>
+					<i class="fa fa-search"></i>
+				</label>
+		  </form>
+	  </section>
+	  <section class="logout small-6 large-7 columns text-right">
+	  	<a href="">Log Out</a>
+	  </section>
+	</div>
+	<div class="middle">
+		<div class="small-6 large-5 columns sidebar">
+		<ul class="no-bullet">
+			<li >
+				<a href="">
+					<i class="fa fa-hospital-o"></i>
+					<span>Build 1</span>
+				</a>
+			</li>
+			<li>
+				<a href="">
+					<i class="fa fa-hospital-o"></i>
+					<span>hell</span>
+				</a>
+			</li>
+			<li>
+				<a href="">
+					<i class="fa fa-hospital-o"></i>
+					<span>debian with wordpress</span>
+				</a>
+			</li>
+		</ul>
+		</div>
+		<div class="small-6 large-7 columns main">
+		<section class="new-build">
+			<h2>
+				Build a new image
+			</h2>
+			<form>
+				<label>Name:</label><input type="text"> <i class="fa fa-info-circle"></i>
+				<label>Bitnami URL:</label> <input type="text"> <i class="fa fa-info-circle"></i>
+				<label>Blah:</label><input type="text"> <i class="fa fa-info-circle"></i>
+	                            <label>Project:</label>
+	                            <select>
+	                            	<option>Yio</option>
+	                            	<option>Yio</option>
+	                            	<option>Yio</option>
+	                            	<option>Yio</option>
+	                            </select>
+			</form>
+			
+			<button>Build</button>
+		</section>
+			<section class="details">
+				<h2>{{model.firstObject.name}}</h2>
+				<dl>
+					<dt>ID</dt><dd>12345</dd>
+					<dt >Status</dt><dd  class="error">Error</dd>
+					<dt>Created</dt><dd class="success">3 months ago</dd>
+					<dt>Update</dt><dd>2 days ago</dd>
+				</dl>
+			</section>
+		</div>
+	</div>
+		<footer>
+			Funding?
+			Copyright?
+			Terms of use/service?
+			Version?
+		</footer>
+</div>		

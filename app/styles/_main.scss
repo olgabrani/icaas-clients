@@ -1,0 +1,127 @@
+$header-height: 5rem;
+$topbar-height: 2.8rem;
+
+// ===
+.header, .top-bar, .middle, footer {
+	// position: absolute;
+    left: 0;
+}
+
+.middle {
+	padding-top: $header-height + $topbar-height;
+	padding-bottom: $footer-height;
+	top: - ($header-height + $topbar-height);
+	overflow: hidden;
+}
+
+// ===
+
+html, body, body > .ember-view, .ember-view > .row, .middle {
+	height: 100%;
+	position: relative; // for wrapper
+}
+header {
+	background-color: pink;
+    height: $header-height;
+    padding: 0.9375rem;
+}
+.top-bar {
+	height: $topbar-height;
+	line-height: $topbar-height;
+
+    border-top: 1px solid $iron;
+    border-bottom: 1px solid $iron;
+    background-color: $topbar-bg-color;
+    box-shadow: 2px 2px 8px $jumbo;
+
+	list-style: none;
+}
+
+footer {
+	position: relative;
+	background-color: pink;
+	height: $header-height;
+	width: 100%;
+	top: - (2*$header-height + $topbar-height); 
+}
+.main {
+	background-color: rgb(114, 236, 106);
+	overflow: auto;
+	height: 100%;
+}
+.sidebar {
+	background-color: rgb(250, 250, 182); //light yellow
+	overflow: auto;
+	height: 100%;
+}
+.new-build {
+	background-color: rgb(220, 226, 220);
+	label {
+		display: inline-block;
+		width: 25%;
+		overflow: hidden;
+	}
+	input {
+		display: inline-block;
+		width: 70%;
+	}
+	.fa {
+		// width: 5%;
+	}
+}
+
+.details {
+	background-color: rgb(132, 212, 253);
+}
+
+.search {
+	line-height: 1;
+	position: relative;
+	label {
+		display: inline-block;
+		position: relative;
+		right: 30px;
+		top: 0.53125rem;
+
+	}
+	input {
+		display: inline-block;
+		width: 200px;
+		border-radius: 20px;
+	}
+}
+
+// make it reusable
+dl {
+  width: 100%;
+  overflow: hidden;
+}
+dt {
+  float: left;
+  width: 30%;
+}
+dd {
+  float: left;
+  width: 70%;
+}
+
+
+// is there a different way?
+.error {
+	color: $alert-color;
+}
+.success {
+	color: $success-color; 
+}
+
+// sass way?
+
+body dl {
+	dt, dd {
+		margin-bottom: 0;
+	}
+}
+
+label {
+	margin-bottom: 0.5rem;
+}
