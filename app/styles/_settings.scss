@@ -118,7 +118,7 @@ $row-width: rem-calc(1200);
 // We use these as default colors throughout
 $primary-color: #F24E53;
 $secondary-color: #3582AC;
-// $alert-color: #f04124;
+$alert-color: cadetblue;
 // $success-color: #43AC6A;
 // $warning-color: #f08a24;
 // $info-color: #a0d3e8;
@@ -370,11 +370,11 @@ $body-bg: honeydew;
 // $alert-bottom-margin: rem-calc(20);
 
 // We use these to style the close buttons
-// $alert-close-color: $oil;
+$alert-close-color: white;
 // $alert-close-top: 50%;
 // $alert-close-position: rem-calc(4);
-// $alert-close-font-size: rem-calc(22);
-// $alert-close-opacity: .3;
+$alert-close-font-size: rem-calc(16);
+$alert-close-opacity: .9;
 // $alert-close-opacity-hover: .5;
 // $alert-close-padding: 9px 6px 4px;
 // $alert-close-background: inherit;
