@@ -2,12 +2,14 @@ import DS from 'ember-data';
 import Ember from 'ember';
 
 export default DS.RESTAdapter.extend({
-  host: 'https://cyclades.example.com/_astakos/account/',
+  host: function(){
+    return this.get('settings.computeURL') + '_astakos/account/';
+  }.property('settings.computeURL'),
   headers: function(){
     return {
      "X-auth-token": this.get('settings.token'),
     };
-  }.property(),
+  }.property('settings.token'),
 
 
   ajaxSuccess: function(jqXHR, jsonPayload) {

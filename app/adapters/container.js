@@ -1,12 +1,14 @@
 import DS from 'ember-data';
 
 export default DS.RESTAdapter.extend({
-  host: 'https://pithos.example.com/object-store/v1',
+  host: function(){
+    return this.get('settings.storageURL');
+  }.property('settings.storageURL'),
   headers: function(){
     return {
      "X-auth-token": this.get('settings.token'),
     };
-  }.property(),
+  }.property('settings.token'),
 
   pathForType: function(){
     return this.get('settings.uuid');

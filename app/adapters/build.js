@@ -1,13 +1,15 @@
 import DS from 'ember-data';
 
 export default DS.RESTAdapter.extend({
-  host: 'http://example.com/icaas',
+  host: function(){
+    return this.get('settings.serviceURL');
+  }.property('settings.serviceURL'),
   headers: function(){
     return {
      "Content-Type": "application/json",
      "X-auth-token": this.get('settings.token'),
     };
-  }.property(),
+  }.property('settings.token'),
 
   pathForType: function(){
    return '';

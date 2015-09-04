@@ -30,7 +30,7 @@ export default Ember.Controller.extend({
     'resolveUser': function(token) {
       var self = this;
       return ajax({
-        url: 'https://accounts.example.com/identity/v2.0/tokens/',
+        url: self.get('settings.authURL')+'/tokens/',
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
