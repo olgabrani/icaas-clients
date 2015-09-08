@@ -7,11 +7,10 @@ export default Ember.Controller.extend({
 
   actions: {
     'tryLogin': function(){
-      var self = this;
       var token = this.get('token');
       if (!token || !token.trim())  {
         this.set('error', true);
-        this.set('errorMsg', 'This field cannot be empty')
+        this.set('errorMsg', 'This field cannot be empty');
         return;
       }
       this.send('resolveUser', token);

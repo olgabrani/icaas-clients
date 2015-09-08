@@ -67,6 +67,7 @@ export default Ember.Controller.extend({
 
       this.set('loading', true);
       build.save().then(function(data){
+        console.log(data);
         self.send('clearForm');
         self.send('checkObjectExists', 
                   path, 
@@ -74,7 +75,7 @@ export default Ember.Controller.extend({
                     console.log('directory already exists');
                   } , 
                   function() {                  
-                    self.send('createDirectory', path)
+                    self.send('createDirectory', path);
                   });
       }, function(err){
         self.set('errorCreation', err);
@@ -103,9 +104,9 @@ export default Ember.Controller.extend({
           'X-Auth-Token': self.get('settings.token')
         },
         type: 'json',
-      }).then(function(data) {
+      }).then(function() {
         callbackSuccess();
-      }, function(err){
+      }, function(){
         callbackError();
       });
     },
@@ -123,6 +124,7 @@ export default Ember.Controller.extend({
         dataType: 'text'
       }).then(function(data) {
         // if successfully created do nothing
+        console.log(data);
         console.log('directory created');
       }, function(err){
         // fail silently for the moment

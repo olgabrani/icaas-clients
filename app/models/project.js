@@ -37,7 +37,7 @@ export default DS.Model.extend({
 
 	vm_free: function() {
 		var limit = this.get('vm_effective_limit');
-		var usage = this.get('vm_user_usage')
+		var usage = this.get('vm_user_usage');
 		var res = limit - usage;
     return res>0 ? res: 0;
 	}.property('vm_effective_limit')
