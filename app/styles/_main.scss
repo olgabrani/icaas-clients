@@ -65,13 +65,8 @@ footer {
 	overflow: auto;
 	height: 100%;
 }
-.new-build {
-	background-color: $create-bg-color;
-}
 
-.details {
-	background-color: $details-bg-color;
-}
+
 
 .search {
 	line-height: 1;
@@ -90,37 +85,10 @@ footer {
 	}
 }
 
-// make it reusable
-dl {
-  width: 100%;
-  overflow: hidden;
-}
-dt {
-  float: left;
-  width: 30%;
-}
-dd {
-  float: left;
-  width: 70%;
-}
-
-
 // is there a different way?
 .error {
 	color: $alert-color;
 }
 .success {
 	color: $success-color; 
-}
-
-// sass way?
-
-body dl {
-	dt, dd {
-		margin-bottom: 0;
-	}
-}
-
-label {
-	margin-bottom: 0.5rem;
 }
