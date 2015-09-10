@@ -7,4 +7,19 @@ $info-btn-color: $primary-color;
 		color: $info-btn-color;
 		margin-left: 4px;
 	}
+
+	.arrow-down {
+	    display: initial;
+	}
+	.arrow-up {
+	    display: none;
+	}
+	&.open {
+		.arrow-down {
+		    display: none;
+		}
+		.arrow-up {
+		    display: initial;
+		}
+	}
 }

@@ -44,39 +44,41 @@
 		</ul>
 		</div>
 		<div class="small-6 large-7 columns main">
-		<section class="new-build">
-			<h2>
+		<section class="new-build open" id="new-build">
+			<h2 id="create-header">
 				Build a new image
+				{{slide-arrow areaID="creation-form" btnID="create-header" containerID="new-build"}}
 			</h2>
-			<form>
-				<label>
-					Name
-					<i class="info-sign fa fa-info-circle"></i>
-				</label>
-				<input type="text">
-				<label>
-					Bitnami URL
-					<i class="info-sign fa fa-info-circle"></i>
-				 </label>
-				 <input type="text">
-				<label>
-					Blah
-					<i class="info-sign fa fa-info-circle"></i>
-				</label>
-				<input type="text">
-                <label>
-	                Project
-					<i class="info-sign fa fa-info-circle"></i>
-	                </label>
-                <select>
-					<option>Yio</option>
-					<option>Yio</option>
-					<option>Yio</option>
-					<option>Yio</option>
-                </select>
-			</form>
-			
-			<button>Build</button>
+			<section id="creation-form">
+				<form>
+					<label>
+						Name
+						<i class="info-sign fa fa-info-circle"></i>
+					</label>
+					<input type="text">
+					<label>
+						Bitnami URL
+						<i class="info-sign fa fa-info-circle"></i>
+					 </label>
+					 <input type="text">
+					<label>
+						Blah
+						<i class="info-sign fa fa-info-circle"></i>
+					</label>
+					<input type="text">
+	                <label>
+		                Project
+						<i class="info-sign fa fa-info-circle"></i>
+		                </label>
+	                <select>
+						<option>Yio</option>
+						<option>Yio</option>
+						<option>Yio</option>
+						<option>Yio</option>
+	                </select>
+				</form>
+				<button>Build</button>
+			</section>
 		</section>
 			<section class="details">
 				<h2>{{model.firstObject.name}}</h2>
