@@ -67,18 +67,6 @@ footer {
 }
 .new-build {
 	background-color: $create-bg-color;
-	label {
-		display: inline-block;
-		width: 25%;
-		overflow: hidden;
-	}
-	input {
-		display: inline-block;
-		width: 70%;
-	}
-	.fa {
-		// width: 5%;
-	}
 }
 
 .details {

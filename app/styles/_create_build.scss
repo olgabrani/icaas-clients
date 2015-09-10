@@ -1,0 +1,10 @@
+$info-btn-color: $primary-color;
+
+.new-build {
+	padding: 0 12px;
+	background-color: $create-bg-color;
+	.info-sign {
+		color: $info-btn-color;
+		margin-left: 4px;
+	}
+}
