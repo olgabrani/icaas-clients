@@ -46,7 +46,7 @@ export default Ember.Controller.extend({
     'createBuild': function(){
       var self = this;
 
-      var url = this.get('url');
+      var src = this.get('src');
       var name = this.get('name');
       var project = this.get('project');
       var container = this.get('container');
@@ -58,7 +58,7 @@ export default Ember.Controller.extend({
       var log = path + '/log_for_'+ image_name;
 
       var build = this.store.createRecord('build', {
-        'url': url,
+        'src': src,
         'name': name,
         'log': log,
         'image': image,
@@ -85,7 +85,7 @@ export default Ember.Controller.extend({
 
     'clearForm': function(){
       this.set('loading', false);
-      this.set('url', null);
+      this.set('src', null);
       this.set('name', null);
       this.set('project', null);
     },
