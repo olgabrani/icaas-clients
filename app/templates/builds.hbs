@@ -67,10 +67,10 @@
         {{#if controller.loading}}
             <div class="text-center">{{fa-icon "fa-refresh" spin=true}}</div>
         {{/if}}
-        {{#each controller.errorCreation.errors as |e|}}
+        {{#each controller.errorCreation as |e|}}
             <div class="alert-box alert">
                 <a {{action 'hideErrors'}} title="Hide errors" class="close">{{fa-icon "fa-close"}}</a>
-                {{e.detail}}
+                {{e.title}}
             </div>   
         {{/each}}
         <h2>Quotas</h2>

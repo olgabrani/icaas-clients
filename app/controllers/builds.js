@@ -44,6 +44,7 @@ export default Ember.Controller.extend({
 
 
     'createBuild': function(){
+      this.send('hideErrors');
       var self = this;
 
       var src = this.get('src');
@@ -78,7 +79,7 @@ export default Ember.Controller.extend({
                     self.send('createDirectory', path);
                   });
       }, function(err){
-        self.set('errorCreation', err);
+        self.set('errorCreation', err.errors);
         self.send('clearForm');
       });
     },
