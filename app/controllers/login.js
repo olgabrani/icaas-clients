@@ -23,7 +23,7 @@ export default Ember.Controller.extend({
       c.setCookie('token', this.get('settings.tokenInfo.token.id'));
       c.setCookie('uuid', this.get('settings.tokenInfo.user.id'));
       c.setCookie('username', this.get('settings.tokenInfo.user.name'));
-      this.transitionTo('application');
+      this.transitionToRoute('application');
     },
     
     'resolveUser': function(token) {
@@ -38,6 +38,7 @@ export default Ember.Controller.extend({
         data: JSON.stringify({auth:{token:{id: token}}})
       }).then(function(data) {
         self.get('settings').set('tokenInfo', data.response.access);
+        self.get('settings').set('token', data.response.access.token.id);
         self.send('success');
       }, function(err){
         self.set('error', true);

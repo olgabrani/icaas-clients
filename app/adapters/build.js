@@ -16,8 +16,10 @@ export default DS.RESTAdapter.extend({
   // This is due to the erroneous behaviour of API response format..
   // Should be erased as soon as the error is compliant with Ember's 
   // expected format
- 
   normalizeErrorResponse: function(status, headers, payload) {
+    console.log('a');
+    debugger;
+
     if (payload && typeof payload === 'object' && payload.errors) {
       return payload.errors;
     } else {
@@ -30,6 +32,5 @@ export default DS.RESTAdapter.extend({
       ];
     }
   }
-
   /* tmp code ends here */
 });
