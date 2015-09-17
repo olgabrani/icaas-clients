@@ -7,11 +7,11 @@ export default Ember.Controller.extend({
   loading: false,
 
   projects: function(){
-    return this.store.find('project', {'state': 'active'});
+    return this.store.query('project', {'state': 'active'});
   }.property(),
 
   containers: function(){
-    return this.store.find('container', {'format': 'json'});
+    return this.store.query('container', {'format': 'json'});
   }.property(),
 
 

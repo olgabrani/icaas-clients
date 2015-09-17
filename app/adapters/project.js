@@ -12,22 +12,27 @@ export default DS.RESTAdapter.extend({
   }.property('settings.token'),
 
 
-  ajaxSuccess: function(jqXHR, jsonPayload) {
-    var quotas_url = this.get('host') + '/quotas';
-    var headers = this.get('headers');
+  handleResponse: function(status, headers, payload) {
+    var self = this;
+    if (this.isSuccess(status, headers, payload)) {
+      var quotas_url = self.get('host') + '/quotas';
+      var headers = self.get('headers');
+      return new Ember.RSVP.Promise(function(resolve, reject) {
+        $.ajax({
+          url: quotas_url,
+          headers: headers
+        }).then(function(data) {
+          payload.quotas = data;
+          Ember.run(null, resolve, payload);
+          }, function(jqXHR, textStatus, errorThrown) {
+            console.log('%cfail', "color: blue", jqXHR, textStatus, errorThrown);
+            Ember.run(null, reject, "error");
+          });
+      });
 
-    return new Ember.RSVP.Promise(function(resolve, reject) {
-      $.ajax({
-        url: quotas_url,
-        headers: headers
-      }).then(function(data) {
-        jsonPayload.quotas = data;
-        Ember.run(null, resolve, jsonPayload);
-        }, function(jqXHR, textStatus, errorThrown) {
-          console.log('%cfail', "color: blue", jqXHR, textStatus, errorThrown);
-          Ember.run(null, reject, "error");
-        });
-    });
+
+    }
+
   },
 
 });
