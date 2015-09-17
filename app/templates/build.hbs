@@ -4,7 +4,7 @@
     <ul>
         <li><strong>ID</strong> {{model.id}}</li>
         <li><strong>Name</strong> {{model.name}}</li>
-        <li><strong>Status</strong> {{model.status}}</li>
+        <li><strong>Status</strong> <em class="{{model.status}}">{{model.status}}</em></li>
         <li><strong>Bitnami URL</strong> {{model.src}}</li>
         <li><strong>Created</strong> {{moment-format model.created 'Do MMMM YYYY, H:mm'}}</li>
         <li><strong>Updated</strong> {{moment-format model.updated 'Do MMMM YYYY, H:mm'}}</li>

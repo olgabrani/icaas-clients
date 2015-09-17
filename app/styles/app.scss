@@ -2,3 +2,22 @@
 
 @import "foundation";
 
+.panel em {
+    padding-right: 20px;
+    background:
+}
+
+.panel em:after {
+    font-family: FontAwesome;
+    font-style: normal;
+    padding-left: 20px;
+}
+
+.panel em.ERROR:after {
+    color: $alert-color;
+    content: "\f1e2"; 
+}
+.panel em.SUCCESS:after {
+    color: $success-color;
+    content: "\f00c"; 
+}
