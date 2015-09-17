@@ -78,6 +78,7 @@ export default Ember.Controller.extend({
                   function() {                  
                     self.send('createDirectory', path);
                   });
+        self.transitionToRoute('build', build);
       }, function(err){
         self.set('errorCreation', err.errors);
         self.send('clearForm');
