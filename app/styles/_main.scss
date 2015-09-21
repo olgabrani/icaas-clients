@@ -48,9 +48,9 @@ header {
 		display: inline-block;
 		width: rem-calc(165);
 		height: 1.85rem;
-		float: right;
 	}
 	form {
+		float: right;
         display: inline-block;
 	}
 }
@@ -88,7 +88,7 @@ footer {
 	input {
 		display: inline-block;
 		width: 200px;
-		border-radius: 20px;
+		// border-radius: 20px;
 	}
 }
 
