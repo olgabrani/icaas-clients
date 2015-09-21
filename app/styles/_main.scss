@@ -18,6 +18,27 @@ $details-bg-color: $silver;
     left: 0;
 }
 
+h1 {
+	color: white;
+	cursor: pointer;
+}
+
+[data-present-style='font-demo-1'] {
+	font-family: 'Nothing You Could Do', cursive;
+}
+
+[data-present-style='font-demo-2'] {
+	font-family: 'Averia Gruesa Libre', cursive;
+}
+
+[data-present-style='font-demo-3'] {
+	font-family: 'Lobster', cursive;
+}
+
+[data-present-style='font-demo-4'] {
+	font-family: 'Roboto', cursive;
+}
+
 .middle {
 	padding-top: $header-height + $topbar-height;
 	padding-bottom: $footer-height;
@@ -35,7 +56,10 @@ header {
 	background-color: $header-bg-color;
     height: $header-height;
     padding: 0.9375rem;
+    z-index: 1;
+    position: relative;
 }
+
 .top-bar {
 	line-height: $topbar-height - rem-calc(2);
 
