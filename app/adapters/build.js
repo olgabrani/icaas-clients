@@ -17,8 +17,6 @@ export default DS.RESTAdapter.extend({
   // Should be erased as soon as the error is compliant with Ember's 
   // expected format
   normalizeErrorResponse: function(status, headers, payload) {
-    console.log('a');
-    debugger;
 
     if (payload && typeof payload === 'object' && payload.errors) {
       return payload.errors;
