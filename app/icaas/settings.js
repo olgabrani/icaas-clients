@@ -19,6 +19,7 @@ export default Ember.Object.extend({
   service_url: alias('appSettings.service_url'),
   storage_url: alias('appSettings.storage_url'),
   compute_url: alias('appSettings.compute_url'),
+  storage_view_url: alias('appSettings.storage_view_url'),
 
 
   // app settings defined in conf/environment.js

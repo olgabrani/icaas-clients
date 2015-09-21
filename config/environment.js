@@ -43,7 +43,8 @@ module.exports = function(environment) {
       auth_url: 'https://accounts.example.com/identity/v2.0',
       service_url: 'http://example.com/icaas',
       storage_url: 'https://pithos.example.com/object-store/v1',
-      compute_url: 'https://cyclades.example.com/'
+      compute_url: 'https://cyclades.example.com/',
+      storage_view_url: 'https://pithos.example.com/ui/view'
     }
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;
