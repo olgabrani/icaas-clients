@@ -24,7 +24,7 @@ module.exports = function(environment) {
       'script-src': "'self'", // Allow scripts from https://cdn.mxpnl.com
       'font-src': "'self' fonts.gstatic.com", // Allow fonts to be loaded from http://fonts.gstatic.com
       'connect-src': "'self' * ", // Allow data (ajax/websocket) from api.mixpanel.com and custom-api.local
-      'img-src': "'self'",
+      'img-src': "'self' *",
       'style-src': "'self' 'unsafe-inline' fonts.googleapis.com", // Allow inline styles and loaded CSS from http://fonts.googleapis.com 
       'media-src': "'self'"
     },
@@ -36,6 +36,15 @@ module.exports = function(environment) {
   };
 
   if (environment === 'development') {
+    ENV.appSettings = {
+      'branding': {
+        STORAGE_LOGO_URL: 'https://example.com/static/branding/images/storage_logo.png'
+      },
+      auth_url: 'https://accounts.example.com/identity/v2.0',
+      service_url: 'http://example.com/icaas',
+      storage_url: 'https://pithos.example.com/object-store/v1',
+      compute_url: 'https://cyclades.example.com/'
+    }
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;
     // ENV.APP.LOG_TRANSITIONS = true;

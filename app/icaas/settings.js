@@ -1,4 +1,7 @@
 import Ember from 'ember';
+import config from 'icaas/config/environment';
+
+var alias = Ember.computed.alias;
 
 export default Ember.Object.extend({
   tokenInfo: null,
@@ -12,9 +15,17 @@ export default Ember.Object.extend({
   // {container_id}/{image_path}/{{image_name}
   image_path: 'icaas_images',
 
-  authURL: 'https://accounts.example.com/identity/v2.0',
-  serviceURL: 'http://example.com/icaas',
-  storageURL: 'https://pithos.example.com/object-store/v1',
-  computeURL: 'https://cyclades.example.com/'
+  auth_url: alias('appSettings.auth_url'),
+  service_url: alias('appSettings.service_url'),
+  storage_url: alias('appSettings.storage_url'),
+  compute_url: alias('appSettings.compute_url'),
+
+
+  // app settings defined in conf/environment.js
+  appSettings: function(){
+    return config.appSettings;
+  }.property('config.appSettings'),
+
+  logo_url: alias('appSettings.branding.STORAGE_LOGO_URL')
 
 });

@@ -99,7 +99,7 @@ export default Ember.Controller.extend({
     'checkObjectExists': function(path, callbackSuccess, callbackError) {
       var self = this;
       return ajax({
-        url: self.get('settings.storageURL') + '/' + self.get('settings.uuid') + '/' + path,
+        url: self.get('settings.storage_url') + '/' + self.get('settings.uuid') + '/' + path,
         method: 'HEAD',
         headers: {
           'Content-Type': 'application/json', 
@@ -116,7 +116,7 @@ export default Ember.Controller.extend({
     'createDirectory': function(path) {
       var self = this;
       return ajax({
-        url: self.get('settings.storageURL') + '/' + self.get('settings.uuid') + '/' + path,
+        url: self.get('settings.storage_url') + '/' + self.get('settings.uuid') + '/' + path,
         method: 'PUT',
         headers: {
           'Content-Type': 'application/directory', 

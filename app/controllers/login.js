@@ -29,7 +29,7 @@ export default Ember.Controller.extend({
     'resolveUser': function(token) {
       var self = this;
       return ajax({
-        url: self.get('settings.authURL')+'/tokens/',
+        url: self.get('settings.auth_url')+'/tokens/',
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

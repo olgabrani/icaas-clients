@@ -3,8 +3,8 @@ import Ember from 'ember';
 
 export default DS.RESTAdapter.extend({
   host: function(){
-    return this.get('settings.computeURL') + '_astakos/account/';
-  }.property('settings.computeURL'),
+    return this.get('settings.compute_url') + '_astakos/account/';
+  }.property('settings.compute_url'),
   headers: function(){
     return {
      "X-auth-token": this.get('settings.token'),
