@@ -16,11 +16,11 @@ export default DS.RESTAdapter.extend({
     var self = this;
     if (this.isSuccess(status, headers, payload)) {
       var quotas_url = self.get('host') + '/quotas';
-      var headers = self.get('headers');
+      var adapter_headers = self.get('headers');
       return new Ember.RSVP.Promise(function(resolve, reject) {
         $.ajax({
           url: quotas_url,
-          headers: headers
+          headers: adapter_headers
         }).then(function(data) {
           payload.quotas = data;
           Ember.run(null, resolve, payload);
