@@ -1,6 +1,6 @@
 // heights
 $header-height: 5rem;
-$topbar-height: 2.8rem;
+// $topbar-height: 2.8rem;
 $footer-height: 3.5rem;
 // colors
 $header-bg-color: #3aa6f4; // primary-color to settings
@@ -37,15 +37,13 @@ header {
     padding: 0.9375rem;
 }
 .top-bar {
-	height: $topbar-height;
-	line-height: $topbar-height;
+	line-height: $topbar-height - rem-calc(2);
 
     border-top: 1px solid $iron;
     border-bottom: 1px solid $iron;
     background-color: $topbar-bg-color;
     box-shadow: 2px 2px 8px $jumbo;
-
-	list-style: none;
+    z-index: 1;
 }
 
 footer {
@@ -76,7 +74,7 @@ footer {
 		position: relative;
 		right: 30px;
 		top: 0.53125rem;
-
+		color: $steel;
 	}
 	input {
 		display: inline-block;

@@ -108,11 +108,11 @@ $iron        : #CCCCCC;
 // $aluminum    : #999999;
 $jumbo       : #888888;
 // $monsoon     : #777777;
-// $steel       : #666666;
+$steel       : #666666;
 // $charcoal    : #555555;
 // $tuatara     : #444444;
 $oil         : #333333;
-// $jet         : #222222;
+$jet         : #222222;
 // $black       : #000000;
 
 // We use these as default colors throughout
@@ -225,7 +225,7 @@ $body-bg: honeydew;
 // $include-html-type-classes: $include-html-classes;
 
 // We use these to control header font styles
- $header-font-family: 'Lobster';
+ $header-font-family: $font-family-sans-serif;
 // $header-font-weight: $font-weight-normal;
 // $header-font-style: normal;
 // $header-font-color: $jet;
@@ -235,11 +235,11 @@ $body-bg: honeydew;
 // $header-text-rendering: optimizeLegibility;
 
 // We use these to control header font sizes
-// $h1-font-size: rem-calc(44);
-// $h2-font-size: rem-calc(37);
-// $h3-font-size: rem-calc(27);
-// $h4-font-size: rem-calc(23);
-// $h5-font-size: rem-calc(18);
+$h1-font-size: rem-calc(44);
+$h2-font-size: rem-calc(24);
+$h3-font-size: rem-calc(22);
+$h4-font-size: rem-calc(18);
+$h5-font-size: rem-calc(16);
 // $h6-font-size: 1rem;
 
 // We use these to control header size reduction on small screens
@@ -262,9 +262,9 @@ $body-bg: honeydew;
 // $small-font-color: scale-color($header-font-color, $lightness: 35%);
 
 // We use these to style paragraphs
-// $paragraph-font-family: inherit;
+$paragraph-font-family: $font-family-sans-serif;
 // $paragraph-font-weight: $font-weight-normal;
-// $paragraph-font-size: 1rem;
+// $paragraph-font-size: rem-calc(14);
 // $paragraph-line-height: 1.6;
 // $paragraph-margin-bottom: rem-calc(20);
 // $paragraph-aside-font-size: rem-calc(14);
@@ -295,11 +295,11 @@ $body-bg: honeydew;
 // $hr-margin: rem-calc(20);
 
 // We use these to style lists
-// $list-font-family: $paragraph-font-family;
+$list-font-family: $paragraph-font-family;
 // $list-font-size: $paragraph-font-size;
 // $list-line-height: $paragraph-line-height;
 // $list-margin-bottom: $paragraph-margin-bottom;
-// $list-style-position: outside;
+$list-style-position: none;
 // $list-side-margin: 1.1rem;
 // $list-ordered-side-margin: 1.4rem;
 // $list-side-margin-no-bullet: 0;
@@ -453,9 +453,9 @@ $alert-close-opacity: .9;
 // $include-html-button-classes: $include-html-classes;
 
 // We use these to build padding for buttons.
-// $button-tny: rem-calc(10);
-// $button-sml: rem-calc(14);
-// $button-med: rem-calc(16);
+$button-tny: rem-calc(5);
+$button-sml: rem-calc(10);
+$button-med: rem-calc(14);
 // $button-lrg: rem-calc(18);
 
 // We use this to control the display property.
@@ -466,7 +466,7 @@ $alert-close-opacity: .9;
 // $button-font-family: $body-font-family;
 // $button-font-color: $white;
 // $button-font-color-alt: $oil;
-// $button-font-tny: rem-calc(11);
+$button-font-tny: rem-calc(13);
 // $button-font-sml: rem-calc(13);
 // $button-font-med: rem-calc(16);
 // $button-font-lrg: rem-calc(20);
@@ -652,11 +652,11 @@ $alert-close-opacity: .9;
 // $form-spacing: rem-calc(16);
 
 // We use these to style the labels in different ways
-// $form-label-pointer: pointer;
+$form-label-pointer: default;
 // $form-label-font-size: rem-calc(14);
 // $form-label-font-weight: $font-weight-normal;
 // $form-label-line-height: 1.5;
-// $form-label-font-color: scale-color($black, $lightness: 30%);
+$form-label-font-color: $jet;
 // $form-label-small-transform: capitalize;
 // $form-label-bottom-margin: 0;
 // $input-font-family: inherit;
@@ -1427,10 +1427,13 @@ $topbar-bg: $topbar-bg-color;
 // $topbar-title-font-size: rem-calc(17);
 
 // Set the link colors and styles for top-level nav
+
+// They don't work ****
 $topbar-link-color: $oil;
 $topbar-link-color-hover: $white;
 $topbar-link-color-active: $white;
 $topbar-link-color-active-hover: $white;
+
 // $topbar-link-weight: $font-weight-normal;
 // $topbar-link-font-size: rem-calc(13);
 // $topbar-link-hover-lightness: -10%; // Darken by 10%
