@@ -15,11 +15,21 @@
 					<i class="fa fa-search"></i>
 				</label>
 		  </form>
+			<select>
+				<option>Sort by name A → Z</option>
+				<option>Sort by name Z → A</option>
+				<option>Sort by status A → Z</option>
+				<option>Sort by status Z → A</option>
+				<option>Sort by creation date ↓</option>
+				<option>Sort by creation date ↑</option>
+			</select>
 	  </section>
+
 	  <section class="logout small-6 large-7 columns text-right">
-	  	<a href="">Log Out</a>
+		  	<a href="">Log Out</a>
 	  </section>
 	</div>
+
 	<div class="middle">
 		<div class="small-6 large-5 columns sidebar">
 		<ul class="no-bullet">
@@ -27,18 +37,21 @@
 				<a href="">
 					<i class="fa fa-hospital-o"></i>
 					<span>Build 1</span>
+					<span class="label alert">Error</span>
 				</a>
 			</li>
 			<li>
 				<a href="">
 					<i class="fa fa-hospital-o"></i>
 					<span>hell</span>
+					<span class="label success">Completed</span>
 				</a>
 			</li>
 			<li>
 				<a href="">
 					<i class="fa fa-hospital-o"></i>
 					<span>debian with wordpress</span>
+					<span class="label info">Created</span>
 				</a>
 			</li>
 		</ul>
@@ -71,7 +84,7 @@
 						<i class="info-sign fa fa-info-circle"></i>
 		                </label>
 	                <select>
-						<option>Yio</option>
+						<option>yio</option>
 						<option>Yio</option>
 						<option>Yio</option>
 						<option>Yio</option>
@@ -81,7 +94,7 @@
 			</section>
 		</section>
 			<section class="details">
-				<h2>{{model.firstObject.name}}</h2>
+				<h2>Build 1</h2>
 				<dl>
 					<dt>ID</dt><dd>12345</dd>
 					<dt >Status</dt><dd  class="error">Error</dd>

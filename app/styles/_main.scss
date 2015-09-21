@@ -44,6 +44,15 @@ header {
     background-color: $topbar-bg-color;
     box-shadow: 2px 2px 8px $jumbo;
     z-index: 1;
+	select {
+		display: inline-block;
+		width: rem-calc(165);
+		height: 1.85rem;
+		float: right;
+	}
+	form {
+        display: inline-block;
+	}
 }
 
 footer {
