@@ -1,25 +1,46 @@
 $info-btn-color: $primary-color;
 
+@mixin arrow-in-circle($display) {
+	display: $display;
+	margin-left: rem-calc(10);
+	background-color: rgb(55, 158, 189);
+	height: rem-calc(24);
+	width: rem-calc(24);
+	text-align: center;
+	border-radius: rem-calc(12);
+	color: white;
+}
+
 .new-build {
-	padding: 0 12px;
-	background-color: $create-bg-color;
+	padding: rem-calc(16) 0;
+	background-color: transparent;
+	h2 {
+		display: inline-block;
+		background-color: $create-bg-color;
+		padding: rem-calc(4) rem-calc(8);
+		margin-bottom: 0;
+	}
+	#creation-form {
+		padding: rem-calc(4) rem-calc(8);
+		background-color: $create-bg-color;
+	}
 	.info-sign {
 		color: $info-btn-color;
-		margin-left: 4px;
+		margin-left: rem-calc(4);
 	}
 
 	.arrow-down {
-	    display: initial;
+		@include arrow-in-circle(inline-block);
 	}
 	.arrow-up {
-	    display: none;
+		@include arrow-in-circle(none);
 	}
 	&.open {
 		.arrow-down {
-		    display: none;
+			display: none;
 		}
 		.arrow-up {
-		    display: initial;
+			display: inline-block;
 		}
 	}
 }
