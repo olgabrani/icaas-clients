@@ -20,5 +20,8 @@
   },
   "resolutions": {
     "jquery": "^1.11.3"
+  },
+  "devDependencies": {
+    "is_js": "~0.7.4"
   }
 }
