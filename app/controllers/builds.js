@@ -14,8 +14,14 @@ export default Ember.Controller.extend({
     return this.store.query('container', {'format': 'json'});
   }.property(),
 
+  selectedProject: function(){
+    return this.get('projects').get('firstObject');
+  }.property('projects.@each'),
 
-  project: null,
+  selectedContainer: function(){
+    return this.get('containers').get('firstObject');
+  }.property('containers.@each'),
+
 
   actions: {
 
@@ -25,7 +31,7 @@ export default Ember.Controller.extend({
       // in the destination path. If it does just 
       // return. If not continue with the creation
       if (this.get('image_name')) {
-        var container = self.get('container');
+        var container = self.get('selectedContainer.id');
         var path =  container + '/' + self.get('settings.image_path');
         var image = path + '/' + this.get('image_name');
         self.send('checkObjectExists', 
@@ -49,8 +55,8 @@ export default Ember.Controller.extend({
 
       var src = this.get('src');
       var name = this.get('name');
-      var project = this.get('project');
-      var container = this.get('container');
+      var project = this.get('selectedProject.id');
+      var container = this.get('selectedContainer.id');
       var t = Date.now();
       var image_name = this.get('image_name') || 'image_' + t;
 

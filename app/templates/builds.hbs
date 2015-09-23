@@ -15,64 +15,8 @@
         <p>For the time being, it only works on Bitnami images.</p>
         <a {{action 'logout'}}>{{fa-icon 'sign-out'}} Logout</a>
 
-       
-        <h2>Create a new build</h2>
-        <form class="clearfix">
-            <div class="row">
-                <div class="small-3 columns">
-                    <label for="name" class="right">Official image name</label>
-                </div>
-                <div class="small-9 columns">
-                    {{input type="text" value=name id="name"}}
-                </div>
-            </div>
-            <div class="row">
-                <div class="small-3 columns">
-                    <label for="src" class="right">Bitnami url</label>
-                </div>
-                <div class="small-9 columns">
-                    {{input type="url" value=src id="src"}}
-                </div>
-            </div>
-            <div class="row">
-                {{view "select" content=projects
-                                optionValuePath="content.id"
-                                optionLabelPath="content.human_name"
-                                prompt="Select a project"
-                                value=project}}
-            </div>
-            <div class="row">
-                {{view "select" content=containers
-                                optionValuePath="content.id"
-                                optionLabelPath="content.name"
-                                prompt="Select a container"
-                                value=container}}
-            </div>
-            <fieldset>
-                <legend>Advanced options</legend>
-                <div class="row">
-                    <div class="small-3 columns">
-                        <label for="name" class="right">Image name</label>
-                    </div>
-                    <div class="small-9 columns">
-                        {{input type="text" value=image_name id="image_name"}}
-                    </div>
-                </div>
+        {{partial "create-build"}} 
 
-            </fieldset>
-            <div class="row right">
-                <button type="submit small" {{action 'initCreateBuild'}}>Create build</button>
-            </div>
-        </form>
-        {{#if controller.loading}}
-            <div class="text-center">{{fa-icon "fa-refresh" spin=true}}</div>
-        {{/if}}
-        {{#each controller.errorCreation as |e|}}
-            <div class="alert-box alert">
-                <a {{action 'hideErrors'}} title="Hide errors" class="close">{{fa-icon "fa-close"}}</a>
-                {{e.title}}
-            </div>   
-        {{/each}}
         <h2>Quotas</h2>
         <ul>
             {{#each controller.projects as |project|}}

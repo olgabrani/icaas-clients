@@ -1,0 +1,67 @@
+        <h2>Create a new build</h2>
+        <form class="clearfix">
+            <div class="row">
+                <div class="small-3 columns">
+                    <label for="name" class="right">Official image name</label>
+                </div>
+                <div class="small-9 columns">
+                    {{input type="text" value=name id="name"}}
+                </div>
+            </div>
+            <div class="row">
+                <div class="small-3 columns">
+                    <label for="src" class="right">Bitnami url</label>
+                </div>
+                <div class="small-9 columns">
+                    {{input type="url" value=src id="src"}}
+                </div>
+            </div>
+            <div class="row">
+                <div class="small-3 columns">
+                    <label class="right">Select project</label>
+                </div>
+                <div class="small-9 columns">
+                    {{#x-select value=selectedProject}}
+                        {{#each projects as |p|}}
+                            {{#x-option value=p}}{{p.human_name}}{{/x-option}}
+                        {{/each}}
+                    {{/x-select}}
+                </div>
+            </div>
+            <div class="row">
+                <div class="small-3 columns">
+                    <label class="right">Select container</label>
+                </div>
+                <div class="small-9 columns">
+                    {{#x-select value=selectedContainer}}
+                        {{#each containers as |c|}}
+                            {{#x-option value=c}}{{c.name}}{{/x-option}}
+                        {{/each}}
+                    {{/x-select}}
+                </div>
+            </div>
+            <fieldset>
+                <legend>Advanced options</legend>
+                <div class="row">
+                    <div class="small-3 columns">
+                        <label for="name" class="right">Image name</label>
+                    </div>
+                    <div class="small-9 columns">
+                        {{input type="text" value=image_name id="image_name"}}
+                    </div>
+                </div>
+
+            </fieldset>
+            <div class="row right">
+                <button type="submit small" {{action 'initCreateBuild'}}>Create build</button>
+            </div>
+        </form>
+        {{#if loading}}
+            <div class="text-center">{{fa-icon "fa-refresh" spin=true}}</div>
+        {{/if}}
+        {{#each errorCreation as |e|}}
+            <div class="alert-box alert">
+                <a {{action 'hideErrors'}} title="Hide errors" class="close">{{fa-icon "fa-close"}}</a>
+                {{e.title}}
+            </div>
+        {{/each}}
