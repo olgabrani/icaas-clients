@@ -10,13 +10,17 @@ export default Ember.Controller.extend({
     return this.store.query('project', {'state': 'active'});
   }.property(),
 
-  containers: function(){
+  allContainers: function(){
     return this.store.query('container', {'format': 'json'});
   }.property(),
 
   selectedProject: function(){
     return this.get('projects').get('firstObject');
   }.property('projects.@each'),
+
+  containers: Ember.computed.filter('allContainers', function(c) {
+    return c.get('name') !== 'trash';
+  }),
 
   selectedContainer: function(){
     return this.get('containers').get('firstObject');
