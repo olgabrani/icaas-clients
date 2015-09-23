@@ -138,6 +138,10 @@ export default Ember.Controller.extend({
         // fail silently for the moment
         console.log(err);
       });
+    },
+
+    'deleteBuild': function(build){
+      build.destroyRecord();
     }
 
   }

@@ -3,7 +3,10 @@
         <h2>Builds list</h2>
         <ul>
            {{#each controller.model as |build|}}
-                <li>{{#link-to "build" build.id}}{{build.name}}{{/link-to}}</li>
+                <li>
+                    {{#link-to "build" build.id}}{{build.name}}{{/link-to}}
+                    <a {{action "deleteBuild" build}}>(delete)</a>
+                </li>
             {{/each}}
         </ul>
     </div>
