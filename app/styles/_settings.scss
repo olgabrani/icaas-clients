@@ -131,8 +131,8 @@ $jet         : #222222;
 // $alert-color: cadetblue;
 // temp end --------
 
-$primary-color: #3582AC;
-$secondary-color: #F24E53;
+$primary-color: #0764a6;
+$secondary-color: #3aa6f4;
 $alert-color: #f04124;
 $success-color: #43AC6A;
 $warning-color: #f08a24;
@@ -285,8 +285,8 @@ $paragraph-font-family: $font-family-sans-serif;
 // We use these to style anchors
 // $anchor-text-decoration: none;
 // $anchor-text-decoration-hover: none;
-// $anchor-font-color: $primary-color;
-// $anchor-font-color-hover: scale-color($anchor-font-color, $lightness: -14%);
+$anchor-font-color: $primary-color;
+$anchor-font-color-hover: $secondary-color;
 
 // We use these to style the <hr> element
 // $hr-border-width: 1px;

@@ -1,59 +1,58 @@
-// heights
-$header-height: 5rem;
-// $topbar-height: 2.8rem;
-$footer-height: 3.5rem;
-// colors
-$header-bg-color: #3aa6f4; // primary-color to settings
-$footer-bg-color: #3aa6f4;
+@mixin horizontal-menu-border() {
+    border-top: 1px solid $iron;
+    border-bottom: 1px solid $iron;
+    box-shadow: 2px 2px 8px $jumbo;
+}
+
+$header-bg-color: $primary-color; // primary-color to settings
+$footer-bg-color: $topbar-bg-color;
 $sidebar-bg-color: $silver;
 $middle-bg-color: $iron;
 $create-bg-color: $silver;
 $details-bg-color: $silver;
 
+html {
+    overflow: hidden;
+}
 
-
-// ===
 .header, .top-bar, .middle, footer {
-	// position: absolute;
     left: 0;
 }
 
 h1 {
-	color: white;
-	cursor: pointer;
+    color: white;
+    cursor: pointer;
 }
 
 [data-present-style='font-demo-1'] {
-	font-family: 'Nothing You Could Do', cursive;
+    font-family: 'Nothing You Could Do', cursive;
 }
 
 [data-present-style='font-demo-2'] {
-	font-family: 'Averia Gruesa Libre', cursive;
+    font-family: 'Averia Gruesa Libre', cursive;
 }
 
 [data-present-style='font-demo-3'] {
-	font-family: 'Lobster', cursive;
+    font-family: 'Lobster', cursive;
 }
 
 [data-present-style='font-demo-4'] {
-	font-family: 'Roboto', cursive;
+    font-family: 'Roboto', cursive;
 }
 
 .middle {
-	padding-top: $header-height + $topbar-height;
-	padding-bottom: $footer-height;
-	top: - ($header-height + $topbar-height);
-	overflow: hidden;
+    padding-top: $header-height + $topbar-height;
+    padding-bottom: $footer-height;
+    top: - ($header-height + $topbar-height);
+    overflow: hidden;
 }
-
-// ===
 
 html, body, body > .ember-view, .ember-view > .row, .middle {
-	height: 100%;
-	position: relative; // for wrapper
+    height: 100%;
+    position: relative; // for wrapper
 }
 header {
-	background-color: $header-bg-color;
+    background-color: $header-bg-color;
     height: $header-height;
     padding: 0.9375rem;
     z-index: 1;
@@ -61,58 +60,62 @@ header {
 }
 
 .top-bar {
-	line-height: $topbar-height - rem-calc(2);
+    line-height: $topbar-height - rem-calc(2);
 
-    border-top: 1px solid $iron;
-    border-bottom: 1px solid $iron;
     background-color: $topbar-bg-color;
-    box-shadow: 2px 2px 8px $jumbo;
+    @include horizontal-menu-border;
     z-index: 1;
-	select {
-		display: inline-block;
-		width: rem-calc(165);
-		height: 1.85rem;
-	}
-	form {
-		float: right;
+    select {
         display: inline-block;
-	}
+        width: rem-calc(165);
+        height: 1.85rem;
+    }
+    form {
+        float: right;
+        display: inline-block;
+    }
 }
 
 footer {
-	position: relative;
-	background-color: $footer-bg-color;
-	height: $footer-height;
-	width: 100%;
-	top: - ($header-height + $topbar-height + $footer-height); 
+    font-size: 0.8rem;
+    position: relative;
+    top: - ($header-height + $topbar-height + $footer-height);
+    height: $footer-height;
+    width: 100%;
+        padding: 0 rem-calc(16);
+        line-height: rem-calc(56);
+        background-color: $footer-bg-color;
+        @include horizontal-menu-border;
+        a {
+            font-weight: bold;
+        }
 }
 .main {
-	background-color: $middle-bg-color;
-	overflow: auto;
-	height: 100%;
+    background-color: $middle-bg-color;
+    overflow: auto;
+    height: 100%;
 }
 .sidebar {
-	background-color: $sidebar-bg-color; //light yellow
-	overflow: auto;
-	height: 100%;
+    background-color: $sidebar-bg-color; //light yellow
+    overflow: auto;
+    height: 100%;
 }
 
 
 
 .search {
-	line-height: 1;
-	position: relative;
-	label {
-		display: inline-block;
-		position: relative;
-		right: 30px;
-		top: 0.53125rem;
-		color: $steel;
-	}
-	input {
-		display: inline-block;
-		width: 200px;
-		// border-radius: 20px;
-	}
+    line-height: 1;
+    position: relative;
+    label {
+        display: inline-block;
+        position: relative;
+        right: 30px;
+        top: 0.53125rem;
+        color: $steel;
+    }
+    input {
+        display: inline-block;
+        width: 200px;
+        // border-radius: 20px;
+    }
 }
-

@@ -1,3 +1,4 @@
+$status-pending: #3582AC;
 .details {
 	background-color: $details-bg-color;
 	padding: rem-calc(4) rem-calc(8);
@@ -48,14 +49,14 @@
 
 .creating {
 	.descr {
-		color: darken($primary-color, 10%);
+		color: darken($status-pending, 10%);
 	}
 	.icon {
 		display: inline-block;
 		width: 19px;
 		height: 19px;
 		border-radius: 10px;
-		background-color: lighten($primary-color, 30%);
+		background-color: lighten($status-pending, 30%);
 		position: relative;
 		vertical-align: text-top;
 	}
