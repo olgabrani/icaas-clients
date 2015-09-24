@@ -1,4 +1,5 @@
 $status-pending: #3582AC;
+
 .details {
 	background-color: $details-bg-color;
 	padding: rem-calc(4) rem-calc(8);
@@ -56,7 +57,7 @@ $status-pending: #3582AC;
 		width: 19px;
 		height: 19px;
 		border-radius: 10px;
-		background-color: lighten($status-pending, 30%);
+		background-color: $info-color;
 		position: relative;
 		vertical-align: text-top;
 	}
@@ -83,6 +84,9 @@ $status-pending: #3582AC;
 	}
 }
 
+.btn-popover {
+	margin-left: rem-calc(10);
+}
 
 @keyframes blink {
   0% {

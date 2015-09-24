@@ -60,20 +60,71 @@ header {
 }
 
 .top-bar {
+    .logout {
+        padding-right: 0;
+    }
     line-height: $topbar-height - rem-calc(2);
 
     background-color: $topbar-bg-color;
     @include horizontal-menu-border;
     z-index: 1;
     select {
+        float: left;
         display: inline-block;
         width: rem-calc(165);
         height: 1.85rem;
+        margin-right: 16px;
     }
     form {
-        float: right;
+        float: left;
         display: inline-block;
     }
+
+li {
+    border-left: 1px solid $gainsboro;
+    text-align: center;
+    margin: 0;
+    a {
+        height: $topbar-height - rem-calc(2);
+        line-height: inherit;
+        padding: rem-calc(8px 15px 0);
+        &:hover {
+            text-decoration: none;
+        }
+    }
+    &:hover {
+        background-color: lighten($primary-color, 30%);
+        // background-color: $primary-color;
+        label {
+        color: $topbar-link-color-hover;
+        }
+        .fa {
+            color: $topbar-link-color-hover;
+        }
+    }
+    &.disabled {
+            opacity: 0.5;
+        a:hover {
+            background: inherit;
+            color: inherit;
+            cursor: default;
+        }
+        &:hover label {
+            color: $body-font-color;
+        }
+    }
+    label {
+        display: block;
+        font-size: rem-calc(12);
+        color: $topbar-link-color;
+    }
+    .fa {
+        color: $form-label-font-color;
+        font-size: rem-calc(18);
+    }
+}
+
+
 }
 
 footer {
@@ -99,6 +150,7 @@ footer {
     background-color: $sidebar-bg-color; //light yellow
     overflow: auto;
     height: 100%;
+    padding-top: rem-calc(16);
 }
 
 
@@ -110,7 +162,7 @@ footer {
         display: inline-block;
         position: relative;
         right: 30px;
-        top: 0.53125rem;
+        top: rem-calc(17);
         color: $steel;
     }
     input {

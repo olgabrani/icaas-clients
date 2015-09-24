@@ -23,8 +23,21 @@
 		  </form>
 	  </section>
 
-	  <section class="logout small-6 large-7 columns text-right">
-		  	<a href="">Log Out</a>
+	  <section class="logout small-6 large-7 columns">
+	  <ul class="inline-list right">
+		<li>
+			<a href="">
+				{{fa-icon "question-circle"}}
+				<label>Help</label>
+			</a>
+		</li>
+		<li>
+			<a href="">
+				{{fa-icon "sign-out"}}
+				<label>Log Out</label>
+			</a>
+		</li>
+	  </ul>
 	  </section>
 	</div>
 
@@ -55,13 +68,12 @@
 		</ul>
 		</div>
 		<div class="small-6 large-7 columns main">
-		<section class="new-build open" id="new-build">
+		<section class="new-build" id="new-build">
 			<h2 id="create-header">
-				Build a new image
-				{{slide-arrow areaID="creation-form" btnID="create-header" containerID="new-build"}}
+				Build new image
+				{{slide-arrow areaID="creation-form" btnID="create-header" containerID="new-build" initState="open"}}
 			</h2>
 			<section id="creation-form">
-				<form>
 					<label>
 						Name
 						<i class="info-sign fa fa-info-circle"></i>
@@ -77,18 +89,36 @@
 						<i class="info-sign fa fa-info-circle"></i>
 					</label>
 					<input type="text">
-	                <label>
-		                Project
+					<label>
+						Project
 						<i class="info-sign fa fa-info-circle"></i>
-		                </label>
-	                <select>
+						</label>
+					<select>
 						<option>yio</option>
 						<option>Yio</option>
 						<option>Yio</option>
 						<option>Yio</option>
-	                </select>
-				</form>
-				<button>Build</button>
+					</select>
+					<section id="create-adv-options" >
+						<h3 id="create-adv-btn">
+							More Options
+							{{slide-arrow areaID="adv-options" btnID="create-adv-btn" containerID="create-adv-options" initState="close"}}
+						</h3>
+						<section id="adv-options">
+							<label>
+						Blah
+						<i class="info-sign fa fa-info-circle"></i>
+					</label>
+					<input type="text">
+					<label>
+						Blah
+						<i class="info-sign fa fa-info-circle"></i>
+					</label>
+					<input type="text">
+						</section>
+					</section>
+				 <a href="">Cancel</a>
+				<button class="small right">Build</button>
 			</section>
 		</section>
 			<section class="details">
@@ -120,7 +150,7 @@
 					<dt>ID</dt><dd>12345</dd>
 					<dt>Image name in Pithos</dt><dd>Ubuntu with wordpress</dd>
 					<dt>Image location in Pithos</dt><dd>pithos/icaas_images/</dd>
-					<dt>Logs file location in Pithos</dt><dd>pithos/icaas_images/</dd>
+					<dt>Logs file location in Pithos</dt><dd>pithos/icaas_images/ <a href="">{{fa-icon "external-link" classNames="btn-popover"}}</a></dd>
 					<dt>src/bitnami url</dt><dd>https://bitnami.com/redirect/to/71159/bitnami-wordpress-4.3.1-0-ubuntu-14.04.zip</dd>
 					<hr>
 					<dt>Created</dt><dd>15/9/2015</dd>

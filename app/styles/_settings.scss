@@ -237,9 +237,8 @@ $body-bg: honeydew;
 // We use these to control header font sizes
 $h1-font-size: rem-calc(44);
 $h2-font-size: rem-calc(24);
-$h3-font-size: rem-calc(22);
-$h4-font-size: rem-calc(18);
-$h5-font-size: rem-calc(16);
+$h3-font-size: rem-calc(18);
+
 // $h6-font-size: 1rem;
 
 // We use these to control header size reduction on small screens
@@ -1419,7 +1418,7 @@ $topbar-bg-color: scale-color($white, $lightness: -5%);
 $topbar-bg: $topbar-bg-color;
 
 // Height and margin
-// $topbar-height: rem-calc(45);
+$topbar-height: rem-calc(60);
 // $topbar-margin-bottom: 0;
 
 // Controlling the styles for the title in the top bar
