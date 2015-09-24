@@ -1,13 +1,14 @@
 $info-btn-color: $primary-color;
 
-@mixin arrow-in-circle($display) {
+@mixin arrow-in-circle($display, $size, $font-size, $dist) {
 	display: $display;
-	margin-left: rem-calc(10);
-	background-color: rgb(55, 158, 189);
-	height: rem-calc(24);
-	width: rem-calc(24);
+	font-size: rem-calc($font-size);
+	margin-left: rem-calc($dist);
+	background-color: lighten($primary-color, 30%);
+	height: rem-calc($size);
+	width: rem-calc($size);
 	text-align: center;
-	border-radius: rem-calc(12);
+	border-radius: rem-calc($size/2);
 	color: white;
 }
 
@@ -19,28 +20,41 @@ $info-btn-color: $primary-color;
 		background-color: $create-bg-color;
 		padding: rem-calc(4) rem-calc(8);
 		margin-bottom: 0;
+		cursor: pointer;
+		.arrow-down {
+			@include arrow-in-circle(inline-block, 24, 22, 10);
+		}
+		.arrow-up {
+			@include arrow-in-circle(none, 24, 22, 10);
+		}
+	}
+	h3 {
+		cursor: pointer;
+		.arrow-down {
+			@include arrow-in-circle(inline-block, 20, 18, 4);
+		}
+		.arrow-up {
+			@include arrow-in-circle(none, 20, 18, 4);
+		}
+	}
+	a {
+		font-size: rem-calc(13);
 	}
 	#creation-form {
-		padding: rem-calc(4) rem-calc(8);
+		padding: rem-calc(4) rem-calc(8) rem-calc(25) rem-calc(8);
 		background-color: $create-bg-color;
 	}
 	.info-sign {
 		color: $info-btn-color;
 		margin-left: rem-calc(4);
 	}
+}
 
-	.arrow-down {
-		@include arrow-in-circle(inline-block);
-	}
-	.arrow-up {
-		@include arrow-in-circle(none);
-	}
-	&.open {
-		.arrow-down {
+	.arrow-icon.open {
+		&>.arrow-down {
 			display: none;
 		}
-		.arrow-up {
+		&>.arrow-up {
 			display: inline-block;
 		}
 	}
-}
