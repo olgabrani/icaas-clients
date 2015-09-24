@@ -4,6 +4,8 @@ import {raw as ajax} from 'ic-ajax';
 export default Ember.Controller.extend({
 
   errorCreation: null,
+  errorMsg: null,
+
   loading: false,
 
   projects: function(){
@@ -34,6 +36,19 @@ export default Ember.Controller.extend({
       // If the user provides a name for the image, check if the image exists 
       // in the destination path. If it does just 
       // return. If not continue with the creation
+      var name = this.get('name');
+      var src = this.get('src');
+      if (!name || !name.trim())  {
+        this.set('errorMsg', 'Name field cannot be empty');
+        return;
+      }
+
+      if (!src || !src.trim())  {
+        this.set('errorMsg', 'Bitnami url field cannot be empty');
+        return;
+      }
+
+
       if (this.get('image_name')) {
         var container = self.get('selectedContainer.id');
         var path =  container + '/' + self.get('settings.image_path');
@@ -104,6 +119,7 @@ export default Ember.Controller.extend({
 
     'hideErrors': function(){
       this.set('errorCreation', null);
+      this.set('errorMsg', null);
     },
 
     'checkObjectExists': function(path, callbackSuccess, callbackError) {

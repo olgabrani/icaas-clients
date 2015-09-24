@@ -65,3 +65,10 @@
                 {{e.title}}
             </div>
         {{/each}}
+        {{#if errorMsg}}
+            <div class="alert-box alert">
+                <a {{action 'hideErrors'}} title="Hide errors" class="close">{{fa-icon "fa-close"}}</a>
+                {{errorMsg}}
+            </div>
+        {{/if}}
+
