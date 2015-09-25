@@ -3,6 +3,8 @@ import {raw as ajax} from 'ic-ajax';
 
 export default Ember.Controller.extend({
 
+  queryParams: ['status'],
+
   errorCreation: null,
   errorMsg: null,
   isPrivate: Ember.computed.alias('settings.isPrivate'),

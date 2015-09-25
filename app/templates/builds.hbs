@@ -1,6 +1,9 @@
  <div class="row">
     <div class="columns small-4">
         <h2>Builds list</h2>
+        {{#link-to "builds" (query-params status="error")}}Error builds{{/link-to}} | 
+        {{#link-to "builds" (query-params status="creating")}}Creating builds{{/link-to}} |
+        {{#link-to "builds" (query-params status="completed")}}Completed builds{{/link-to}}
         <ul>
            {{#each controller.model as |build|}}
                 <li>
