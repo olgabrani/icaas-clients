@@ -3,7 +3,21 @@ import {raw as ajax} from 'ic-ajax';
 
 export default Ember.Controller.extend({
 
-  queryParams: ['status'],
+  queryParams: ['status', 'searchTerm'],
+  queryResults: Ember.computed('searchTerm', 'model', function(){
+    var searchTerm = this.get('searchTerm');
+    var builds = this.get('model');
+    var rx = new RegExp(searchTerm, 'gi');
+
+    if (searchTerm) {
+      return builds.filter(function(el){
+        return el.get('name').match(rx);
+      });
+    } else {
+      return builds;
+    }
+    
+  }),
 
   errorCreation: null,
   errorMsg: null,

@@ -1,11 +1,12 @@
  <div class="row">
     <div class="columns small-4">
         <h2>Builds list</h2>
+        {{search-box value=searchTerm}}
         {{#link-to "builds" (query-params status="error")}}Error builds{{/link-to}} | 
         {{#link-to "builds" (query-params status="creating")}}Creating builds{{/link-to}} |
         {{#link-to "builds" (query-params status="completed")}}Completed builds{{/link-to}}
         <ul>
-           {{#each controller.model as |build|}}
+           {{#each controller.queryResults as |build|}}
                 <li>
                     {{#link-to "build" build.id}}{{build.name}}{{/link-to}}
                     <a {{action "deleteBuild" build}}>(delete)</a>

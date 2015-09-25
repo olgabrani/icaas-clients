@@ -21,3 +21,13 @@
     color: $success-color;
     content: "\f00c"; 
 }
+
+.search-box {
+    position: relative;
+    .fa {
+        position: absolute;
+        right: 10px;
+        top: 5px;
+    }
+}
+
