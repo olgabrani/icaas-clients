@@ -14,6 +14,7 @@ export default Ember.Object.extend({
   // `image` sent during build creation will be
   // {container_id}/{image_path}/{{image_name}
   image_path: 'icaas_images',
+  isPrivate: true,
 
   auth_url: alias('appSettings.auth_url'),
   service_url: alias('appSettings.service_url'),

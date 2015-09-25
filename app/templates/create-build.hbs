@@ -41,7 +41,7 @@
                 </div>
             </div>
             <fieldset>
-                <legend>Advanced options</legend>
+                <legend>Optional fields</legend>
                 <div class="row">
                     <div class="small-3 columns">
                         <label for="name" class="right">Image name</label>
@@ -50,6 +50,24 @@
                         {{input type="text" value=image_name id="image_name"}}
                     </div>
                 </div>
+                <div class="row">
+                    <div class="small-3 columns">
+                        <label for="description" class="right">Description</label>
+                    </div>
+                    <div class="small-9 columns">
+                        {{textarea value=description id="description" maxlength=255}}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="small-3 columns">
+                        <label for="private" class="right">Private</label>
+                    </div>
+                    <div class="small-9 columns">
+                        {{input type="checkbox" id="private" checked=isPrivate}}
+                    </div>
+                </div>
+
+
 
             </fieldset>
             <div class="row right">

@@ -5,6 +5,7 @@ export default Ember.Controller.extend({
 
   errorCreation: null,
   errorMsg: null,
+  isPrivate: Ember.computed.alias('settings.isPrivate'),
 
   loading: false,
 
@@ -74,6 +75,8 @@ export default Ember.Controller.extend({
 
       var src = this.get('src');
       var name = this.get('name');
+      var isPublic = !this.get('isPrivate');
+      var description = this.get('description');
       var project = this.get('selectedProject.id');
       var container = this.get('selectedContainer.id');
       var t = Date.now();
@@ -89,6 +92,8 @@ export default Ember.Controller.extend({
         'log': log,
         'image': image,
         'project': project,
+        'description': description, 
+        'public': isPublic
       });
 
       this.set('loading', true);
