@@ -1,0 +1,19 @@
+<div class="top-bar">
+    {{outlet "top-bar-right"}}
+    <section class="logout small-6 large-7 columns">
+        <ul class="inline-list right">
+            <li>
+                <a href="">
+                {{fa-icon "question-circle"}}
+                <label>Help</label>
+                </a>
+            </li>
+            <li>
+                <a href="" {{action 'logout'}}>
+                {{fa-icon "sign-out"}}
+                <label>Log Out</label>
+                </a>
+            </li>
+        </ul>
+    </section>
+</div>

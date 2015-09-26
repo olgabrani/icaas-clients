@@ -1,0 +1,11 @@
+<section class="search small-6 large-5 columns">
+    {{#link-to "builds" (query-params status="error")}}Error builds{{/link-to}} | 
+    {{#link-to "builds" (query-params status="creating")}}Creating builds{{/link-to}} |
+    {{#link-to "builds" (query-params status="completed")}}Completed builds{{/link-to}}
+    <form>
+        <input type="text" placeholder="Search builds...">
+        <label>
+            <i class="fa fa-search"></i>
+        </label>
+    </form>
+</section>
