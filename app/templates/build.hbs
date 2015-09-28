@@ -8,6 +8,7 @@
         <li><strong>Public</strong> {{model.public}}</li>
         <li><strong>Log</strong> <a href="{{log_url}}" target="_blank">{{model.log}}</a></li>
         <li><strong>Status</strong> <em class="{{model.status}}">{{model.status}}</em></li>
+        <li><strong>Status details</strong> {{model.status_details}}</li>
         <li><strong>Bitnami URL</strong> {{model.src}}</li>
         <li><strong>Created</strong> {{moment-format model.created 'Do MMMM YYYY, H:mm'}}</li>
         <li><strong>Updated</strong> {{moment-format model.updated 'Do MMMM YYYY, H:mm'}}</li>
