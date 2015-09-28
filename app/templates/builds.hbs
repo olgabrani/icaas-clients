@@ -7,7 +7,9 @@
                         <i class="icon-disk-outline"></i>
                         <span>{{build.name}}</span>
                     {{/link-to}}
-                    <a {{action "deleteBuild" build}}>(delete)</a>
+                    <a {{action "deleteBuild" build}} class="right remove-sign" title="remove record">
+                        {{fa-icon "fa-times"}}
+                    </a>
                 </li>
             {{/each}}
         </ul>

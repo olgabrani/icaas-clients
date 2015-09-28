@@ -150,7 +150,16 @@ footer {
     background-color: $sidebar-bg-color; //light yellow
     overflow: auto;
     height: 100%;
-    padding-top: rem-calc(16);
+    padding: 1.75rem 0;
+    li {
+        padding: rem-calc(4 20);
+        &:hover {
+            background-color: rgba(253, 253, 95, 0.29);
+        }
+    }
+    .remove-sign {
+        color: $alert-color;
+    }
 }
 
 
@@ -160,14 +169,14 @@ footer {
     position: relative;
     label {
         display: inline-block;
-        position: relative;
-        right: 30px;
-        top: rem-calc(17);
+        position: absolute;
+        right: rem-calc(25);
+        top: rem-calc(20);
         color: $steel;
     }
     input {
         display: inline-block;
-        width: 200px;
+        width: 204px;
         // border-radius: 20px;
     }
 }
