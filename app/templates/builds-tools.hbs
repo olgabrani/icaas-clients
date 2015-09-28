@@ -1,16 +1,14 @@
-<section class="search small-6 large-5 columns">
 {{#x-select value=controller.status}}
-  {{#x-option value=""}}Status: All{{/x-option}}
-  {{#x-option value="creating"}}Status: Creating{{/x-option}}
-  {{#x-option value="completed"}}Status: Completed{{/x-option}}
-  {{#x-option value="error"}}Status: Error{{/x-option}}
+    {{#x-option value=""}}Status: All{{/x-option}}
+    {{#x-option value="creating"}}Status: Creating{{/x-option}}
+    {{#x-option value="completed"}}Status: Completed{{/x-option}}
+    {{#x-option value="error"}}Status: Error{{/x-option}}
 {{/x-select}}
 
+<form>
+    <input type="text" placeholder="Search builds...">
+    <label>
+        <i class="fa fa-search"></i>
+    </label>
+</form>
 
-    <form>
-        <input type="text" placeholder="Search builds...">
-        <label>
-            <i class="fa fa-search"></i>
-        </label>
-    </form>
-</section>

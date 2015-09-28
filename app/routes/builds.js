@@ -18,6 +18,11 @@ export default Ember.Route.extend({
       outlet: 'top-bar-right',
       controller: 'builds',
     });
+
+    this.render('application-tools', {
+      into: 'application',
+      outlet: 'top-bar-left',
+    });
   }
 
 });
