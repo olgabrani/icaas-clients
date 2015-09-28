@@ -24,6 +24,10 @@ h1 {
     cursor: pointer;
 }
 
+h2 .icon-disk-filled {
+    font-size: rem-calc(24);
+}
+
 [data-present-style='font-demo-1'] {
     font-family: 'Nothing You Could Do', cursive;
 }
@@ -179,4 +183,8 @@ footer {
         width: 204px;
         // border-radius: 20px;
     }
+}
+
+.buttons {
+    text-align: right;
 }

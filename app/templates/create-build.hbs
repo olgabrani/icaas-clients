@@ -3,7 +3,9 @@
         Create new build
         {{slide-arrow areaID="creation-form" btnID="create-header" containerID="new-build" initState="open"}}
     </h2>
-    <form id="creation-form">
+    <div id="creation-form">
+        
+    <form>
         <label for="name">
             Official image name
             <i class="info-sign fa fa-info-circle"></i>
@@ -71,9 +73,12 @@
             {{errorMsg}}
         </div>
     {{/if}}
+<div class="buttons">
+    {{!-- <a href="">Cancel</a> --}}
+    <button type="submit" class="small success" {{action 'initCreateBuild'}}>Build</button>
+</div>
+    </div>
 </section>
-<a href="">Cancel</a>
-<button type="submit" class="small right" {{action 'initCreateBuild'}}>Build</button>
 
 
 {{!--         <h2>Create a new build</h2>

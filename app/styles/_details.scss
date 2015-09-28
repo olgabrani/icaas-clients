@@ -2,7 +2,10 @@ $status-pending: #3582AC;
 
 .details {
 	background-color: $details-bg-color;
-	padding: rem-calc(4) rem-calc(8);
+	padding: rem-calc(16 24 0);
+	h2 {
+		margin-left: rem-calc(-7);
+	}
 	// make it reusable
 	dl {
 		width: 100%;
@@ -85,10 +88,6 @@ $status-pending: #3582AC;
 	.dot:nth-child(3) {
 	  animation-delay: .4s;
 	}
-}
-
-.buttons {
-	text-align: center;
 }
 
 @keyframes blink {

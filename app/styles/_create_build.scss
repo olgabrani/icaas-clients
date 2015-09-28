@@ -52,7 +52,7 @@ html {
 		font-size: rem-calc(13);
 	}
 	#creation-form {
-		padding: rem-calc(4) rem-calc(24) rem-calc(25);
+		padding: rem-calc(4 24 0);
 		background-color: $create-bg-color;
 	}
 	.info-sign {
