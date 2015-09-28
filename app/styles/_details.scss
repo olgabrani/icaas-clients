@@ -10,12 +10,12 @@ $status-pending: #3582AC;
 	}
 	dt {
 		float: left;
-		width: 30%;
+		width: 25%;
 		margin-bottom: 0;
 	}
 	dd {
 		float: left;
-		width: 70%;
+		width: 75%;
 		margin-bottom: 0;
 	}
 
@@ -87,8 +87,8 @@ $status-pending: #3582AC;
 	}
 }
 
-.btn-popover {
-	margin-left: rem-calc(10);
+.buttons {
+	text-align: center;
 }
 
 @keyframes blink {

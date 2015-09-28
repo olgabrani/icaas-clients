@@ -1,0 +1,12 @@
+{{#if isCreating}}
+    <span class="icon">
+        <span class="dot">.</span>
+        <span class="dot">.</span>
+        <span class="dot">.</span>
+    </span>
+{{else if isCompleted}}
+    <span class="icon">{{fa-icon "check-square-o"}}</span>
+{{else if isError}}
+    <span class="icon">{{fa-icon "exclamation-triangle"}}</span>
+{{/if}}
+<span class="descr">{{status}}</span>

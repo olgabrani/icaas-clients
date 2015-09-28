@@ -3,23 +3,30 @@
     <h2><i class="icon-disk-filled"></i>{{model.name}}</h2>
     <dl>
         <dt>Status</dt>
-        <dd class={{model.status}}>
-            <span class="icon">
-                !
-            </span>
-            <span class="descr">{{model.status}}</span>
-            <span class="status-details">{{model.status_details}}</span>
+        <dd>
+            {{build-status status=model.status}}
+            {{#if model.status_details}}
+                <span class="status-details">{{model.status_details}}</span>
+            {{/if}}
         </dd>
         <hr>
         <dt>ID</dt><dd>{{model.id}}</dd>
-        <dt>Description</dt><dd>{{model.description}}</dd>
+        {{#if model.description}}
+            <dt>Description</dt><dd>{{model.description}}</dd>
+        {{/if}}
         <dt>Bitnami URL</dt><dd> <a href="{{model.src}}" target="_blank">{{model.src}}</a></dd>
         <dt>Public</dt><dd>{{model.public}}</dd>
-        <dt>Log</dt><dd><a href="{{log_url}}">{{fa-icon "external-link" classNames="btn-popover"}}</a>Temp!</dd>
         <hr>
         <dt>Created</dt><dd>{{moment-format model.created 'Do MMMM YYYY, H:mm'}}</dd>
         <dt>Updated</dt><dd>{{moment-format model.updated 'Do MMMM YYYY, H:mm'}}</dd>
     </dl>
+    <hr>
+    <div class="buttons">
+        <a href="{{log_url}}" class="button small info">
+            {{fa-icon "external-link"}}
+            <span>View Logs</span>
+        </a>
+    </div>
 </section>
 
 
