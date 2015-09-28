@@ -14,9 +14,13 @@ export default Ember.Route.extend({
   startTimer: function () {
     var self = this;
     var m = this.get('currentModel');
-    m.reload().then(function(){
-      self.scheduleRefresh();
-    });
+
+    // Reload the model only if it is in status CREATING
+    if (m.get('status') === 'CREATING'){
+      m.reload().then(function(){
+        self.scheduleRefresh();
+      });
+    }
   },
 
   scheduleRefresh: function(){
