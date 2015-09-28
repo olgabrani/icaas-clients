@@ -1,4 +1,82 @@
-        <h2>Create a new build</h2>
+<section class="new-build" id="new-build">
+    <h2 id="create-header">
+        Create new build
+        {{slide-arrow areaID="creation-form" btnID="create-header" containerID="new-build" initState="open"}}
+    </h2>
+    <form id="creation-form">
+        <label for="name">
+            Official image name
+            <i class="info-sign fa fa-info-circle"></i>
+        </label>
+        {{input type="text" value=name id="name"}}
+        <label for="src">
+            Bitnami URL
+            <i class="info-sign fa fa-info-circle"></i>
+            {{input type="url" value=src id="src"}}
+        </label>
+        <label>
+            Project
+            <i class="info-sign fa fa-info-circle"></i>
+        </label>
+        {{#x-select value=selectedProject}}
+            {{#each projects as |p|}}
+                {{#x-option value=p}}{{p.human_name}}{{/x-option}}
+            {{/each}}
+        {{/x-select}}
+        <label>
+            Pithos container
+            <i class="info-sign fa fa-info-circle"></i>
+        </label>
+        {{#x-select value=selectedContainer}}
+            {{#each containers as |c|}}
+                {{#x-option value=c}}{{c.name}}{{/x-option}}
+            {{/each}}
+        {{/x-select}}
+        <section id="create-adv-options">
+            <h3 id="create-adv-btn">
+                More Options
+                {{slide-arrow areaID="adv-options" btnID="create-adv-btn" containerID="create-adv-options" initState="close"}}
+            </h3>
+            <section id="adv-options">
+                <label for="image_name">
+                    Image name
+                    <i class="info-sign fa fa-info-circle"></i>
+                </label>
+                {{input type="text" value=image_name id="image_name"}}
+                <label for="description">
+                    Description
+                    <i class="info-sign fa fa-info-circle"></i>
+                </label>
+                {{textarea value=description id="description" maxlength=255}}
+                <label for="private">
+                    Private
+                    {{input type="checkbox" id="private" checked=isPrivate}}
+                </label>
+            </section>
+        </section>
+    </form>
+    {{#if loading}}
+        <div class="text-center">{{fa-icon "fa-refresh" spin=true}}</div>
+    {{/if}}
+    {{error-msg err=errorCreation.common}}
+    {{#each errorCreation as |e|}}
+        <div class="alert-box alert">
+            <a {{action 'hideErrors'}} title="Hide errors" class="close">{{fa-icon "fa-close"}}</a>
+            {{e.title}}
+        </div>
+    {{/each}}
+    {{#if errorMsg}}
+        <div class="alert-box alert">
+            <a {{action 'hideErrors'}} title="Hide errors" class="close">{{fa-icon "fa-close"}}</a>
+            {{errorMsg}}
+        </div>
+    {{/if}}
+</section>
+<a href="">Cancel</a>
+<button type="submit" class="small right" {{action 'initCreateBuild'}}>Build</button>
+
+
+{{!--         <h2>Create a new build</h2>
         <form class="clearfix">
             <div class="row">
                 <div class="small-3 columns">
@@ -96,3 +174,4 @@
             </div>
         {{/if}}
 
+ --}}

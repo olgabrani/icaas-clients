@@ -48,13 +48,16 @@ $info-btn-color: $primary-color;
 		color: $info-btn-color;
 		margin-left: rem-calc(4);
 	}
+	input[type=checkbox] {
+		margin-left: rem-calc(10);
+	}
 }
 
-	.arrow-icon.open {
-		&>.arrow-down {
-			display: none;
-		}
-		&>.arrow-up {
-			display: inline-block;
-		}
+.arrow-icon.open {
+	&>.arrow-down {
+		display: none;
 	}
+	&>.arrow-up {
+		display: inline-block;
+	}
+}

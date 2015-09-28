@@ -46,6 +46,9 @@ $status-pending: #3582AC;
 			font-size: rem-calc(20);
 		}
 	}
+	.icon-disk-filled:before {
+		transform: rotate(90deg);
+	}
 }
 
 .creating {

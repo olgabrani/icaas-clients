@@ -1,4 +1,33 @@
- <div class="row">
+<div class="middle">
+    <div class="small-6 large-5 columns sidebar">
+        <ul class="no-bullet">
+           {{#each controller.model as |build|}}
+                <li>
+                    {{#link-to "build" build.id}}
+                        <i class="icon-disk-outline"></i>
+                        <span>{{build.name}}</span>
+                    {{/link-to}}
+                    <a {{action "deleteBuild" build}}>(delete)</a>
+                </li>
+            {{/each}}
+        </ul>
+    </div>
+    <div class="small-6 large-7 columns main">
+        {{partial "create-build"}}
+        {{outlet}}
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+{{!--  <div class="row">
     <div class="columns small-4">
         <h2>Builds list</h2>
         {{search-box value=searchTerm}}
@@ -33,3 +62,4 @@
         {{outlet}}
     </div>
 </div> 
+ --}}
