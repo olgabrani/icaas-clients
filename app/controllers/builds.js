@@ -19,7 +19,7 @@ export default Ember.Controller.extend({
     
   }),
 
-  errorCreation: null,
+  errorCreation: {},
   errorMsg: null,
   isPrivate: Ember.computed.alias('settings.isPrivate'),
 
@@ -49,6 +49,8 @@ export default Ember.Controller.extend({
   actions: {
 
     'initCreateBuild': function() {
+
+      this.send('hideErrors');
       var self = this;
       // If the user provides a name for the image, check if the image exists 
       // in the destination path. If it does just 
@@ -56,12 +58,14 @@ export default Ember.Controller.extend({
       var name = this.get('name');
       var src = this.get('src');
       if (!name || !name.trim())  {
-        this.set('errorMsg', 'Name field cannot be empty');
-        return;
+        this.set('errorCreation.name', 'Name field cannot be empty');
       }
 
       if (!src || !src.trim())  {
-        this.set('errorMsg', 'Bitnami url field cannot be empty');
+        this.set('errorCreation.src', 'Bitnami url field cannot be empty');
+      }
+
+      if (!(is.empty(this.get('errorCreation')))){ 
         return;
       }
 
@@ -86,7 +90,6 @@ export default Ember.Controller.extend({
 
 
     'createBuild': function(){
-      this.send('hideErrors');
       var self = this;
 
       var src = this.get('src');
@@ -126,7 +129,8 @@ export default Ember.Controller.extend({
                   });
         self.transitionToRoute('build', build);
       }, function(err){
-        self.set('errorCreation', err.errors);
+        debugger;
+        self.set('errorCreation.common', err.errors);
         self.send('clearForm');
       });
     },
@@ -139,7 +143,7 @@ export default Ember.Controller.extend({
     },
 
     'hideErrors': function(){
-      this.set('errorCreation', null);
+      this.set('errorCreation', {});
       this.set('errorMsg', null);
     },
 

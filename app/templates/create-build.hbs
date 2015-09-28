@@ -5,7 +5,9 @@
                     <label for="name" class="right">Official image name</label>
                 </div>
                 <div class="small-9 columns">
-                    {{input type="text" value=name id="name"}}
+                    {{#error-msg err=errorCreation.name}}
+                        {{input type="text" value=name id="name"}}
+                    {{/error-msg}}
                 </div>
             </div>
             <div class="row">
@@ -14,6 +16,8 @@
                 </div>
                 <div class="small-9 columns">
                     {{input type="url" value=src id="src"}}
+                    {{error-msg err=errorCreation.src}}
+
                 </div>
             </div>
             <div class="row">
@@ -77,6 +81,8 @@
         {{#if loading}}
             <div class="text-center">{{fa-icon "fa-refresh" spin=true}}</div>
         {{/if}}
+                    {{error-msg err=errorCreation.common}}
+
         {{#each errorCreation as |e|}}
             <div class="alert-box alert">
                 <a {{action 'hideErrors'}} title="Hide errors" class="close">{{fa-icon "fa-close"}}</a>
