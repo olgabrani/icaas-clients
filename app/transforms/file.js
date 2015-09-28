@@ -13,7 +13,7 @@ export default DS.Transform.extend({
   },
 
   serialize: function(deserialized) {
-    var parts = deserialized.split('/');
+    var parts =  deserialized && deserialized.split('/') || [];
     let container = parts.shift();
     let object = parts.join('/');
     return {

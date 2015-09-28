@@ -129,7 +129,6 @@ export default Ember.Controller.extend({
                   });
         self.transitionToRoute('build', build);
       }, function(err){
-        debugger;
         self.set('errorCreation.common', err.errors);
         self.send('clearForm');
       });
