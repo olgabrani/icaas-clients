@@ -4,27 +4,38 @@ $info-btn-color: $primary-color;
 	display: $display;
 	font-size: rem-calc($font-size);
 	margin-left: rem-calc($dist);
-	background-color: lighten($primary-color, 30%);
-	height: rem-calc($size);
-	width: rem-calc($size);
+	// background-color: lighten($primary-color, 30%);
+	background-color: transparent;
+	// height: rem-calc($size);
+	// width: rem-calc($size);
 	text-align: center;
 	border-radius: rem-calc($size/2);
-	color: white;
+	// color: white;
+	color: $header-font-color;
 }
-
+html {
+	background-color: rgba(255, 165, 0, 0.25);
+}
 .new-build {
+	select {
+		padding-right: rem-calc(6);
+		padding-left: rem-calc(6);
+		max-width: rem-calc(240);
+	}
 	padding: rem-calc(16) 0;
 	background-color: transparent;
 	h2 {
 		display: inline-block;
 		background-color: $create-bg-color;
-		padding: rem-calc(4) rem-calc(8);
+		padding: rem-calc(12) rem-calc(24);
 		margin-bottom: 0;
 		cursor: pointer;
 		.arrow-down {
+			// @include arrow-in-circle(inline-block, 24, 22, 10);
 			@include arrow-in-circle(inline-block, 24, 22, 10);
 		}
 		.arrow-up {
+			// @include arrow-in-circle(none, 24, 22, 10);
 			@include arrow-in-circle(none, 24, 22, 10);
 		}
 	}
@@ -41,7 +52,7 @@ $info-btn-color: $primary-color;
 		font-size: rem-calc(13);
 	}
 	#creation-form {
-		padding: rem-calc(4) rem-calc(8) rem-calc(25) rem-calc(8);
+		padding: rem-calc(4) rem-calc(24) rem-calc(25);
 		background-color: $create-bg-color;
 	}
 	.info-sign {

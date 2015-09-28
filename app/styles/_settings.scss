@@ -139,7 +139,7 @@ $warning-color: #f08a24;
 $info-color: #a0d3e8;
 
 // We use these to control various global styles
-$body-bg: honeydew;
+$body-bg: rgba(255, 165, 0, 0.25);
 // $body-font-color: $jet;
 // $body-font-family: $font-family-sans-serif;
 // $body-font-weight: $font-weight-normal;
@@ -236,8 +236,8 @@ $body-bg: honeydew;
 
 // We use these to control header font sizes
 $h1-font-size: rem-calc(44);
-$h2-font-size: rem-calc(24);
-$h3-font-size: rem-calc(18);
+$h2-font-size: rem-calc(20);
+$h3-font-size: rem-calc(16);
 
 // $h6-font-size: 1rem;
 
