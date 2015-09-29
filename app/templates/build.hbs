@@ -10,15 +10,20 @@
             {{/if}}
         </dd>
         <hr>
-        <dt>ID</dt><dd>{{model.id}}</dd>
         {{#if model.description}}
             <dt>Description</dt><dd  class="wrap-text">{{model.description}}</dd>
         {{/if}}
         <dt>Bitnami URL</dt><dd> <a href="{{model.src}}" target="_blank" class="wrap-text">{{model.src}}</a></dd>
         <dt>Public</dt><dd>{{model.public}}</dd>
         <hr>
-        <dt>Created</dt><dd>{{moment-format model.created 'Do MMMM YYYY, H:mm'}}</dd>
-        <dt>Updated</dt><dd>{{moment-format model.updated 'Do MMMM YYYY, H:mm'}}</dd>
+        <dt>Started</dt><dd>{{moment-format model.created 'Do MMMM YYYY, H:mm'}}</dd>
+        {{#if isCompleted}}
+            <dt>Created</dt>
+            <dd>{{moment-format model.updated 'Do MMMM YYYY, H:mm'}}</dd>
+        {{else if isError}}
+            <dt>Finished</dt>
+            <dd>{{moment-format model.updated 'Do MMMM YYYY, H:mm'}}</dd>
+        {{/if}}
     </dl>
     <hr>
     <div class="buttons">

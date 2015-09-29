@@ -1,6 +1,8 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
+  isCompleted: Ember.computed.equal('model.status', 'COMPLETED'),
+  isError: Ember.computed.equal('model.status', 'ERROR'),
 
   log_url: function(){
     let storage_view_url = this.get('settings.storage_view_url');
