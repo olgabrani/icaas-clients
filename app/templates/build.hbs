@@ -1,6 +1,6 @@
 <section class="details panel">
     <a {{action "hide"}} class="right" title="Hide details">{{fa-icon "close"}}</a>
-    <h2><i class="icon-disk-filled"></i>{{model.name}}</h2>
+    <h2  class="wrap-text"><i class="icon-disk-filled"></i>{{model.name}}</h2>
     <dl>
         <dt>Status</dt>
         <dd>
@@ -12,9 +12,9 @@
         <hr>
         <dt>ID</dt><dd>{{model.id}}</dd>
         {{#if model.description}}
-            <dt>Description</dt><dd>{{model.description}}</dd>
+            <dt>Description</dt><dd  class="wrap-text">{{model.description}}</dd>
         {{/if}}
-        <dt>Bitnami URL</dt><dd> <a href="{{model.src}}" target="_blank">{{model.src}}</a></dd>
+        <dt>Bitnami URL</dt><dd> <a href="{{model.src}}" target="_blank" class="wrap-text">{{model.src}}</a></dd>
         <dt>Public</dt><dd>{{model.public}}</dd>
         <hr>
         <dt>Created</dt><dd>{{moment-format model.created 'Do MMMM YYYY, H:mm'}}</dd>
@@ -22,7 +22,7 @@
     </dl>
     <hr>
     <div class="buttons">
-        <a href="{{log_url}}" class="button small info">
+        <a href="{{log_url}}" class="button small info" target="_blank">
             {{fa-icon "external-link"}}
             <span>View Logs</span>
         </a>
