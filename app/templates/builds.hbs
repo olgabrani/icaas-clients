@@ -5,6 +5,7 @@
                 <li>
                     {{#link-to "build" build.id}}
                         <i class="icon-disk-outline"></i>
+                        <i class="icon-disk-filled"></i>
                         <span>{{build.name}}</span>
                     {{/link-to}}
                     <a {{action "deleteBuild" build}} class="right remove-sign" title="remove record">

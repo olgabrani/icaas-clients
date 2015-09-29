@@ -151,14 +151,54 @@ footer {
     height: 100%;
 }
 .sidebar {
-    background-color: $sidebar-bg-color; //light yellow
+    background-color: $sidebar-bg-color;
     overflow: auto;
     height: 100%;
     padding: 1.75rem 0;
     li {
         padding: rem-calc(4 20);
+        .remove-sign {
+            display: inline-block;
+            width: rem-calc(22);
+            height: rem-calc(22);
+            line-height: rem-calc(22);
+            border-radius: rem-calc(13);
+            text-align: center;
+        }
+        .icon-disk-filled {
+            display: none;
+            width: 20px;
+            height: 20px;
+        }
+        .icon-disk-outline {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+        }
+        a:not(.remove-sign) {
+            color: $topbar-link-color;
+        }
         &:hover {
-            background-color: rgba(253, 253, 95, 0.29);
+            // background-color: rgba(253, 253, 95, 0.29);
+            background-color: lighten($primary-color, 30%);
+            a:not(.remove-sign) {
+                color: white;
+            }
+            .remove-sign {
+                background-color: $sidebar-bg-color;
+            }
+            .icon-disk-filled {
+                display: inline-block;
+                font-size: 1.25rem;
+                position: relative;
+                left: -3px;
+                &:before {
+                    transform: rotate(90deg);
+                }
+            }
+            .icon-disk-outline {
+                display: none;
+            }
         }
     }
     .remove-sign {
