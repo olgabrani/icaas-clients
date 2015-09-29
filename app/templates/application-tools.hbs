@@ -1,9 +1,9 @@
  <ul class="inline-list right">
     <li>
-        <a href="">
-        {{fa-icon "question-circle"}}
-        <label>Help</label>
-        </a>
+        {{#link-to "guide"}}
+            {{fa-icon "question-circle"}}
+            <label>Help</label>
+        {{/link-to}}
     </li>
     <li>
         <a href="" {{action 'logout'}}>
