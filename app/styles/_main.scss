@@ -45,6 +45,7 @@ h2 .icon-disk-filled {
 }
 
 .middle {
+    background-color: $white;
     padding-top: $header-height + $topbar-height;
     padding-bottom: $footer-height;
     top: - ($header-height + $topbar-height);

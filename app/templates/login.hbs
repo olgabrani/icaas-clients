@@ -1,21 +1,15 @@
-<form>
-    <div class="row">
-        <div class="small-3 columns">
-            <label for="token" class="right">Token</label>
-        </div>
-        <div class="small-9 columns">
+<div class="middle">
+    <form class="login">
+        <label for="token" class="right">Token</label>
+        <div class="input-with-error">
             {{input value=token id="token"}}
+            {{#if error}}
+                <div class="alert-box alert">
+                    <a {{action 'hideErrors'}} title="Hide errors" class="close">{{fa-icon "fa-close"}}</a>
+                    {{errorMsg}}
+                </div>
+            {{/if}}
         </div>
-    </div>
-    <div class="row">
-        <button {{action 'tryLogin'}}>Login</button>
-    </div>
-    <div class="row">
-        {{#if error}}
-            <div class="alert-box alert">
-                <a {{action 'hideErrors'}} title="Hide errors" class="close">{{fa-icon "fa-close"}}</a>
-                {{errorMsg}}
-            </div>
-        {{/if}}
-    </div>
-</form>
+        <button {{action 'tryLogin'}} class="small">Login</button>
+    </form>
+</div>
