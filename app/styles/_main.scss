@@ -215,23 +215,24 @@ footer {
     .search-icon {
         display: inline-block;
         position: absolute;
-        right: -28px;
-        top: 16px;
+        right: rem-calc(7);
+        top: rem-calc(16);
         color: white;
         height: 100%;
-        width: 30px;
+        width: rem-calc(30);
         background-color: $primary-color;
     }
     .clear {
         display: inline-block;
         position: absolute;
-        right: rem-calc(5);
+        right: rem-calc(36);
         top: rem-calc(18);
         color: $alert-color;
     }
     input {
         display: inline-block;
-        width: 204px;
+        width: rem-calc(170);
+        padding-right: rem-calc(32);
         // border-radius: 20px;
     }
 }
