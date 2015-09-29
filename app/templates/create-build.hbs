@@ -10,11 +10,15 @@
             Official image name
             <i class="info-sign fa fa-info-circle"></i>
         </label>
-        {{input type="text" value=name id="name"}}
+        {{#error-msg err=errorCreation.name}}
+            {{input type="text" value=name id="name"}}
+        {{/error-msg}}
         <label for="src">
             Bitnami URL
             <i class="info-sign fa fa-info-circle"></i>
-            {{input type="url" value=src id="src"}}
+            {{#error-msg err=errorCreation.src}}
+                {{input type="url" value=src id="src"}}
+            {{/error-msg}}
         </label>
         <label>
             Project
@@ -61,12 +65,6 @@
         <div class="text-center">{{fa-icon "fa-refresh" spin=true}}</div>
     {{/if}}
     {{error-msg err=errorCreation.common}}
-    {{#each errorCreation as |e|}}
-        <div class="alert-box alert">
-            <a {{action 'hideErrors'}} title="Hide errors" class="close">{{fa-icon "fa-close"}}</a>
-            {{e.title}}
-        </div>
-    {{/each}}
     {{#if errorMsg}}
         <div class="alert-box alert">
             <a {{action 'hideErrors'}} title="Hide errors" class="close">{{fa-icon "fa-close"}}</a>
