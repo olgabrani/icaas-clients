@@ -39,15 +39,6 @@ html {
 			@include arrow-in-circle(none, 24, 22, 10);
 		}
 	}
-	h3 {
-		cursor: pointer;
-		.arrow-down {
-			@include arrow-in-circle(inline-block, 20, 18, 4);
-		}
-		.arrow-up {
-			@include arrow-in-circle(none, 20, 18, 4);
-		}
-	}
 	a {
 		font-size: rem-calc(13);
 	}
@@ -62,6 +53,21 @@ html {
 	input[type=checkbox] {
 		margin-left: rem-calc(10);
 	}
+
+	.dropdown {
+		display: inline-block;
+		width: 45%;
+	}
+	small {
+		text-transform: inherit;
+		font-style: normal;
+	}
+}
+
+.mendatory-sign {
+	color: $alert-color;
+	font-weight: bold;
+	font-size: 1rem;
 }
 
 .arrow-icon.open {

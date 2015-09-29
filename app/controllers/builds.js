@@ -21,7 +21,6 @@ export default Ember.Controller.extend({
 
   errorCreation: {},
   errorMsg: null,
-  isPrivate: Ember.computed.alias('settings.isPrivate'),
 
   loading: false,
 
@@ -62,7 +61,7 @@ export default Ember.Controller.extend({
       }
 
       if (!src || !src.trim())  {
-        this.set('errorCreation.src', 'Bitnami url field cannot be empty');
+        this.set('errorCreation.src', 'Bitnami URL field cannot be empty');
       }
 
       if (!(is.empty(this.get('errorCreation')))){ 
@@ -94,7 +93,7 @@ export default Ember.Controller.extend({
 
       var src = this.get('src');
       var name = this.get('name');
-      var isPublic = !this.get('isPrivate');
+      var isPublic = this.get('isPublic');
       var description = this.get('description');
       var project = this.get('selectedProject.id');
       var container = this.get('selectedContainer.id');

@@ -1,65 +1,63 @@
 <section class="new-build" id="new-build">
     <h2 id="create-header">
-        Create new build
+        Create new image
         {{slide-arrow areaID="creation-form" btnID="create-header" containerID="new-build" initState="open"}}
     </h2>
     <div id="creation-form">
         
     <form>
-        <label for="name">
-            Official image name
-            <i class="info-sign fa fa-info-circle"></i>
-        </label>
-        {{#error-msg err=errorCreation.name}}
-            {{input type="text" value=name id="name"}}
-        {{/error-msg}}
         <label for="src">
-            Bitnami URL
+            <span class="mendatory-sign">*</span>
+            Bitnami image URL
             <i class="info-sign fa fa-info-circle"></i>
             {{#error-msg err=errorCreation.src}}
                 {{input type="url" value=src id="src"}}
             {{/error-msg}}
         </label>
-        <label>
-            Project
+        <label for="name">
+            <span class="mendatory-sign">*</span>
+            Name
             <i class="info-sign fa fa-info-circle"></i>
         </label>
-        {{#x-select value=selectedProject}}
-            {{#each projects as |p|}}
-                {{#x-option value=p}}{{p.human_name}}{{/x-option}}
-            {{/each}}
-        {{/x-select}}
-        <label>
-            Pithos container
+        {{#error-msg err=errorCreation.name}}
+            {{input type="text" value=name id="name"}}
+        {{/error-msg}}
+        <label for="description">
+            Description
             <i class="info-sign fa fa-info-circle"></i>
         </label>
-        {{#x-select value=selectedContainer}}
-            {{#each containers as |c|}}
-                {{#x-option value=c}}{{c.name}}{{/x-option}}
-            {{/each}}
-        {{/x-select}}
-        <section id="create-adv-options">
-            <h3 id="create-adv-btn">
-                More Options
-                {{slide-arrow areaID="adv-options" btnID="create-adv-btn" containerID="create-adv-options" initState="close"}}
-            </h3>
-            <section id="adv-options">
-                <label for="image_name">
-                    Image name
-                    <i class="info-sign fa fa-info-circle"></i>
-                </label>
-                {{input type="text" value=image_name id="image_name"}}
-                <label for="description">
-                    Description
-                    <i class="info-sign fa fa-info-circle"></i>
-                </label>
-                {{textarea value=description id="description" maxlength=255}}
-                <label for="private">
-                    Private
-                    {{input type="checkbox" id="private" checked=isPrivate}}
-                </label>
-            </section>
-        </section>
+        {{textarea value=description id="description" maxlength=255}}
+        <label for="image_name">
+            Storage file name
+            <i class="info-sign fa fa-info-circle"></i>
+        </label>
+        {{input type="text" value=image_name id="image_name"}}
+        <div class="dropdown">
+            <label>
+                Project
+                <i class="info-sign fa fa-info-circle"></i>
+            </label>
+            {{#x-select value=selectedProject}}
+                {{#each projects as |p|}}
+                    {{#x-option value=p}}{{p.human_name}}{{/x-option}}
+                {{/each}}
+            {{/x-select}}
+        </div>
+        <div class="dropdown right">
+            <label>
+                Storage container
+                <i class="info-sign fa fa-info-circle"></i>
+            </label>
+            {{#x-select value=selectedContainer}}
+                {{#each containers as |c|}}
+                    {{#x-option value=c}}{{c.name}}{{/x-option}}
+                {{/each}}
+            {{/x-select}}
+        </div>
+        <label for="public">
+            Public
+            {{input type="checkbox" id="public" checked=isPublic}}
+        </label>
     </form>
     {{#if loading}}
         <div class="text-center">{{fa-icon "fa-refresh" spin=true}}</div>
