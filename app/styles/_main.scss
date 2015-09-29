@@ -208,15 +208,25 @@ footer {
 
 
 
-.search {
+.search-box {
     line-height: 1;
     position: relative;
-    label {
+    .search-icon {
         display: inline-block;
         position: absolute;
-        right: rem-calc(25);
-        top: rem-calc(20);
-        color: $steel;
+        right: -28px;
+        top: 16px;
+        color: white;
+        height: 100%;
+        width: 30px;
+        background-color: $primary-color;
+    }
+    .clear {
+        display: inline-block;
+        position: absolute;
+        right: rem-calc(5);
+        top: rem-calc(18);
+        color: $alert-color;
     }
     input {
         display: inline-block;
