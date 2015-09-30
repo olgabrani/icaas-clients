@@ -10,7 +10,7 @@
             <span class="mendatory-sign">*</span>
             Bitnami image URL
             <i class="info-sign fa fa-info-circle"></i>
-            {{#error-msg err=errorCreation.src}}
+            {{#error-msg err=errorCreation.src action="clearError"}}
                 {{input type="url" value=src id="src"}}
             {{/error-msg}}
         </label>
@@ -19,7 +19,7 @@
             Name
             <i class="info-sign fa fa-info-circle"></i>
         </label>
-        {{#error-msg err=errorCreation.name}}
+        {{#error-msg err=errorCreation.name action="clearError"}}
             {{input type="text" value=name id="name"}}
         {{/error-msg}}
         <label for="description">
