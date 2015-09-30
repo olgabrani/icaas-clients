@@ -185,6 +185,12 @@ footer {
             height: 25px;
             line-height: 25px;
             margin-right: 10px;
+            font-size: 1.25rem;
+            position: relative;
+            left: -3px;
+            &:before {
+                transform: rotate(90deg);
+            }
         }
         .icon-disk-outline {
             display: inline-block;
@@ -196,6 +202,17 @@ footer {
         a:not(.remove-sign) {
             color: $topbar-link-color;
             display: block;
+            &.active {
+                .icon-disk-outline {
+                    display: none;
+                }
+                .icon-disk-filled {
+                    display: inline-block;
+                }
+                .name {
+                    border-bottom: 1px solid $info-color;
+                }
+            }
         }
         &:hover {
             // background-color: rgba(253, 253, 95, 0.29);
@@ -208,12 +225,6 @@ footer {
             }
             .icon-disk-filled {
                 display: inline-block;
-                font-size: 1.25rem;
-                position: relative;
-                left: -3px;
-                &:before {
-                    transform: rotate(90deg);
-                }
             }
             .icon-disk-outline {
                 display: none;
