@@ -126,11 +126,13 @@ export default Ember.Controller.extend({
                   function() {                  
                     self.send('createDirectory', path);
                   });
+        self.send('refreshRoute');
         self.transitionToRoute('build', build);
       }, function(err){
         self.set('errorCreation.common', err.errors);
         self.send('clearForm');
       });
+
     },
 
     'clearForm': function(){
@@ -187,7 +189,10 @@ export default Ember.Controller.extend({
 
     'deleteBuild': function(build){
       build.destroyRecord();
-    }
+    },
 
+    'refreshRoute': function(){
+      this.get('target.router').refresh();
+    }
   }
 });
