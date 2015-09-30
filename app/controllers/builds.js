@@ -138,6 +138,8 @@ export default Ember.Controller.extend({
       this.set('src', null);
       this.set('name', null);
       this.set('project', null);
+      this.set('image_name', null);
+      this.set('description', null);
     },
 
     'hideErrors': function(){
