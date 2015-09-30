@@ -3,14 +3,14 @@
         <ul class="no-bullet">
            {{#each controller.queryResults as |build|}}
                 <li>
-                    {{#link-to "build" build.id}}
-                        <i class="icon-disk-outline"></i>
-                        <i class="icon-disk-filled"></i>
-                        <span class="wrap-text">{{build.name}}</span>
-                    {{/link-to}}
                     <a {{action "deleteBuild" build}} class="right remove-sign" title="remove record">
                         {{fa-icon "fa-times"}}
                     </a>
+                    {{#link-to "build" build.id}}
+                        <i class="icon-disk-outline left"></i>
+                        <i class="icon-disk-filled left"></i>
+                        <span class="wrap-text">{{build.name}}</span>
+                    {{/link-to}}
                 </li>
             {{/each}}
         </ul>

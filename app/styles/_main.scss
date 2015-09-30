@@ -169,15 +169,20 @@ footer {
         .icon-disk-filled {
             display: none;
             width: 20px;
-            height: 20px;
+            height: 25px;
+            line-height: 25px;
+            margin-right: 10px;
         }
         .icon-disk-outline {
             display: inline-block;
             width: 20px;
-            height: 20px;
+            height: 25px;
+            line-height: 25px;
+            margin-right: 10px;
         }
         a:not(.remove-sign) {
             color: $topbar-link-color;
+            display: block;
         }
         &:hover {
             // background-color: rgba(253, 253, 95, 0.29);
@@ -226,7 +231,7 @@ footer {
         display: inline-block;
         position: absolute;
         right: rem-calc(36);
-        top: rem-calc(18);
+        top: rem-calc(17);
         color: $alert-color;
     }
     input {
