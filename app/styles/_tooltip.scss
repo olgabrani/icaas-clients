@@ -1,0 +1,240 @@
+// To use the custom tooltip add an `aria-label` attribute with the desired
+// content and the class `css-tooltip` to an element.
+// The following classes are used for directing the tooltip:
+//
+// .css-tooltip-n: Top centered
+// .css-tooltip-ne: Top right
+// .css-tooltip-nw: Top left
+// .css-tooltip-e: Right
+// .css-tooltip-w: Left
+// .css-tooltip-s: Bottom centered
+// .css-tooltip-se: Bottom right
+// .css-tooltip-sw: Bottom left
+//
+// In addition to this, we can use the class `css-tooltip-multiline` for
+// multiline comments.
+// Custom background colors can be used with the classes
+// `css-tooltip-alert` and `css-tooltip-success`
+
+@mixin box-shadow() {
+    box-shadow: 2px 2px 8px $jumbo;
+}
+
+.css-tooltip {
+    position: relative;
+}
+
+// This is the tooltip bubble
+.css-tooltip:after {
+    // @include box-shadow();
+    background: $tooltip-bg;
+    border-radius: $tooltip-radius;
+    color: $tooltip-font-color;
+    content: attr(aria-label);
+    display: none;
+    font-size: $tooltip-font-size;
+    height: auto;
+    line-height: $tooltip-line-height;
+    padding: $tooltip-padding;
+    pointer-events: none;
+    position: absolute;
+    text-align: center;
+    text-decoration: none;
+    white-space: pre;
+    word-wrap: break-word;
+    z-index: 1000000;
+}
+
+// This is the tooltip arrow
+.css-tooltip:before {
+    border: $tooltip-pip-size solid transparent;
+    color: $tooltip-bg;
+    content: "";
+    display: none;
+    height: 0;
+    pointer-events: none;
+    position: absolute;
+    width: 0;
+    z-index: 1000001;
+}
+
+.css-tooltip:hover,
+.css-tooltip:active,
+.css-tooltip:focus {
+    &:before,
+    &:after {
+        display: inline-block;
+        text-decoration: none;
+    }
+}
+
+.css-tooltip-multiline:hover,
+.css-tooltip-multiline:active,
+.css-tooltip-multiline:focus {
+    &:after {
+        display: table-cell;
+    }
+}
+
+.css-tooltip-s,
+.css-tooltip-se,
+.css-tooltip-sw {
+    &:after {
+        margin-top: 5px;
+        right: 50%;
+        top: 100%;
+    }
+
+    &:before {
+        border-bottom-color: $tooltip-bg;
+        bottom: -5px;
+        margin-right: -5px;
+        right: 50%;
+        top: auto;
+    }
+}
+
+.css-tooltip-se {
+    &:after {
+        left: 50%;
+        margin-left: -15px;
+        right: auto;
+    }
+}
+
+.css-tooltip-sw:after {
+    margin-right: -15px;
+}
+
+.css-tooltip-n,
+.css-tooltip-ne,
+.css-tooltip-nw {
+    &:after {
+        bottom: 100%;
+        margin-bottom: 5px;
+        right: 50%;
+    }
+
+    &:before {
+        border-top-color: $tooltip-bg;
+        bottom: auto;
+        margin-right: -5px;
+        right: 50%;
+        top: -5px;
+    }
+}
+
+.css-tooltip-ne {
+    
+    &:after {
+        left: 50%;
+        margin-left: -15px;
+        right: auto;
+    }
+}
+
+.css-tooltip-nw:after {
+    margin-right: -15px;
+}
+
+.css-tooltip-s:after,
+.css-tooltip-n:after {
+    transform: translateX(50%);
+}
+
+.css-tooltip-w {
+    &:after {
+        bottom: 50%;
+        margin-right: 5px;
+        right: 100%;
+        transform: translateY(50%);
+    }
+
+    &:before {
+        border-left-color: $tooltip-bg;
+        bottom: 50%;
+        left: -5px;
+        margin-top: -5px;
+        top: 50%;
+    }
+}
+
+.css-tooltip-e {
+    &:after {
+        bottom: 50%;
+        left: 100%;
+        margin-left: 5px;
+        transform: translateY(50%);
+    }
+
+    &:before {
+        border-right-color: $tooltip-bg;
+        bottom: 50%;
+        margin-top: -5px;
+        right: -5px;
+        top: 50%;
+    }
+}
+
+.css-tooltip-multiline {
+    &:after {
+        border-collapse: separate;
+        max-width: $tooltip-max-width;
+        white-space: pre-line;
+        width: max-content;
+        word-break: break-word;
+        word-wrap: normal;
+    }
+
+    &.css-tooltip-s:after,
+    &.css-tooltip-n:after {
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%);
+    }
+
+    &.css-tooltip-w:after,
+    &.css-tooltip-e:after {
+        right: 100%;
+    }
+}
+
+// Colors for different tooltip states.
+@mixin colorize-tooltip($text-color, $background-color) {
+    &:after {
+        background: $background-color;
+        color: $text-color;
+    }
+
+    .css-tooltip-s,
+    .css-tooltip-se,
+    .css-tooltip-sw {
+        &:before {
+            border-bottom-color: $background-color;
+        }
+    }
+
+    &.css-tooltip-n,
+    &.css-tooltip-ne,
+    &.css-tooltip-nw {
+        &:before {
+            border-top-color: $background-color;
+        }
+    }
+
+    &.css-tooltip-e:before {
+        border-right-color: $background-color;
+    }
+
+    &.css-tooltip-w:before {
+        border-left-color: $background-color;
+    }
+}
+
+.css-tooltip-alert {
+    @include colorize-tooltip($tooltip-font-color, $alert-color);
+}
+
+.css-tooltip-success {
+    @include colorize-tooltip($tooltip-font-color, $success-color);
+}

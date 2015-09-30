@@ -9,7 +9,9 @@
         <label for="src">
             <span class="mendatory-sign">*</span>
             Bitnami image URL
-            <i class="info-sign fa fa-info-circle"></i>
+            <span class="css-tooltip css-tooltip-e"  aria-label="I will help you! In the future....">
+                <i class="info-sign fa fa-info-circle"></i>
+            </span>
             {{#error-msg err=errorCreation.src action="clearError"}}
                 {{input type="url" value=src id="src"}}
             {{/error-msg}}
