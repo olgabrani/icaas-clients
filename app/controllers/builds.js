@@ -34,7 +34,7 @@ export default Ember.Controller.extend({
 
   selectedProject: function(){
     return this.get('projects').get('firstObject');
-  }.property('projects.@each'),
+  }.property('projects.[]'),
 
   containers: Ember.computed.filter('allContainers', function(c) {
     return c.get('name') !== 'trash';
@@ -42,7 +42,7 @@ export default Ember.Controller.extend({
 
   selectedContainer: function(){
     return this.get('containers').get('firstObject');
-  }.property('containers.@each'),
+  }.property('containers.[]'),
 
 
   actions: {
