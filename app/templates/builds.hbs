@@ -1,7 +1,7 @@
 <div class="middle">
     <div class="small-6 large-5 columns sidebar">
         <ul class="no-bullet">
-           {{#each controller.queryResults as |build|}}
+           {{#each queryResults as |build|}}
                 <li>
                     <a {{action "deleteBuild" build}} class="right remove-sign" title="remove record">
                         {{fa-icon "fa-times"}}
