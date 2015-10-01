@@ -14,6 +14,7 @@ Router.map(function() {
   this.route('guide');
   // temporary route
   this.route('mocks');
+  this.route('not-found', { path: "*path"});
 });
 
 export default Router;
