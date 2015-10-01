@@ -1,93 +1,107 @@
 $status-pending: #3582AC;
 
 .details {
-	background-color: $details-bg-color;
-	padding: rem-calc(16 24 0);
-	h2 {
-		margin-left: rem-calc(-7);
-	}
-	// make it reusable
-	dl {
-		width: 100%;
-		overflow: hidden;
-	}
-	dt {
-		float: left;
-		width: 25%;
-		margin-bottom: 0;
-	}
-	dd {
-		float: left;
-		width: 75%;
-		margin-bottom: 0;
-	}
+    background-color: $details-bg-color;
+    padding: rem-calc(16 24 0);
 
-	.status-details {
-		display: block;
-	}
-	.icon {
-		margin-right: rem-calc(10);
-	}
-	.descr {
-		font-weight: bold;
-	}
+    h2 {
+        margin-left: rem-calc(-7);
+    }
 
-	.error {
-		.icon, .descr {
-			color: $alert-color;
-		}
-		.icon {
-			font-size: rem-calc(18);
-		}
-	}
+    // make it reusable
+    dl {
+        width: 100%;
+        overflow: hidden;
+    }
 
-	.success {
-		.icon, .descr {
-			color: $success-color;
-		}
-		.icon {
-			font-size: rem-calc(20);
-		}
-	}
-	.icon-disk-filled:before {
-		transform: rotate(90deg);
-	}
+    dt {
+        float: left;
+        width: 25%;
+        margin-bottom: 0;
+    }
+
+    dd {
+        float: left;
+        width: 75%;
+        margin-bottom: 0;
+    }
+
+    .status-details {
+        display: block;
+    }
+
+    .icon {
+        margin-right: rem-calc(10);
+    }
+
+    .descr {
+        font-weight: bold;
+    }
+
+    .error {
+
+        .icon, .descr {
+            color: $alert-color;
+        }
+
+        .icon {
+            font-size: rem-calc(18);
+        }
+    }
+
+    .success {
+
+        .icon, .descr {
+            color: $success-color;
+        }
+
+        .icon {
+            font-size: rem-calc(20);
+        }
+    }
+
+    .icon-disk-filled:before {
+        transform: rotate(90deg);
+    }
 }
 
 .creating {
-	.descr {
-		color: darken($status-pending, 10%);
-	}
-	.icon {
-		display: inline-block;
-		width: 19px;
-		height: 19px;
-		border-radius: 10px;
-		background-color: $info-color;
-		position: relative;
-		vertical-align: text-top;
-	}
-	.dot {
-		color: darken($primary-color, 10%);
-		font-size: rem-calc(25);
-		font-weight: bold;
-		margin-right: rem-calc(-6);
-		animation-name: blink;
-		animation-duration: 1.4s;
-		animation-iteration-count: infinite;
-		animation-fill-mode: both;
-		position: relative;
-		bottom: 16px;
-		left: 2px
-	}
 
-	.dot:nth-child(2) {
-	  animation-delay: .2s;
-	}
+    .descr {
+        color: darken($status-pending, 10%);
+    }
 
-	.dot:nth-child(3) {
-	  animation-delay: .4s;
-	}
+    .icon {
+        display: inline-block;
+        width: 19px;
+        height: 19px;
+        border-radius: 10px;
+        background-color: $info-color;
+        position: relative;
+        vertical-align: text-top;
+    }
+
+    .dot {
+        color: darken($primary-color, 10%);
+        font-size: rem-calc(25);
+        font-weight: bold;
+        margin-right: rem-calc(-6);
+        animation-name: blink;
+        animation-duration: 1.4s;
+        animation-iteration-count: infinite;
+        animation-fill-mode: both;
+        position: relative;
+        bottom: 16px;
+        left: 2px
+    }
+
+    .dot:nth-child(2) {
+        animation-delay: .2s;
+    }
+
+    .dot:nth-child(3) {
+        animation-delay: .4s;
+    }
 }
 
 @keyframes blink {

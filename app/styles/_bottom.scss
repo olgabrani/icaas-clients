@@ -1,0 +1,16 @@
+footer {
+    font-size: 0.8rem;
+    position: relative;
+    top: - ($header-height + $topbar-height + $footer-height);
+    height: $footer-height;
+    width: 100%;
+    padding: 0 rem-calc(16);
+    line-height: rem-calc(56);
+    background-color: $footer-bg-color;
+
+    @include horizontal-menu-border;
+
+    a {
+        font-weight: bold;
+    }
+}

@@ -1,80 +1,94 @@
 $info-btn-color: $primary-color;
 
 @mixin arrow-in-circle($display, $size, $font-size, $dist) {
-	display: $display;
-	font-size: rem-calc($font-size);
-	margin-left: rem-calc($dist);
-	// background-color: lighten($primary-color, 30%);
-	background-color: transparent;
-	// height: rem-calc($size);
-	// width: rem-calc($size);
-	text-align: center;
-	border-radius: rem-calc($size/2);
-	// color: white;
-	color: $header-font-color;
+    display: $display;
+    font-size: rem-calc($font-size);
+    margin-left: rem-calc($dist);
+    // background-color: lighten($primary-color, 30%);
+    background-color: transparent;
+    // height: rem-calc($size);
+    // width: rem-calc($size);
+    text-align: center;
+    border-radius: rem-calc($size/2);
+    // color: white;
+    color: $header-font-color;
 }
-html {
-	background-color: rgba(255, 165, 0, 0.25);
-}
-.new-build {
-	select {
-		padding-right: rem-calc(6);
-		padding-left: rem-calc(6);
-		max-width: rem-calc(240);
-	}
-	padding: rem-calc(16) 0;
-	background-color: transparent;
-	h2 {
-		display: inline-block;
-		background-color: $create-bg-color;
-		padding: rem-calc(12) rem-calc(24);
-		margin-bottom: 0;
-		cursor: pointer;
-		.arrow-down {
-			// @include arrow-in-circle(inline-block, 24, 22, 10);
-			@include arrow-in-circle(inline-block, 24, 22, 10);
-		}
-		.arrow-up {
-			// @include arrow-in-circle(none, 24, 22, 10);
-			@include arrow-in-circle(none, 24, 22, 10);
-		}
-	}
-	a {
-		font-size: rem-calc(13);
-	}
-	#creation-form {
-		padding: rem-calc(4 24 0);
-		background-color: $create-bg-color;
-	}
-	.info-sign {
-		color: $info-btn-color;
-		margin-left: rem-calc(4);
-	}
-	input[type=checkbox] {
-		margin-left: rem-calc(10);
-	}
 
-	.dropdown {
-		display: inline-block;
-		width: 45%;
-	}
-	small {
-		text-transform: inherit;
-		font-style: normal;
-	}
+html {
+    background-color: rgba(255, 165, 0, 0.25);
+}
+
+.new-build {
+    padding: rem-calc(16) 0;
+    background-color: transparent;
+
+    select {
+        padding-right: rem-calc(6);
+        padding-left: rem-calc(6);
+        max-width: rem-calc(240);
+    }
+
+    h2 {
+        display: inline-block;
+        background-color: $create-bg-color;
+        padding: rem-calc(12) rem-calc(24);
+        margin-bottom: 0;
+        cursor: pointer;
+
+        .arrow-down {
+            // @include arrow-in-circle(inline-block, 24, 22, 10);
+            @include arrow-in-circle(inline-block, 24, 22, 10);
+        }
+
+        .arrow-up {
+            // @include arrow-in-circle(none, 24, 22, 10);
+            @include arrow-in-circle(none, 24, 22, 10);
+        }
+    }
+
+    a {
+        font-size: rem-calc(13);
+    }
+
+    #creation-form {
+        padding: rem-calc(4 24 0);
+        background-color: $create-bg-color;
+    }
+
+    .info-sign {
+        color: $info-btn-color;
+        margin-left: rem-calc(4);
+    }
+
+    input[type=checkbox] {
+        margin-left: rem-calc(10);
+    }
+
+    .dropdown {
+        display: inline-block;
+        width: 45%;
+    }
+
+    small.error {
+        text-transform: inherit;
+        font-style: normal;
+        margin-top: -1rem;
+    }
 }
 
 .mendatory-sign {
-	color: $alert-color;
-	font-weight: bold;
-	font-size: 1rem;
+    color: $alert-color;
+    font-weight: bold;
+    font-size: 1rem;
 }
 
 .arrow-icon.open {
-	&>.arrow-down {
-		display: none;
-	}
-	&>.arrow-up {
-		display: inline-block;
-	}
+
+    &>.arrow-down {
+        display: none;
+    }
+
+    &>.arrow-up {
+        display: inline-block;
+    }
 }

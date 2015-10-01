@@ -1,0 +1,159 @@
+@mixin horizontal-menu-border() {
+    border-top: 1px solid $iron;
+    border-bottom: 1px solid $iron;
+    box-shadow: 2px 2px 8px $jumbo;
+}
+
+header {
+    background-color: $header-bg-color;
+    height: $header-height;
+    padding: 0.9375rem;
+    z-index: 1;
+    position: relative;
+}
+
+h1 {
+    color: white;
+    cursor: pointer;
+    span.label {
+        position: absolute;
+        right: 14px;
+        bottom: 10px;
+    }
+}
+
+.welcome {
+    font-size: rem-calc(12);
+    color: white;
+    position: absolute;
+    right: 14px;
+}
+
+[data-present-style='font-demo-1'] {
+    font-family: 'Nothing You Could Do', cursive;
+}
+
+[data-present-style='font-demo-2'] {
+    font-family: 'Averia Gruesa Libre', cursive;
+}
+
+[data-present-style='font-demo-3'] {
+    font-family: 'Lobster', cursive;
+}
+
+[data-present-style='font-demo-4'] {
+    font-family: 'Roboto', cursive;
+}
+
+.top-bar {
+    line-height: $topbar-height - rem-calc(2);
+    background-color: $topbar-bg-color;
+    z-index: 1;
+
+    @include horizontal-menu-border;
+
+    .logout {
+        padding-right: 0;
+    }
+
+    select {
+        float: left;
+        display: inline-block;
+        width: rem-calc(165);
+        height: 1.85rem;
+        margin-right: 16px;
+    }
+
+    form {
+        float: left;
+        display: inline-block;
+    }
+
+    li {
+        border-left: 1px solid $gainsboro;
+        text-align: center;
+        margin: 0;
+
+        a {
+            height: $topbar-height - rem-calc(2);
+            line-height: inherit;
+            padding: rem-calc(8px 15px 0);
+            &:hover {
+                text-decoration: none;
+            }
+        }
+
+        &:hover {
+            background-color: lighten($primary-color, 30%);
+
+            label {
+            color: $topbar-link-color-hover;
+            }
+
+            .fa {
+                color: $topbar-link-color-hover;
+            }
+        }
+
+        &.disabled {
+            opacity: 0.5;
+
+            a:hover {
+                background: inherit;
+                color: inherit;
+                cursor: default;
+            }
+
+            &:hover label {
+                color: $body-font-color;
+            }
+        }
+
+        label {
+            display: block;
+            font-size: rem-calc(12);
+            color: $topbar-link-color;
+        }
+
+        .fa {
+            color: $form-label-font-color;
+            font-size: rem-calc(18);
+        }
+    }
+}
+
+.search-box {
+    line-height: 1;
+    position: relative;
+
+    .search-icon {
+        display: inline-block;
+        position: absolute;
+        right: rem-calc(7);
+        top: rem-calc(16);
+        color: white;
+        height: 100%;
+        width: rem-calc(30);
+        background-color: $primary-color;
+    }
+
+    .clear {
+        display: inline-block;
+        position: absolute;
+        right: rem-calc(36);
+        top: rem-calc(17);
+        color: $alert-color;
+    }
+
+    .fa {
+        position: absolute;
+        right: 10px;
+        top: 5px;
+    }
+
+    input {
+        display: inline-block;
+        width: rem-calc(170);
+        padding-right: rem-calc(32);
+    }
+}

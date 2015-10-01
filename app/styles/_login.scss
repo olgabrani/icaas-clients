@@ -2,26 +2,31 @@ $horizontal-dist: 1rem;
 .login {
     margin: rem-calc(80) auto;
     max-width: rem-calc(562);
+
     .input-with-error {
         width: rem-calc(400);
         display: inline-block;
         margin-right: $horizontal-dist;
         position: relative;
     }
+
     .alert-box {
         position: absolute;
         width: 100%;
         top: rem-calc(36);
     }
+
     input {
         width: 100%;
     }
+
     label {
         display: inline-block;
         width: rem-calc(50);
         font-size: 1rem;
         margin-right: $horizontal-dist;
     }
+
     button {
         padding-top: 0.625rem;
         padding-bottom: 0.625rem;
