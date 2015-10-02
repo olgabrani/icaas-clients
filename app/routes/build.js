@@ -1,13 +1,14 @@
 import Ember from 'ember';
+import {RefreshRouteMixin} from 'icaas/icaas/refresh';
 
-export default Ember.Route.extend({
+export default Ember.Route.extend(RefreshRouteMixin, {
 
   setupController: function(controller, model){
     var self = this;
     this._super(controller, model);
     model.reload().then(function(b){
       controller.set('model', b);
-      self.scheduleRefresh();
+      self.scheduleRefresh(3000);
     });
   },
   
@@ -22,18 +23,5 @@ export default Ember.Route.extend({
       });
     }
   },
-
-  scheduleRefresh: function(){
-    this._refresh = Ember.run.later(this, 'startTimer', 2000);
-  },
-
-  afterModel: function(){
-    Ember.run.cancel(this._refresh);
-  }, 
-
-  deactivate: function(){
-    Ember.run.cancel(this._refresh);
-  }
-
-
+  
 });
