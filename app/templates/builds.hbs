@@ -12,6 +12,10 @@
                         <span class="wrap-text name">{{build.name}}</span>
                     </a>
                 {{/link-to}}
+                {{else}}
+                    <li class="empty-list">
+                        No builds
+                    </li>
             {{/each}}
         </ul>
     </div>
