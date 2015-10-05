@@ -74,19 +74,16 @@ html, body, body > .ember-view, .ember-view > .row, .middle {
             color: $topbar-link-color;
             display: block;
 
-            &.active {
+        }
+        &.active {
+            background-color: lighten($info-color, 10%);
 
-                .icon-disk-outline {
-                    display: none;
-                }
+            .icon-disk-outline {
+                display: none;
+            }
 
-                .icon-disk-filled {
-                    display: inline-block;
-                }
-
-                .name {
-                    border-bottom: 1px solid $info-color;
-                }
+            .icon-disk-filled {
+                display: inline-block;
             }
         }
 
@@ -94,7 +91,9 @@ html, body, body > .ember-view, .ember-view > .row, .middle {
             background-color: lighten($primary-color, 30%);
 
             a:not(.remove-sign) {
-                color: white;
+                i, span {
+                    color: white;
+                }
             }
 
             .remove-sign {

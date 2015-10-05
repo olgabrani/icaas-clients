@@ -2,16 +2,16 @@
     <div class="small-6 large-5 columns sidebar">
         <ul class="no-bullet">
            {{#each queryResults as |build|}}
-                <li>
-                    <a {{action "deleteBuild" build}} class="right remove-sign" title="remove record">
+                {{#link-to "build" build.id tagName="li"}}
+                    <a {{action "deleteBuild" build}} class="right remove-sign" title="remove record" href="    ">
                         {{fa-icon "fa-times"}}
                     </a>
-                    {{#link-to "build" build.id}}
+                    <a href="">
                         <i class="icon-disk-outline left"></i>
                         <i class="icon-disk-filled left"></i>
                         <span class="wrap-text name">{{build.name}}</span>
-                    {{/link-to}}
-                </li>
+                    </a>
+                {{/link-to}}
             {{/each}}
         </ul>
     </div>
