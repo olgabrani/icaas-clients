@@ -51,6 +51,7 @@ html {
     }
 
     #creation-form {
+        position: relative;
         padding: rem-calc(4 24 0);
         background-color: $create-bg-color;
     }
