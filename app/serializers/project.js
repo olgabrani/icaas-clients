@@ -1,7 +1,10 @@
 import DS from 'ember-data';
 
 export default DS.RESTSerializer.extend({
-  extractArray: function(store, type, payload) {
+  // The isNewSerializerAPI flag is only required for Ember Data 1.13 and will 
+  // be removed in Ember Data 2.0
+  isNewSerializerAPI: true,
+  normalizeArrayResponse: function(store, primaryModelClass, payload, id, requestType) {
     var quotas = payload.quotas;
     delete payload.quotas;
 
@@ -20,6 +23,6 @@ export default DS.RESTSerializer.extend({
 
     payload = { projects: project_list};
 
-    return this._super(store, type, payload);
+    return this._super(store, primaryModelClass, payload, id, requestType);
   },
 });
