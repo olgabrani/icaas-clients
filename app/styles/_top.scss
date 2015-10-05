@@ -125,35 +125,31 @@ h1 {
 .search-box {
     line-height: 1;
     position: relative;
+    display: inline-block;
+    width: 200px;
+    float: right;
 
     .search-icon {
-        display: inline-block;
         position: absolute;
-        right: rem-calc(7);
-        top: rem-calc(16);
-        color: white;
-        height: 100%;
-        width: rem-calc(30);
-        background-color: $primary-color;
+        bottom: -12px;
+        left: 8px;
+        color: darken($primary-color, 10%);
     }
 
     .clear {
         display: inline-block;
         position: absolute;
-        right: rem-calc(36);
-        top: rem-calc(17);
+        right: 8px;
+        bottom: -11px;
         color: $alert-color;
-    }
-
-    .fa {
-        position: absolute;
-        right: 10px;
-        top: 5px;
+        &.hide {
+            display: none;
+        }
     }
 
     input {
-        display: inline-block;
-        width: rem-calc(170);
-        padding-right: rem-calc(32);
+        padding-right: 28px;
+        padding-left: 28px;
+        height: $topbar-input-height + rem-calc(2);
     }
 }
