@@ -13,7 +13,6 @@ var RefreshRouteMixin = Ember.Mixin.create({
 
   scheduleRefresh: function(setInterval){
     this.set('interval', setInterval || 4000);
-    console.log(this.get('interval'));
     var self = this;
     this._refresh = Ember.run.later(this, 'startTimer', self.get('interval'));
   },
