@@ -3,6 +3,7 @@ $status-pending: #3582AC;
 .details {
     background-color: $details-bg-color;
     padding: rem-calc(16 24 0);
+    position: relative;
 
     h2 {
         margin-left: rem-calc(-7);

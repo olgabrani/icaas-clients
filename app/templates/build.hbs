@@ -32,4 +32,7 @@
             <span>View Logs</span>
         </a>
     </div>
+    {{#if loading}}
+        <div class="text-center loader">{{fa-icon "fa-refresh" spin=true}}</div>
+    {{/if}}
 </section>
