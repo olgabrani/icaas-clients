@@ -5,7 +5,7 @@ export default Ember.Component.extend({
   classNames: ['search-box'],
   hideClearBtn: function() {
     var hideClearBtn;
-    hideClearBtn = this.get('value').length ? false : true;
+    hideClearBtn = this.get('value') ? false : true;
 
     return hideClearBtn;
 
