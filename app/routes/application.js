@@ -13,5 +13,14 @@ export default Ember.Route.extend({
     }
   },
 
+  actions: {
+    error(error, transition) {
+      // In case of expired token or unauthorized user redirect to login
+      if (error && error.errors[0].status === 401) {
+        return this.transitionTo('login');
+      }
+    }
+  }
+
 });
 
