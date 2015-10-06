@@ -13,14 +13,5 @@ export default Ember.Route.extend({
     }
   },
 
-  actions: {
-    'logout': function(){
-       this.get('cookie').removeCookie('token');
-       this.get('cookie').removeCookie('uuid');
-       this.get('cookie').removeCookie('username');
-       this.transitionTo('login');
-    }
-  }
-
 });
 

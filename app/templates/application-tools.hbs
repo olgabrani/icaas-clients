@@ -6,9 +6,9 @@
         {{/link-to}}
     </li>
     <li>
-        <a href="" {{action 'logout'}}>
-        {{fa-icon "sign-out"}}
-        <label>Log Out</label>
-        </a>
+        {{#link-to 'login'}}
+            {{fa-icon "sign-out"}}
+            <label>Log Out</label>
+        {{/link-to}}
     </li>
 </ul>
