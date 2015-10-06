@@ -1,7 +1,7 @@
 import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
 
-moduleForComponent('slide-arrow', 'Integration | Component | slide arrow', {
+moduleForComponent('slide-button', 'Integration | Component | slide button', {
   integration: true
 });
 
