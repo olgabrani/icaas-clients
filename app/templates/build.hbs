@@ -1,5 +1,5 @@
 <section class="details panel">
-    <a {{action "hide"}} class="right" title="Hide details">{{fa-icon "close"}}</a>
+    {{#link-to "builds" class="right"}}{{fa-icon "close"}}{{/link-to}}
     <h2  class="wrap-text"><i class="icon-disk-filled"></i>{{model.name}}</h2>
     <dl>
         <dt>Status</dt>

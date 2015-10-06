@@ -14,9 +14,4 @@ export default Ember.Controller.extend({
     return '*';
   }.property('settings.storag_view_url', 'model.log'),
 
-  actions: {
-    'hide': function(){
-      this.transitionToRoute('builds');
-    }
-  }
 });
