@@ -36,12 +36,10 @@ html {
         cursor: pointer;
 
         .arrow-down {
-            // @include arrow-in-circle(inline-block, 24, 22, 10);
             @include arrow-in-circle(inline-block, 24, 22, 10);
         }
 
         .arrow-up {
-            // @include arrow-in-circle(none, 24, 22, 10);
             @include arrow-in-circle(none, 24, 22, 10);
         }
     }

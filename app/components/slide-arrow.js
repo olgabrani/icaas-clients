@@ -6,14 +6,20 @@ export default Ember.Component.extend({
 	classNames: ['arrow-icon'],
   isOpen: true,
   didInsertElement: function(){
+    var $area = $('#' + this.get('areaID'));
     var $container = $('#' + this.get('containerID'));
+
     if (this.get('isOpen') === true) {
       $container.addClass('open');
+      $area.show();
+    } else {
+      $area.hide();
     }
   },
   click: function() {
       var $area = $('#' + this.get('areaID'));
       var $container = $('#' + this.get('containerID'));
+
       $container.toggleClass('open');
       var toOpen = $container.hasClass('open');
 
