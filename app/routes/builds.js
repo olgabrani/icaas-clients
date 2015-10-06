@@ -1,5 +1,5 @@
 import Ember from 'ember';
-import {RefreshRouteMixin} from 'icaas/icaas/refresh';
+import {RefreshRouteMixin} from 'icaas/lib/refresh';
 
 export default Ember.Route.extend(RefreshRouteMixin, {
 

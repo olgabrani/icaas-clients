@@ -1,4 +1,4 @@
-import Settings from "icaas/icaas/settings";
+import Settings from "icaas/lib/settings";
 
 var settings = Settings.create();
 

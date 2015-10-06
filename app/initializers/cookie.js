@@ -1,4 +1,4 @@
-import Cookie from 'icaas/icaas/cookie';
+import Cookie from 'icaas/lib/cookie';
 
 export function initialize(container, app) {
   app.register('cookie:main', Cookie);
