@@ -4,8 +4,9 @@ import {raw as ajax} from 'ic-ajax';
 export default Ember.Controller.extend({
 
   queryParams: ['status', 'searchTerm'],
-  queryResults: Ember.computed('searchTerm', 'model', function(){
+  queryResults: Ember.computed('searchTerm', 'status', 'model', function(){
     var searchTerm = this.get('searchTerm');
+    var status = this.get('status');
     var builds = this.get('model');
     var rx = new RegExp(searchTerm, 'gi');
 
@@ -13,9 +14,13 @@ export default Ember.Controller.extend({
       return builds.filter(function(el){
         return el.get('name').match(rx);
       });
-    } else {
-      return builds;
     }
+    if (status) {
+      return builds.filter(function(el){
+        return el.get('status').toLowerCase() ===  status;
+      });
+    }
+    return builds;
     
   }),
 

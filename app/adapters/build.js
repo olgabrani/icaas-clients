@@ -10,6 +10,10 @@ export default DS.RESTAdapter.extend({
      "X-auth-token": this.get('settings.token'),
     };
   }.property('settings.token'),
+  
+  urlForFindAll: function(modelName) {
+    return this._buildURL(modelName)+'?details=1';
+  },
 
 
   /* tmp code starts here */

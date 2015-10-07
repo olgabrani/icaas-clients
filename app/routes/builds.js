@@ -8,14 +8,8 @@ export default Ember.Route.extend(RefreshRouteMixin, {
     this.scheduleRefresh(8000);
   },
  
-  queryParams: {
-    'status': {
-      refreshModel: true
-    }
-  },
-
   model: function(params){
-    return this.store.query('build', params);
+    return this.store.findAll('build');
   },
 
   renderTemplate: function(){
