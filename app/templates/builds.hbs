@@ -9,7 +9,9 @@
                     <a href="">
                         <i class="icon-disk-outline left"></i>
                         <i class="icon-disk-filled left"></i>
-                        <span class="wrap-text name">{{build.name}} - {{build.status}}</span>
+
+                        <span class="wrap-text name">{{build.name}}</span>
+                        <i class=" build-status label {{tolowercase build.status}}">{{build.status}}</i>
                     </a>
                 {{/link-to}}
                 {{else}}

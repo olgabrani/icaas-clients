@@ -112,6 +112,25 @@ html, body, body > .ember-view, .ember-view > .row, .middle {
             color: gray;
             padding-left: 28px;
         }
+        .build-status {
+            font-style: normal;
+            border: 1px solid $white;
+            vertical-align: text-bottom;
+            height: 20px;
+            margin-left: 6px;
+            &.error {
+                background-color: $alert-color;
+            }
+            &.completed {
+                background-color: $success-color;
+            }
+            &.creating {
+                background-color: darken($info-color, 15%);
+            }
+            &.canceled {
+                background-color: $warning-color;
+            }
+        }
     }
 
     .remove-sign {
