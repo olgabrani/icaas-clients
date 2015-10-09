@@ -26,8 +26,12 @@
         {{/if}}
     </dl>
     <hr>
-    <div class="buttons">
-        <a href="{{log_url}}" class="button small info" target="_blank">
+    <div class="buttons clearfix">
+        <a class="button small alert left" target="_blank">
+        {{fa-icon "ban"}}
+            <span>Abort!</span>
+        </a>
+        <a href="{{log_url}}" class="button small info right" target="_blank">
             {{fa-icon "external-link"}}
             <span>View Logs</span>
         </a>

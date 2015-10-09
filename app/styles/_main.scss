@@ -135,7 +135,20 @@ html, body, body > .ember-view, .ember-view > .row, .middle {
 }
 
 .buttons {
-    text-align: right;
+    .alert {
+        background-color: lighten($alert-color, 30%);
+    }
+    .info:hover {
+        background-color: $primary-color;
+    }
+     a {
+        .fa {
+            margin-right: 3px;
+        }
+        &:not(:hover) {
+            color: $black;
+        }
+    }
 }
 
 .wrap-text {
