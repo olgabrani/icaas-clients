@@ -56,10 +56,6 @@ html, body, body > .ember-view, .ember-view > .row, .middle {
             font-size: 1.25rem;
             position: relative;
             left: -3px;
-
-            &:before {
-                transform: rotate(90deg);
-            }
         }
 
         .icon-disk-outline {
@@ -172,4 +168,8 @@ body {
     opacity: 0.7;
     font-size: 70px;
     padding-top: 30%
+}
+
+.icon-disk-filled:before {
+    transform: rotate(90deg);
 }

@@ -50,7 +50,20 @@ $status-pending: #3582AC;
         }
     }
 
-    .success {
+    .cancelled {
+
+        .icon {
+            color: $warning-color;
+        }
+        .descr {
+            color: darken($warning-color, 10%);
+        }
+
+        .icon {
+            font-size: rem-calc(18);
+        }
+    }
+    .completed {
 
         .icon, .descr {
             color: $success-color;
@@ -61,49 +74,47 @@ $status-pending: #3582AC;
         }
     }
 
-    .icon-disk-filled:before {
-        transform: rotate(90deg);
+    .creating {
+
+        .descr {
+            color: darken($status-pending, 10%);
+        }
+
+        .icon {
+            display: inline-block;
+            width: 19px;
+            height: 19px;
+            border-radius: 10px;
+            background-color: $info-color;
+            position: relative;
+            vertical-align: text-top;
+        }
+
+        .dot {
+            color: darken($primary-color, 10%);
+            font-size: rem-calc(25);
+            font-weight: bold;
+            margin-right: rem-calc(-6);
+            animation-name: blink;
+            animation-duration: 1.4s;
+            animation-iteration-count: infinite;
+            animation-fill-mode: both;
+            position: relative;
+            bottom: 16px;
+            left: 2px
+        }
+
+        .dot:nth-child(2) {
+            animation-delay: .2s;
+        }
+
+        .dot:nth-child(3) {
+            animation-delay: .4s;
+        }
     }
+
 }
 
-.creating {
-
-    .descr {
-        color: darken($status-pending, 10%);
-    }
-
-    .icon {
-        display: inline-block;
-        width: 19px;
-        height: 19px;
-        border-radius: 10px;
-        background-color: $info-color;
-        position: relative;
-        vertical-align: text-top;
-    }
-
-    .dot {
-        color: darken($primary-color, 10%);
-        font-size: rem-calc(25);
-        font-weight: bold;
-        margin-right: rem-calc(-6);
-        animation-name: blink;
-        animation-duration: 1.4s;
-        animation-iteration-count: infinite;
-        animation-fill-mode: both;
-        position: relative;
-        bottom: 16px;
-        left: 2px
-    }
-
-    .dot:nth-child(2) {
-        animation-delay: .2s;
-    }
-
-    .dot:nth-child(3) {
-        animation-delay: .4s;
-    }
-}
 
 @keyframes blink {
   0% {
