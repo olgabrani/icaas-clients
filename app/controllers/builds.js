@@ -131,7 +131,6 @@ export default Ember.Controller.extend({
                   function() {                  
                     self.send('createDirectory', path);
                   });
-        self.send('refreshRoute');
         self.transitionToRoute('build', build);
       }, function(err){
         self.set('errorCreation.common', err.errors);

@@ -1,13 +1,7 @@
 import Ember from 'ember';
-import {RefreshRouteMixin} from 'icaas/lib/refresh';
 
-export default Ember.Route.extend(RefreshRouteMixin, {
+export default Ember.Route.extend({
 
-  setupController: function(controller, model){
-    this._super(controller, model);
-    this.scheduleRefresh(8000);
-  },
- 
   model: function(params){
     return this.store.findAll('build');
   },
