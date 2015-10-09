@@ -10,7 +10,9 @@
                     <i class="icon-disk-filled left"></i>
 
                     <span class="wrap-text name">{{build.name}}</span>
-                    <i class=" build-status label {{tolowercase build.status}}">{{build.status}}</i>
+                    {{#if build.status}}
+                        <i class=" build-status label {{tolowercase build.status}}">{{build.status}}</i>
+                    {{/if}}
                 </a>
             {{/link-to}}
             {{else}}
