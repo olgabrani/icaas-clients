@@ -10,9 +10,7 @@
         <label for="src">
             <span class="mendatory-sign">*</span>
             Bitnami image URL
-            <span class="css-tooltip css-tooltip-e"  aria-label="I will help you! In the future....">
-                <i class="info-sign fa fa-info-circle"></i>
-            </span>
+            <i class="info-sign fa fa-info-circle"></i>
             {{#error-msg err=errorCreation.src action="clearError"}}
                 {{input type="url" value=src id="src"}}
             {{/error-msg}}
@@ -20,7 +18,11 @@
         <label for="name">
             <span class="mendatory-sign">*</span>
             Name
-            <i class="info-sign fa fa-info-circle"></i>
+            <span class="css-tooltip css-tooltip-se"  aria-label='When you will create a new machine,
+you will find the image with this name
+in the tab "My images" or "Public".'>
+                <i class="info-sign fa fa-info-circle"></i>
+            </span>
         </label>
         {{#error-msg err=errorCreation.name action="clearError"}}
             {{input type="text" value=name id="name"}}
@@ -38,7 +40,12 @@
         <div class="dropdown">
             <label>
                 Project
+                <span class="css-tooltip css-tooltip-se"  aria-label='Make sure that the project you will choose
+has enough quota for a new machine.
+A machine will "build" your image
+and will be destroyed afterwards.'>
                 <i class="info-sign fa fa-info-circle"></i>
+            </span>
             </label>
             {{#x-select value=selectedProject}}
                 {{#each projects as |p|}}
@@ -49,7 +56,13 @@
         <div class="dropdown right">
             <label>
                 Storage container
+                <span class="css-tooltip css-tooltip-sw"  aria-label="When the creation is completed, you will find the
+image's files inside the container of your choice.
+
+Make sure that the container that you'll choose
+has enough available space!">
                 <i class="info-sign fa fa-info-circle"></i>
+            </span>
             </label>
             {{#x-select value=selectedContainer}}
                 {{#each containers as |c|}}
@@ -59,6 +72,10 @@
         </div>
         <label for="public">
             Public
+            <span class="css-tooltip css-tooltip-se"  aria-label="Check it, if you want to share the image
+with all the users of the service.">
+                <i class="info-sign fa fa-info-circle"></i>
+            </span>
             {{input type="checkbox" id="public" checked=isPublic}}
         </label>
     </form>

@@ -61,6 +61,8 @@ html {
 
     input[type=checkbox] {
         margin-left: rem-calc(10);
+        position: relative;
+        bottom: -1px;
     }
 
     .dropdown {
