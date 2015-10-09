@@ -1,42 +1,36 @@
-<section class="details panel">
-    {{#link-to "builds" class="right"}}{{fa-icon "close"}}{{/link-to}}
-    <h2  class="wrap-text"><i class="icon-disk-filled"></i>{{model.name}}</h2>
-    <dl>
-        <dt>Status</dt>
-        <dd>
-            {{build-status status=model.status}}
-            {{#if model.status_details}}
-                <span class="status-details">{{model.status_details}}</span>
-            {{/if}}
-        </dd>
-        <hr>
-        {{#if model.description}}
-            <dt>Description</dt><dd  class="wrap-text">{{model.description}}</dd>
+{{#link-to "builds" class="right"}}{{fa-icon "close"}}{{/link-to}}
+<h2  class="wrap-text"><i class="icon-disk-filled"></i>{{model.name}}</h2>
+<dl>
+    <dt>Status</dt>
+    <dd>
+        {{build-status status=model.status}}
+        {{#if model.status_details}}
+            <span class="status-details">{{model.status_details}}</span>
         {{/if}}
-        <dt>Bitnami URL</dt><dd> <a href="{{model.src}}" target="_blank" class="wrap-text">{{model.src}}</a></dd>
-        <dt>Public</dt><dd>{{model.public}}</dd>
-        <hr>
-        <dt>Started</dt><dd>{{moment-format model.created 'Do MMMM YYYY, H:mm'}}</dd>
-        {{#if isCompleted}}
-            <dt>Created</dt>
-            <dd>{{moment-format model.updated 'Do MMMM YYYY, H:mm'}}</dd>
-        {{else if isError}}
-            <dt>Finished</dt>
-            <dd>{{moment-format model.updated 'Do MMMM YYYY, H:mm'}}</dd>
-        {{/if}}
-    </dl>
+    </dd>
     <hr>
-    <div class="buttons clearfix">
-        <a class="button small alert left" target="_blank">
-        {{fa-icon "ban"}}
-            <span>Abort!</span>
-        </a>
-        <a href="{{log_url}}" class="button small info right" target="_blank">
-            {{fa-icon "external-link"}}
-            <span>View Logs</span>
-        </a>
-    </div>
-    {{#if loading}}
-        <div class="text-center loader">{{fa-icon "fa-refresh" spin=true}}</div>
+    {{#if model.description}}
+        <dt>Description</dt><dd  class="wrap-text">{{model.description}}</dd>
     {{/if}}
-</section>
+    <dt>Bitnami URL</dt><dd> <a href="{{model.src}}" target="_blank" class="wrap-text">{{model.src}}</a></dd>
+    <dt>Public</dt><dd>{{model.public}}</dd>
+    <hr>
+    <dt>Started</dt><dd>{{moment-format model.created 'Do MMMM YYYY, H:mm'}}</dd>
+    {{#if isCompleted}}
+        <dt>Created</dt>
+        <dd>{{moment-format model.updated 'Do MMMM YYYY, H:mm'}}</dd>
+    {{else if isError}}
+        <dt>Finished</dt>
+        <dd>{{moment-format model.updated 'Do MMMM YYYY, H:mm'}}</dd>
+    {{/if}}
+</dl>
+<hr>
+<div class="buttons">
+    <a href="{{log_url}}" class="button small info" target="_blank">
+        {{fa-icon "external-link"}}
+        <span>View Logs</span>
+    </a>
+</div>
+{{#if loading}}
+    <div class="text-center loader">{{fa-icon "fa-refresh" spin=true}}</div>
+{{/if}}

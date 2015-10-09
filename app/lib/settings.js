@@ -4,6 +4,7 @@ import config from 'icaas/config/environment';
 var alias = Ember.computed.alias;
 
 export default Ember.Object.extend({
+  modelRefreshInterval: 4000,
   tokenInfo: null,
   token: null,
   uuid: null,
