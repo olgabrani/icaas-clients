@@ -3,6 +3,7 @@ import Ember from 'ember';
 export default Ember.Controller.extend({
   isCompleted: Ember.computed.equal('model.status', 'COMPLETED'),
   isError: Ember.computed.equal('model.status', 'ERROR'),
+  isCreating: Ember.computed.equal('model.status', 'CREATING'),
 
   log_url: function(){
     let storage_view_url = this.get('settings.storage_view_url');
@@ -14,4 +15,12 @@ export default Ember.Controller.extend({
     return '*';
   }.property('settings.storag_view_url', 'model.log'),
 
+  actions: {
+    cancel() {
+      var build = this.get('model');
+      build.set('action', 'cancel');
+      build.save();
+
+    }
+  }
 });

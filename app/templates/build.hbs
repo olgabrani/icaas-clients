@@ -23,6 +23,22 @@
         <dt>Finished</dt>
         <dd>{{moment-format model.updated 'Do MMMM YYYY, H:mm'}}</dd>
     {{/if}}
+    <hr>
+
+    <div class="buttons clearfix">
+        {{#if isCreating}} 
+            <a class="button small alert left" {{action "cancel"}}>
+                {{fa-icon "ban"}}<span>Abort!</span>
+            </a>
+        {{/if}}
+        <a href="{{log_url}}" class="button small info right" target="_blank">
+            {{fa-icon "external-link"}}
+            <span>View Logs</span>
+        </a>
+    </div>
+    {{#if loading}}
+        <div class="text-center loader">{{fa-icon "fa-refresh" spin=true}}</div>
+    {{/if}}
 </dl>
 <hr>
 <div class="buttons">

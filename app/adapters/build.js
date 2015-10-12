@@ -16,6 +16,24 @@ export default DS.RESTAdapter.extend({
   },
 
 
+  updateRecord: function(store, type, snapshot) {
+    var data = {};
+    var serializer = store.serializerFor(type.modelName);
+
+    serializer.serializeIntoHash(data, type, snapshot);
+    if (data.build.action){
+      data = {
+        'action': data.build.action
+      }
+    }
+
+    var id = snapshot.id;
+    var url = this.buildURL(type.modelName, id, snapshot, 'updateRecord');
+
+    return this.ajax(url, "PUT", { data: data });
+  },
+
+
   /* tmp code starts here */
   // This is due to the erroneous behaviour of API response format..
   // Should be erased as soon as the error is compliant with Ember's 

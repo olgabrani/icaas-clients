@@ -11,6 +11,7 @@ export default DS.Model.extend({
   created: DS.attr('string'),
   updated: DS.attr('string'),
   'status': DS.attr('string'),
-  status_details: DS.attr('string')
+  status_details: DS.attr('string'),
+  'action': DS.attr('string')
   
 });
