@@ -31,11 +31,27 @@
                 {{fa-icon "ban"}}<span>Abort!</span>
             </a>
         {{/if}}
-        <a href="{{log_url}}" class="button small info right" target="_blank">
-            {{fa-icon "external-link"}}
-            <span>View Logs</span>
+        <a class="button small info right" {{action "toggle_log"}}>
+            <span>
+                {{#if log_loader}}
+                    {{fa-icon "refresh" spin=true}} Fetching
+                {{else}}
+                    {{fa-icon "file-text-o"}}
+                    {{log_btn_txt}}
+                {{/if}}
+                    Logs
+            </span>
         </a>
+        {{#if log_contents}}
+            <a class="button small info right" {{action "load_log"}}>{{fa-icon "refresh"}}</a>
+        {{/if}}
+
     </div>
+    {{#if log_contents}}
+        <div class="panel file">
+            <pre>{{log_contents}}</pre>
+        </div>
+    {{/if}}
     {{#if loading}}
         <div class="text-center loader">{{fa-icon "fa-refresh" spin=true}}</div>
     {{/if}}

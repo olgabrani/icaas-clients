@@ -1,0 +1,13 @@
+.file {
+    max-height: 500px;
+    overflow: auto;
+}
+pre {
+    white-space: pre;
+    font-size: rem-calc(12);
+}
+.buttons {
+    .button.right {
+        margin-left: 1rem;
+    }
+}
