@@ -24,11 +24,11 @@ export default Ember.Component.extend({
       var toOpen = $container.hasClass('open');
 
       if (toOpen) {
-        this.set('isOpen', true)
-        $area.stop().slideDown('slow')
+        this.set('isOpen', true);
+        $area.stop().slideDown('slow');
       } else {
-        this.set('isOpen', false)
-        $area.stop().slideUp('slow')
+        this.set('isOpen', false);
+        $area.stop().slideUp('slow');
       }
   }
 });

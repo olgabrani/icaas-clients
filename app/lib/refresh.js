@@ -1,4 +1,5 @@
 import Ember from 'ember';
+import DS from 'ember-data';
 
 var Promise = Ember.RSVP.Promise;
 
@@ -192,7 +193,7 @@ var Refresher = Ember.Object.extend({
       source: this.get('context').toString(),
       callee: callee,
       spec: _spec
-    }
+    };
   },
 
   startTask: function(taskSpec, context) {
@@ -208,13 +209,13 @@ var Refresher = Ember.Object.extend({
 
     // FIXME: recreate timeout if interval is less than the one already set to 
     // satisfy the shortest interval possible.
-    if (meta.id) { return } 
+    if (meta.id) { return; } 
 
     var self = this;
     var task = function() {
       var callee = spec.callee, query;
       
-      if (!callee) { debugger }
+      if (!callee) { debugger; }
       Ember.assert(taskSpec + " is invalid task spec", !!callee);
 
       if ((callee instanceof DS.PromiseArray) ||
@@ -241,7 +242,7 @@ var Refresher = Ember.Object.extend({
         }
 
       }
-    }
+    };
 
     var tick = function() {
       meta.id = setTimeout(function() {
@@ -310,7 +311,7 @@ function reloadRecordArray(arr) {
   var type = arr.get('type');
   var query = arr.get('query');
   var adapter = store.adapterFor(type);
-  if (query == undefined) { // findAll()
+  if (query === undefined) { // findAll()
     return _findAll(adapter, store, type);
   }
   return _findQuery(adapter, store, type, query, arr); 
@@ -329,4 +330,4 @@ var markRefresh = function(context, method, type, query, ...args) {
   return promise;
 }
 
-export {RefreshMixin, RefreshViewMixin, markRefresh}
+export {RefreshMixin, RefreshViewMixin, markRefresh};

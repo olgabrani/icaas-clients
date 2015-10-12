@@ -1,5 +1,5 @@
 import Ember from 'ember';
-import {RefreshViewMixin} from 'icaas/lib/refresh'
+import {RefreshViewMixin} from 'icaas/lib/refresh';
 
 export default Ember.View.extend(RefreshViewMixin, {
   classNames: ['details', 'panel'],
