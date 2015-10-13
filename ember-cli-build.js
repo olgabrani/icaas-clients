@@ -4,6 +4,10 @@ var EmberApp = require('ember-cli/lib/broccoli/ember-app');
 module.exports = function(defaults) {
   var app = new EmberApp(defaults, {
     // Add options here
+    autoprefixer: {
+      browsers: ['> 1%', 'IE 7'],
+      cascade: false
+  }
   });
   app.import('bower_components/jquery-cookie/jquery.cookie.js');
   app.import('bower_components/is_js/is.js');
