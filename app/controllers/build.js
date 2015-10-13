@@ -49,9 +49,13 @@ export default Ember.Controller.extend({
         method: 'GET',
         type: 'json',
       }).then(function(data) {
-        self.set('log_contents', data.response);
+        if (data.response.startsWith("<!")){
+          self.set('log_contents', 'You must be logged in to Pithos to view the file');
+        } else {
+          self.set('log_contents', data.response);
+        }
         self.set('log_loader', false);
-      }, function(err){
+      }, function(){
         self.set('log_contents', 'No log available');
         self.set('log_loader', false);
       });
