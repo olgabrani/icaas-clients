@@ -26,6 +26,12 @@ export default Ember.Controller.extend({
     this.set('log_contents', null);
   }.observes('model.id'),
 
+  watchModelDeleted: function(){
+    if (this.get('model.isDeleted')) {
+      this.transitionTo('builds');
+    }
+  }.observes('model.isDeleted'),
+
   actions: {
     cancel() {
       var build = this.get('model');

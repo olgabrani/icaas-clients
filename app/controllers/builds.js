@@ -195,8 +195,5 @@ export default Ember.Controller.extend({
       build.destroyRecord();
     },
 
-    'refreshRoute': function(){
-      this.get('target.router').refresh();
-    }
   }
 });
