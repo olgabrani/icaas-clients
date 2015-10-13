@@ -39,6 +39,8 @@ export default Ember.Controller.extend({
       }).then(function(data) {
         self.get('settings').set('tokenInfo', data.response.access);
         self.get('settings').set('token', data.response.access.token.id);
+        self.get('settings').set('uuid', data.response.access.user.id);
+        self.get('settings').set('username', data.response.access.user.name);
         self.send('success');
       }, function(err){
         self.set('error', true);
