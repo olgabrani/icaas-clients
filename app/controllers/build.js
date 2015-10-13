@@ -14,7 +14,7 @@ export default Ember.Controller.extend({
       return `${storage_view_url}/${uuid}/${log}`;
     }
     return '*';
-  }.property('settings.storag_view_url', 'model.log'),
+  }.property('settings.storage_view_url', 'model.log'),
 
   log_loader: false,
   log_contents: null,
