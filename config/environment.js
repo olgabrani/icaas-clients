@@ -13,14 +13,6 @@ module.exports = function(environment) {
       }
     },
 
-    googleFonts: [
-      'Open+Sans:300',
-      'Roboto:300',
-      'Lobster',
-      'Nothing+You+Could+Do::latin',
-      'Averia+Gruesa+Libre::latin'
-    ],
-
     contentSecurityPolicy: {
       'default-src': "'none'",
       'script-src': "'self'", // Allow scripts from https://cdn.mxpnl.com
