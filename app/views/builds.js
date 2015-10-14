@@ -4,4 +4,9 @@ import {RefreshViewMixin} from 'icaas/lib/refresh';
 export default Ember.View.extend(RefreshViewMixin, {
   classNames: ['middle'],
   refreshTasks: ['controller.model:@controller.settings.modelRefreshInterval'],
+  closeForm: function() {
+    if(this.get('controller').get('closeForm')) {
+      this.$('#create-header').trigger('click');
+    }
+  }.observes('controller.closeForm')
 });

@@ -28,6 +28,7 @@ export default Ember.Controller.extend({
   errorMsg: null,
 
   loading: false,
+  closeForm: false,
 
   projects: function(){
     return this.store.query('project', {'state': 'active'});
@@ -54,6 +55,7 @@ export default Ember.Controller.extend({
 
     'initCreateBuild': function() {
 
+      this.set('closeForm', false);
       this.send('hideErrors');
       var self = this;
       // If the user provides a name for the image, check if the image exists 
@@ -122,6 +124,7 @@ export default Ember.Controller.extend({
       this.set('loading', true);
       build.save().then(function(data){
         console.log(data);
+        self.set('closeForm', true);
         self.send('clearForm');
         self.send('checkObjectExists', 
                   path, 
@@ -132,6 +135,7 @@ export default Ember.Controller.extend({
                     self.send('createDirectory', path);
                   });
         self.transitionToRoute('build', build);
+
       }, function(err){
         self.set('errorCreation.common', err.errors);
         self.send('clearForm');
