@@ -31,4 +31,12 @@ $horizontal-dist: 1rem;
         padding-top: 0.625rem;
         padding-bottom: 0.625rem;
     }
+    .login-info {
+        display: block;
+        width: 100%;
+        position: absolute;
+        top: rem-calc(40);
+        font-style: normal;
+        font-size: rem-calc(14);
+    }
 }

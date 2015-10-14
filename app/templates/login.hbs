@@ -3,6 +3,9 @@
         <label for="token" class="right">Token</label>
         <div class="input-with-error">
             {{input value=token id="token"}}
+            <i class="login-info">
+                You can find your account token <a href="https://accounts.okeanos.grnet.gr/ui/api_access" target="_blank">here</a>.
+            </i>
             {{#if error}}
                 <div class="alert-box alert">
                     <a {{action 'hideErrors'}} title="Hide errors" class="close">{{fa-icon "fa-close"}}</a>
