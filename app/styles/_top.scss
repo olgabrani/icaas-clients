@@ -14,11 +14,17 @@ header {
 
 h1 {
     color: white;
-    cursor: pointer;
-    span.label {
+    button {
+        display: none;
         position: absolute;
         right: 14px;
         bottom: 10px;
+        margin-bottom: 0px;
+    }
+    &:hover {
+        button{
+            display: initial;
+        }
     }
 }
 

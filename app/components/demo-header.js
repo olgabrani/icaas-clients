@@ -7,17 +7,19 @@ export default Ember.Component.extend({
   attributeBindings: ['data-present-style', 'title'],
   'data-present-style': '',
   title: 'Click to change me!',
-  click: function() {
-    var styles = this.get('styles');
-    var stylesLength = styles.length;
-    var currentStyle = this.get('data-present-style');
-    var index = styles.indexOf(currentStyle);
-    if(index < stylesLength - 1) {
-      localStorage.headerStyle = styles[index + 1];
-      this.set('data-present-style', localStorage.headerStyle);
-    } else {
-      localStorage.headerStyle = styles[0];
-      this.set('data-present-style', localStorage.headerStyle);
+  actions: {
+    changeStyle: function() {
+      var styles = this.get('styles');
+      var stylesLength = styles.length;
+      var currentStyle = this.get('data-present-style');
+      var index = styles.indexOf(currentStyle);
+      if(index < stylesLength - 1) {
+        localStorage.headerStyle = styles[index + 1];
+        this.set('data-present-style', localStorage.headerStyle);
+      } else {
+        localStorage.headerStyle = styles[0];
+        this.set('data-present-style', localStorage.headerStyle);
+      }
     }
   },
   detectPreferences: function() {
