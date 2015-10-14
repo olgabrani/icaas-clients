@@ -4,6 +4,7 @@ import {raw as ajax} from 'ic-ajax';
 export default Ember.Controller.extend({
   error: false,
   errorMsg: null,
+  isLoggedIn: false,
 
   actions: {
     'tryLogin': function(){
@@ -23,6 +24,8 @@ export default Ember.Controller.extend({
       c.setCookie('token', this.get('settings.tokenInfo.token.id'));
       c.setCookie('uuid', this.get('settings.tokenInfo.user.id'));
       c.setCookie('username', this.get('settings.tokenInfo.user.name'));
+      this.set('token', '')
+      this.set('isLoggedIn', 'true')
       this.transitionToRoute('application');
     },
     

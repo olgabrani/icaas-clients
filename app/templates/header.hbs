@@ -1,4 +1,8 @@
 <header class="text-center header">
-<p class="right welcome">Welcome, {{settings.username}}</p>
+{{#if isLoggedIn}}
+    <p class="right welcome">Welcome, {{settings.username}}</p>
+{{else}}
+    <p class="right welcome">Welcome, user</p>
+{{/if}}
     {{demo-header}}
 </header>

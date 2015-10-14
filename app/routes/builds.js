@@ -18,6 +18,11 @@ export default Ember.Route.extend({
       into: 'application',
       outlet: 'top-bar-left',
     });
+  },
+
+  setupController: function(controller, model) {
+    this._super(controller, model);
+    this.controllerFor('application').set('isLoggedIn', true);
   }
 
 });

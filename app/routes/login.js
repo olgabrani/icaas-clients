@@ -8,4 +8,8 @@ export default Ember.Route.extend({
     this.get('cookie').removeCookie('username');
   },
 
+    setupController: function(controller, model) {
+    this._super(controller, model);
+    this.controllerFor('application').set('isLoggedIn', false);
+  }
 });
