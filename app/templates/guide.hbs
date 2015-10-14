@@ -1,40 +1,82 @@
 <div class="middle">
-    <div class="content">
-        <h2>General</h2>
+    <div class="content guide">
         <p>
-            ICaaS is a Python Flask application meant to provide the functionality 
-            of snf-image-creator as a service, through the use of VMs.
+            ICaaS is a brand new feature powered by ~okeanos! ICaaS gives you the ability to create VMs from the <a href="https://bitnami.com/" target="_blank">Bitnami</a> library of popular server applications and development environments, along with the use of snf-image-creator tool.
         </p>
         <p>
-            Currently the service uses 
-            <a href="https://bitnami.com/" target="_blank"><strong>bitnami</strong></a> 
-            virtual machines to build the images.
-        </p>
-        <h2>Instructions</h2>
-        <p>
-            Visit <a href="https://bitnami.com/stacks">Bitnami applications page</a> 
-            to view all availble images.<br>
-            You will see a filterable and searchable list of available applications.<br>
-            Click on the selected application as shown below:
-        </p>
-        <p>
-            <img src="assets/images/guide_01.jpg" class="th" >
-        </p>
-        <p>
-            You will be then redirected to the application bitnami page.<br>
-            Click on the <strong>{application} Virtual Machines</strong> 
-            link in the OTHER OPTIONS tab on the right side of the page:
+            The outline of the VM creation process is the following:
+            <ul class="no-bullet">
+                <li>
+                    <strong class="step">Step 1:</strong>
+                    Select your application from Bitnami
+                </li>
+                <li>
+                    <strong class="step">Step 2:</strong>
+                    Build your image with ICaaS
+                </li>
+                <li>
+                    <strong class="step">Step 3:</strong>
+                    Create your VM
+                </li>
+            </ul>
         </p>
         <p>
-            <img src="assets/images/guide_02.jpg" class="th">
+            <em class="label warning">Attention!</em>Before you begin, please make sure you have an <strong>IPv4 address</strong> created and available!
+        </p>
+        <h2>Step 1: Select your application from Bitnami</h2>
+        <p>
+            Firstly, you should visit <a href="https://bitnami.com/stacks">Bitnami applications page</a> and pick the one that fits your needs. You can also search for an application using the filters and the search box.
+        </p>
+        <p class="with-img">
+            <img src="assets/images/guide_01.png" class="th" >
         </p>
         <p>
-            You will then be guided to page with different versions of your application.<br>
-            Once you have found the one you want, right click on the 
-            <strong>DOWNLOAD</strong> button and copy the link
+            Next, you should choose the application you want to use:
+        </p>
+        <p class="with-img">
+            <img src="assets/images/guide_02.png" class="th">
         </p>
         <p>
-            <img src="assets/images/guide_03.jpg" class="th">
+            As soon as you click on the application button you will be redirected to the Bitnami application page. Then you should click on the {application} Virtual Machines link in the OTHER OPTIONS tab on the right side of the page:
+        </p>
+        <p class="with-img">
+            <img src="assets/images/guide_03.png" class="th">
+        </p>
+
+         <p>
+            Next, you should right click on the DOWNLOAD button and copy the link of the Bitnami image, as shown in the following picture:
+        </p>
+        <p class="with-img">
+            <img src="assets/images/guide_04.png" class="th">
+        </p>
+
+        <h2>Step 2: Build your image with ICaaS</h2>
+        
+         <p>
+            Congratulations! Now that you have made it so far, you can login with your <a href="https://accounts.okeanos.grnet.gr/ui/api_access">Token</a> from your ~okeanos account:
+        </p>
+        <p class="with-img">
+            <img src="assets/images/guide_05.png" class="th">
+        </p>
+        <p>
+            Then, you’ll have to fill in the fields of the ICaaS “Create new image form”. More specifically, you should paste the Bitnami image Url that you have copied from the previous step, the Name of the image, a short description of your application and the name of the storage file in which you want the image to be saved. Also, you should select the project whose resources ICaaS will use and the container from Pithos+ in which the created image will be stored. Finally, you can select if your image is going to be public and then you are perfectly ready to click the build button.
+        </p>
+        <p class="with-img">
+            <img src="assets/images/guide_06.png" class="th">
+        </p>
+        <p>
+            You can monitor the status of the image in the box that is shown below the form and you can see the log files concerning your image by clicking on the “View Logs” button.
+        </p>
+        <p class="with-img">
+            <img src="assets/images/guide_07.png" class="th">
+        </p>
+
+        <h2>Step 3:Create your VM</h2>
+         <p>
+            By the end of the building process, you can find your image in <a href="https://cyclades.okeanos.grnet.gr/ui">Cyclades</a> “Available images” list and create a VM from it, following the usual steps that you can find <a href="https://okeanos.grnet.gr/support/user-guide/cyclades-how-to-create-a-vm/">here</a>.
+        </p>
+        <p class="with-img">
+            <img src="assets/images/guide_08.png" class="th">
         </p>
     </div>
 </div>

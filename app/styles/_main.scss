@@ -241,3 +241,21 @@ p.danger {
         @extend a:hover;
     }
 }
+
+.guide {
+    .step {
+        margin-right: rem-calc(4);
+    }
+    .label {
+        font-style: normal;
+        font-size: 1rem;
+        margin-right: rem-calc(10);
+    }
+    img {
+        max-width: 600px;
+    }
+    .with-img {
+        text-align: center;
+        margin-bottom: rem-calc(50);
+    }
+}
