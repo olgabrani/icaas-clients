@@ -5,6 +5,7 @@ export default DS.RESTSerializer.extend({
   // be removed in Ember Data 2.0
   isNewSerializerAPI: true,
   normalizeArrayResponse: function(store, primaryModelClass, payload, id, requestType) {
+    console.log(payload, payload.quotas);
     var quotas = payload.quotas;
     delete payload.quotas;
 
@@ -12,12 +13,15 @@ export default DS.RESTSerializer.extend({
 
     project_list.forEach(function(project) {
       var id = project['id'];
-      var vm = quotas[id]['cyclades.vm'];
+      if(quotas['id']) {
+        var vm = quotas[id]['cyclades.vm'];
 
-      project['vm_user_usage'] = vm['usage'];
-      project['vm_project_usage'] = vm['project_usage'];
-      project['vm_user_limit'] = vm['limit'];
-      project['vm_project_limit'] = vm['project_limit'];
+        project['vm_user_usage'] = vm['usage'];
+        project['vm_project_usage'] = vm['project_usage'];
+        project['vm_user_limit'] = vm['limit'];
+        project['vm_project_limit'] = vm['project_limit'];
+      }
+
       delete project.resources;
     });
 
