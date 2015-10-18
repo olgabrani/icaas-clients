@@ -13,6 +13,10 @@ module.exports = function(environment) {
       }
     },
 
+    i18n: {
+      defaultLocale: 'en'
+    },
+
     contentSecurityPolicy: {
       'default-src': "'none'",
       'script-src': "'self'", // Allow scripts from https://cdn.mxpnl.com
@@ -38,7 +42,10 @@ module.exports = function(environment) {
       service_url: 'http://example.com/icaas',
       storage_url: 'https://pithos.example.com/object-store/v1',
       compute_url: 'https://cyclades.example.com/',
-      storage_view_url: 'https://pithos.example.com/ui/view'
+      storage_view_url: 'https://pithos.example.com/ui/view',
+      api_access_url: 'https://accounts.example.com/api_access',
+      copyright_url: 'https://www.grnet.gr/en',
+      terms_url: 'https://accounts.example.com/approval_terms'
     }
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;

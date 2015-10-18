@@ -1,11 +1,70 @@
 export default {
-  // "some.translation.key": "Text for some.translation.key",
-  //
-  // "a": {
-  //   "nested": {
-  //     "key": "Text for a.nested.key"
-  //   }
-  // },
-  //
-  // "key.with.interpolation": "Text with {{anInterpolation}}"
+  links: {
+    api_access: {
+      descr: 'here',
+      descr_aux: 'You can find your account token'
+    },
+    copyright: {
+     descr: 'Copyright {{fa-icon "copyright"}} 2015 - 2016 GRNET',
+     descr_aux: 'All rights reserved.',
+    },
+    terms: {
+     descr: 'Terms of service',
+    }
+  },
+  buttons: {
+    login: 'Login',
+    build: 'Build',
+    abort: 'Abort!',
+    cancel: 'Cancel',
+    user_guide: 'Help',
+    builds_list: 'Builds',
+    logout: 'Log Out',
+    logs_show: 'Show Logs',
+    logs_hide: 'Hide Logs',
+    logs_loading: 'Fetching Logs',
+    toggle_create_form: 'Create new image',
+    delete: 'Delete',
+    change_style: 'Try me'
+  },
+  help_texts: {
+    url: 'Type here the URL of the image that you want to use.\n  You can get this from the Bitnami website.',
+    build_name: 'When you will create a new machine,\nyou will find the image with this name\nin the tab "My images" or "Public".',
+    project: 'Make sure that the project you will choose\nhas enough quota for a new machine.\nA machine will "build" your image\nand will be destroyed afterwards.',
+    container: 'When the creation is completed, you will find the\nimage\'s files inside the container of your choice.\n\nMake sure that the container that you\'ll choose\nhas enough available space!',
+    public: 'Check it, if you want to share the image\nwith all the users of the service.'
+  },
+  labels: {
+    url: 'Bitnami URL',
+    name: 'Name',
+    descr: 'Description',
+    file: 'Storage file name',
+    project: 'Project',
+    container: 'Storage container',
+    public: 'Public',
+    status: 'Status',
+    status_values: {
+      all: 'all',
+      creating: 'creating',
+      canceled: 'canceled',
+      completed: 'completed',
+      error: 'error',
+
+    },
+    descr: 'Description',
+    logs_full_path: 'Log file',
+    started: 'Started',
+    created: 'Created',
+    ended: 'Finished'
+  },
+  confirmation: {
+    question: 'Are you sure you want to delete the build',
+    info: 'which is in status'
+  },
+  empty_build_list: 'No builds.',
+  welcome: {
+    default: 'Welcome, user',
+    logged_in: 'Welcome'
+  }
+  // pending welcome msg, try-me btn, Status: (?)
 };

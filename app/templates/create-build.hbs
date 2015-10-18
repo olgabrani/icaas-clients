@@ -1,7 +1,7 @@
 <section class="new-build" id="new-build">
 
     {{#slide-button areaID="creation-form" btnID="create-header" containerID="new-build" tagName="h2" id="create-header" isOpen=true }}
-        Create new image
+        {{t "buttons.toggle_create_form"}}
     {{/slide-button}}
 
     <div id="creation-form">
@@ -9,18 +9,18 @@
     <form>
         <label for="src">
             <span class="mendatory-sign">*</span>
-            Bitnami image URL
-            <i class="info-sign fa fa-info-circle"></i>
+            {{t "labels.url"}}
+            <span class="css-tooltip css-tooltip-se"  aria-label={{t "help_texts.url"}}>
+                <i class="info-sign fa fa-info-circle"></i>
+            </span>
             {{#error-msg err=errorCreation.src action="clearError"}}
                 {{input type="url" value=src id="src"}}
             {{/error-msg}}
         </label>
         <label for="name">
             <span class="mendatory-sign">*</span>
-            Name
-            <span class="css-tooltip css-tooltip-se"  aria-label='When you will create a new machine,
-you will find the image with this name
-in the tab "My images" or "Public".'>
+            {{t "labels.name"}}
+            <span class="css-tooltip css-tooltip-se"  aria-label={{t "help_texts.build_name"}}>
                 <i class="info-sign fa fa-info-circle"></i>
             </span>
         </label>
@@ -28,22 +28,17 @@ in the tab "My images" or "Public".'>
             {{input type="text" value=name id="name"}}
         {{/error-msg}}
         <label for="description">
-            Description
-            <i class="info-sign fa fa-info-circle"></i>
+            {{t "labels.descr"}}
         </label>
         {{textarea value=description id="description" maxlength=255}}
         <label for="image_name">
-            Storage file name
-            <i class="info-sign fa fa-info-circle"></i>
+            {{t "labels.file"}}
         </label>
         {{input type="text" value=image_name id="image_name"}}
         <div class="dropdown">
             <label>
-                Project
-                <span class="css-tooltip css-tooltip-se"  aria-label='Make sure that the project you will choose
-has enough quota for a new machine.
-A machine will "build" your image
-and will be destroyed afterwards.'>
+                {{t "labels.project"}}
+                <span class="css-tooltip css-tooltip-se"  aria-label={{t "help_texts.project"}}>
                 <i class="info-sign fa fa-info-circle"></i>
             </span>
             </label>
@@ -55,12 +50,8 @@ and will be destroyed afterwards.'>
         </div>
         <div class="dropdown right">
             <label>
-                Storage container
-                <span class="css-tooltip css-tooltip-sw"  aria-label="When the creation is completed, you will find the
-image's files inside the container of your choice.
-
-Make sure that the container that you'll choose
-has enough available space!">
+                {{t "labels.container"}}
+                <span class="css-tooltip css-tooltip-sw"  aria-label={{t "help_texts.container"}}>
                 <i class="info-sign fa fa-info-circle"></i>
             </span>
             </label>
@@ -71,9 +62,8 @@ has enough available space!">
             {{/x-select}}
         </div>
         <label for="public">
-            Public
-            <span class="css-tooltip css-tooltip-se"  aria-label="Check it, if you want to share the image
-with all the users of the service.">
+            {{t "labels.public"}}
+            <span class="css-tooltip css-tooltip-se"  aria-label={{t "help_texts.public"}}>
                 <i class="info-sign fa fa-info-circle"></i>
             </span>
             {{input type="checkbox" id="public" checked=isPublic}}
@@ -90,7 +80,7 @@ with all the users of the service.">
         </div>
     {{/if}}
 <div class="buttons">
-    <button type="submit" class="small success" {{action 'initCreateBuild'}}>Build</button>
+    <button type="submit" class="small success" {{action 'initCreateBuild'}}>{{t "buttons.build"}}</button>
 </div>
     </div>
 </section>

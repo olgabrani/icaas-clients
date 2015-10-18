@@ -1,9 +1,9 @@
 {{#x-select value=status}}
-    {{#x-option value=""}}Status: All{{/x-option}}
-    {{#x-option value="creating"}}Status: Creating{{/x-option}}
-    {{#x-option value="completed"}}Status: Completed{{/x-option}}
-    {{#x-option value="canceled"}}Status: Canceled{{/x-option}}
-    {{#x-option value="error"}}Status: Error{{/x-option}}
+    {{#x-option value=""}}{{t 'labels.status'}}: {{t 'labels.status_values.all'}}{{/x-option}}
+    {{#x-option value="creating"}}{{t 'labels.status'}}: {{t 'labels.status_values.creating'}}{{/x-option}}
+    {{#x-option value="completed"}}{{t 'labels.status'}}: {{t 'labels.status_values.completed'}}{{/x-option}}
+    {{#x-option value="canceled"}}{{t 'labels.status'}}: {{t 'labels.status_values.canceled'}}{{/x-option}}
+    {{#x-option value="error"}}{{t 'labels.status'}}: {{t 'labels.status_values.error'}}{{/x-option}}
 {{/x-select}}
 
 {{search-box value=searchTerm}}

@@ -1,7 +1,7 @@
 {{#link-to "builds" class="right"}}{{fa-icon "close"}}{{/link-to}}
 <h2  class="wrap-text"><i class="icon-disk-filled"></i>{{model.name}}</h2>
 <dl>
-    <dt>Status</dt>
+    <dt>{{t 'labels.status'}}</dt>
     <dd>
         {{build-status status=model.status}}
         {{#if model.status_details}}
@@ -10,18 +10,18 @@
     </dd>
     <hr>
     {{#if model.description}}
-        <dt>Description</dt><dd  class="wrap-text">{{model.description}}</dd>
+        <dt>{{t 'labels.descr'}}</dt><dd  class="wrap-text">{{model.description}}</dd>
     {{/if}}
-    <dt>Bitnami URL</dt><dd> <a href="{{model.src}}" target="_blank" class="wrap-text">{{model.src}}</a></dd>
-    <dt>Log file</dt><dd class="wrap-text">{{model.log}}</dd>
-    <dt>Public</dt><dd>{{model.public}}</dd>
+    <dt>{{t 'labels.url'}}</dt><dd> <a href="{{model.src}}" target="_blank" class="wrap-text">{{model.src}}</a></dd>
+    <dt>{{t 'labels.logs_full_path'}}</dt><dd class="wrap-text">{{model.log}}</dd>
+    <dt>{{t 'labels.public'}}</dt><dd>{{model.public}}</dd>
     <hr>
-    <dt>Started</dt><dd>{{moment-format model.created 'Do MMMM YYYY, H:mm'}}</dd>
+    <dt>{{t 'labels.started'}}</dt><dd>{{moment-format model.created 'Do MMMM YYYY, H:mm'}}</dd>
     {{#if isCompleted}}
-        <dt>Created</dt>
+        <dt>{{t 'labels.created'}}</dt>
         <dd>{{moment-format model.updated 'Do MMMM YYYY, H:mm'}}</dd>
     {{else if isError}}
-        <dt>Finished</dt>
+        <dt>{{t 'labels.ended'}}</dt>
         <dd>{{moment-format model.updated 'Do MMMM YYYY, H:mm'}}</dd>
     {{/if}}
     <hr>
@@ -29,18 +29,18 @@
     <div class="buttons clearfix">
         {{#if isCreating}} 
             <a class="button small alert left" {{action "cancel"}}>
-                {{fa-icon "ban"}}<span>Abort!</span>
+                {{fa-icon "ban"}}<span>{{t "buttons.abort"}}</span>
             </a>
         {{/if}}
         <a class="button small info right" {{action "toggle_log"}}>
             <span>
                 {{#if log_loader}}
-                    {{fa-icon "refresh" spin=true}} Fetching
+                    {{fa-icon "refresh" spin=true}}{{t "buttons.logs_loading"}}
+                {{else if log_contents}}
+                    {{fa-icon "file-text-o"}}{{t "buttons.logs_hide"}}
                 {{else}}
-                    {{fa-icon "file-text-o"}}
-                    {{log_btn_txt}}
+                    {{fa-icon "file-text-o"}}{{t "buttons.logs_show"}}
                 {{/if}}
-                    Logs
             </span>
         </a>
         {{#if log_contents}}

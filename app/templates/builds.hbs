@@ -4,17 +4,17 @@
             {{display-build build=build action="openConfirm"}}
             {{else}}
                 <li class="empty-list">
-                    No builds
+                    {{t 'empty_build_list'}}
                 </li>
         {{/each}}
     </ul>
     {{#if showConfirm}}
         <div class="alert-panel" style="top:{{confirmTop}}">
-            <p>Are you sure you want to delete build <strong>{{buildToDelete.name}}</strong> 
-            which is in status <strong>{{buildToDelete.status}}</strong>?</p>
+            <p>{{t 'confirmation.question'}} <strong>{{buildToDelete.name}}</strong>
+            {{t 'confirmation.info'}} <strong>{{tolowercase buildToDelete.status}}</strong>?</p>
             <div class="clearfix">
-                <a {{action "deleteBuild" buildToDelete}} class="right button small alert radius">Delete</a>
-                <a {{action "closeConfirm"}} class="left">Cancel</a>
+                <a {{action "deleteBuild" buildToDelete}} class="right button small alert radius">{{t 'buttons.cancel'}}</a>
+                <a {{action "closeConfirm"}} class="left">{{t 'buttons.cancel'}}</a>
             </div>
         </div>
     {{/if}}

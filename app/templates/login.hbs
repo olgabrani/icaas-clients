@@ -4,7 +4,7 @@
         <div class="input-with-error">
             {{input value=token id="token"}}
             <i class="login-info">
-                You can find your account token <a href="https://accounts.okeanos.grnet.gr/ui/api_access" target="_blank">here</a>.
+                {{t "links.api_access.descr_aux"}} <a href={{settings.api_access_url}} target="_blank">{{t "links.api_access.descr"}}</a>.
             </i>
             {{#if error}}
                 <div class="alert-box alert">
@@ -13,6 +13,6 @@
                 </div>
             {{/if}}
         </div>
-        <button {{action 'tryLogin'}} class="small">Login</button>
+        <button {{action 'tryLogin'}} class="small">{{t "buttons.login"}}</button>
     </form>
 </div>
