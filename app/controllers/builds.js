@@ -31,7 +31,7 @@ export default Ember.Controller.extend({
   closeForm: false,
 
   projects: function(){
-    return this.store.query('project', {'state': 'active'});
+    return this.store.query('project', {'mode':'member'});
   }.property(),
 
   allContainers: function(){
