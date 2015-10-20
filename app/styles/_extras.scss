@@ -11,3 +11,14 @@ pre {
         margin-left: 1rem;
     }
 }
+
+.sidebar {
+    li {
+        position: relative;
+    }
+    .alert-panel {
+        right: 10px;
+        padding-bottom: 0;
+    }
+
+}

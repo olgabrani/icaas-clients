@@ -1,0 +1,17 @@
+.alert-panel {
+    position: absolute;
+    top: 0;
+    right: 0;
+    max-width: 300px;
+    padding: 10px 20px;
+    background: $reveal-modal-bg;
+    box-shadow: $reveal-box-shadow;
+    z-index: 10;
+    font-size: rem-calc(14);
+    p {
+        font-size: rem-calc(14);
+    }
+    .button {
+        display: inline-block;
+    }
+}

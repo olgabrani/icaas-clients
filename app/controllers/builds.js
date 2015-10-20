@@ -50,6 +50,10 @@ export default Ember.Controller.extend({
     return this.get('containers').get('firstObject');
   }.property('containers.[]'),
 
+  showConfirm: false,
+  buildToDelete: null,
+  confirmTop: null,
+
 
   actions: {
 
@@ -195,8 +199,21 @@ export default Ember.Controller.extend({
       });
     },
 
+    'openConfirm': function(build, top){
+      this.set('showConfirm', true);
+      this.set('buildToDelete', build);
+      var trueTop = top + 32;
+      this.set('confirmTop', trueTop+'px');
+    },
+
+    'closeConfirm': function(){
+      this.set('showConfirm', false);
+      this.set('buildToDelete', null);
+    },
+
     'deleteBuild': function(build){
       build.destroyRecord();
+      this.send('closeConfirm');
     },
 
   }

@@ -4,8 +4,9 @@ export default Ember.Component.extend({
   tagName: 'li',
   actions: {
     showConfirmation(){
-      this.sendAction('action', this.get('build'));
-      console.log(this.get('element'));
+      let el = $(this.get('element'));
+      let top = el.position().top;
+      this.sendAction('action', this.get('build'), top);
     }
   }
 });

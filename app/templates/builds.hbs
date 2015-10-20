@@ -1,13 +1,23 @@
 <div class="small-6 large-5 columns sidebar">
     <ul class="no-bullet">
        {{#each queryResults as |build|}}
-            {{display-build build=build action="deleteBuild"}}
+            {{display-build build=build action="openConfirm"}}
             {{else}}
                 <li class="empty-list">
                     No builds
                 </li>
         {{/each}}
     </ul>
+    {{#if showConfirm}}
+        <div class="alert-panel" style="top:{{confirmTop}}">
+            <p>Are you sure you want to delete build <strong>{{buildToDelete.name}}</strong> 
+            which is in status <strong>{{buildToDelete.status}}</strong>?</p>
+            <div class="clearfix">
+                <a {{action "deleteBuild" buildToDelete}} class="right button small alert radius">Delete</a>
+                <a {{action "closeConfirm"}} class="left">Cancel</a>
+            </div>
+        </div>
+    {{/if}}
 </div>
 <div class="small-6 large-7 columns main">
     {{partial "create-build"}}

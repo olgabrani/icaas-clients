@@ -8,5 +8,17 @@ export default Ember.View.extend(RefreshViewMixin, {
     if(this.get('controller').get('closeForm')) {
       this.$('#create-header').trigger('click');
     }
-  }.observes('controller.closeForm')
+  }.observes('controller.closeForm'),
+  didInsertElement: function(){
+    var self = this;
+    $(document).keyup(function(e) {
+      if (e.keyCode === 27) {
+        self.get('controller').send('closeConfirm');
+      }
+    });
+    $(document).mouseup(function (e) {
+      self.get('controller').send('closeConfirm');
+    });
+  },
+
 });
