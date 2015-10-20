@@ -1,0 +1,13 @@
+<a {{action "showConfirmation" build}} class="right remove-sign" title="remove record">
+    {{fa-icon "fa-times"}}
+</a>
+{{#link-to "build" build.id}}
+    <i class="icon-disk-outline left"></i>
+    <i class="icon-disk-filled left"></i>
+
+    <span class="wrap-text name">{{build.name}}</span>
+    {{#if build.status}}
+        <i class=" build-status label {{tolowercase build.status}}">{{build.status}}</i>
+    {{/if}}
+{{/link-to}}
+

@@ -1,20 +1,7 @@
 <div class="small-6 large-5 columns sidebar">
     <ul class="no-bullet">
        {{#each queryResults as |build|}}
-            {{#link-to "build" build.id tagName="li"}}
-                <a {{action "deleteBuild" build}} class="right remove-sign" title="remove record" href="    ">
-                    {{fa-icon "fa-times"}}
-                </a>
-                <a href="">
-                    <i class="icon-disk-outline left"></i>
-                    <i class="icon-disk-filled left"></i>
-
-                    <span class="wrap-text name">{{build.name}}</span>
-                    {{#if build.status}}
-                        <i class=" build-status label {{tolowercase build.status}}">{{build.status}}</i>
-                    {{/if}}
-                </a>
-            {{/link-to}}
+            {{display-build build=build action="deleteBuild"}}
             {{else}}
                 <li class="empty-list">
                     No builds
