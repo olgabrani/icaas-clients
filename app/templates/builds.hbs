@@ -9,7 +9,7 @@
         {{/each}}
     </ul>
     {{#if showConfirm}}
-        <div class="alert-panel" style="top:{{confirmTop}}">
+        <div class="alert-panel" style="top:{{confirmTop}};  left: {{confirmLeft}}">
             <p>{{t 'confirmation.question'}} <strong>{{buildToDelete.name}}</strong>
             {{t 'confirmation.info'}} <strong>{{tolowercase buildToDelete.status}}</strong>?</p>
             <div class="clearfix">

@@ -5,7 +5,6 @@ export default DS.RESTSerializer.extend({
   // be removed in Ember Data 2.0
   isNewSerializerAPI: true,
   normalizeArrayResponse: function(store, primaryModelClass, payload, id, requestType) {
-    console.log(payload, payload.quotas);
     var quotas = payload.quotas;
     delete payload.quotas;
 

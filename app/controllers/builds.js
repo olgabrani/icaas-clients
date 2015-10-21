@@ -53,6 +53,7 @@ export default Ember.Controller.extend({
   showConfirm: false,
   buildToDelete: null,
   confirmTop: null,
+  confirmLeft: null,
 
 
   actions: {
@@ -198,11 +199,14 @@ export default Ember.Controller.extend({
       });
     },
 
-    'openConfirm': function(build, top){
+    'openConfirm': function(build, top, left){
       this.set('showConfirm', true);
       this.set('buildToDelete', build);
       var trueTop = top + 32;
+      var trueLeft = left + $('.sidebar li').first().width() - 300 - 20;
+
       this.set('confirmTop', trueTop+'px');
+      this.set('confirmLeft', trueLeft+'px');
     },
 
     'closeConfirm': function(){
