@@ -25,7 +25,7 @@ export default {
     logs_loading: 'Fetching Logs',
     toggle_create_form: 'Create new image',
     delete: 'Delete',
-    change_style: 'Try me'
+    change_style: 'Try me!'
   },
   help_texts: {
     url: 'Type here the URL of the image that you want to use.\n  You can get this from the Bitnami website.',
@@ -38,9 +38,9 @@ export default {
     url: 'Bitnami URL',
     name: 'Name',
     descr: 'Description',
-    file: 'Storage file name',
+    file: 'Store in Pithos as',
     project: 'Project',
-    container: 'Storage container',
+    container: 'Pithos container',
     public: 'Public',
     status: 'Status',
     status_values: {
@@ -55,16 +55,17 @@ export default {
     logs_full_path: 'Log file',
     started: 'Started',
     created: 'Created',
-    ended: 'Finished'
+    ended: 'Finished',
+    token: 'Token'
   },
   confirmation: {
     question: 'Are you sure you want to delete the build',
-    info: 'which is in status'
+    info: 'which is in status',
+    cannot_undo_action: 'The action cannot be undone.',
   },
   empty_build_list: 'No builds.',
   welcome: {
     default: 'Welcome, user',
     logged_in: 'Welcome'
   }
-  // pending welcome msg, try-me btn, Status: (?)
 };

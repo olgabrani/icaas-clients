@@ -1,5 +1,3 @@
-$status-pending: #3582AC;
-
 .details {
     background-color: $details-bg-color;
     padding: rem-calc(16 24 0);
@@ -42,7 +40,7 @@ $status-pending: #3582AC;
     .error {
 
         .icon, .descr {
-            color: $alert-color;
+            color: $error-color;
         }
 
         .icon {
@@ -53,10 +51,10 @@ $status-pending: #3582AC;
     .canceled {
 
         .icon {
-            color: $warning-color;
+            color: $canceled-icon-color;
         }
         .descr {
-            color: darken($warning-color, 10%);
+            color: $canceled-text-color;
         }
 
         .icon {
@@ -66,7 +64,7 @@ $status-pending: #3582AC;
     .completed {
 
         .icon, .descr {
-            color: $success-color;
+            color: $completed-color;
         }
 
         .icon {
@@ -74,10 +72,12 @@ $status-pending: #3582AC;
         }
     }
 
+
+
     .creating {
 
         .descr {
-            color: darken($status-pending, 10%);
+            color: $creating-text-color;
         }
 
         .icon {
@@ -85,7 +85,7 @@ $status-pending: #3582AC;
             width: 19px;
             height: 19px;
             border-radius: 10px;
-            background-color: $info-color;
+            background-color: $creating-icon-color;
             position: relative;
             vertical-align: text-top;
         }

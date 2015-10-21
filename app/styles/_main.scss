@@ -141,16 +141,16 @@ html, body, body > .ember-view, .ember-view > .row, .middle {
             height: 20px;
             margin-left: 6px;
             &.error {
-                background-color: $alert-color;
+                background-color: $error-color;
             }
             &.completed {
-                background-color: $success-color;
+                background-color: $completed-color;
             }
             &.creating {
-                background-color: darken($info-color, 15%);
+                background-color: darken($creating-text-color, 15%);
             }
             &.canceled {
-                background-color: $warning-color;
+                background-color: $canceled-icon-color;
             }
         }
     }
@@ -208,4 +208,36 @@ body {
 
 .icon-disk-filled:before {
     transform: rotate(90deg);
+}
+
+p.danger {
+    color: $alert-color;
+    font-weight: bold;
+    .icon {
+        margin-right: rem-calc(10);
+    }
+}
+
+.alert-panel {
+    .canceled {
+        color: $canceled-text-color;
+    }
+    .completed {
+        color: $completed-color;
+    }
+    .error {
+        color: $error-color;
+    }
+    .creating {
+        color: $creating-text-color;
+    }
+}
+.cancel {
+    background-color: transparent;
+    font-weight: bold;
+    @extend a;
+    &:hover {
+        background-color: transparent;
+        @extend a:hover;
+    }
 }

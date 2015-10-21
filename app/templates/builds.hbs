@@ -11,10 +11,11 @@
     {{#if showConfirm}}
         <div class="alert-panel" style="top:{{confirmTop}};  left: {{confirmLeft}}">
             <p>{{t 'confirmation.question'}} <strong>{{buildToDelete.name}}</strong>
-            {{t 'confirmation.info'}} <strong>{{tolowercase buildToDelete.status}}</strong>?</p>
+            {{t 'confirmation.info'}} <strong class={{tolowercase buildToDelete.status}}>{{tolowercase buildToDelete.status}}</strong>?</p>
+            <p class="danger"><{{fa-icon "fa-warning" classNames="icon"}} {{t 'confirmation.cannot_undo_action'}}</p>
             <div class="clearfix">
-                <a {{action "deleteBuild" buildToDelete}} class="right button small alert radius">{{t 'buttons.delete'}}</a>
-                <a {{action "closeConfirm"}} class="left">{{t 'buttons.cancel'}}</a>
+                <button {{action "deleteBuild" buildToDelete}} class="right button small alert">{{t 'buttons.delete'}}</button>
+                <a {{action "closeConfirm"}} class="left small button cancel">{{t 'buttons.cancel'}}</a>
             </div>
         </div>
     {{/if}}
