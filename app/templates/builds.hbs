@@ -13,7 +13,7 @@
             <p>{{t 'confirmation.question'}} <strong>{{buildToDelete.name}}</strong>
             {{t 'confirmation.info'}} <strong>{{tolowercase buildToDelete.status}}</strong>?</p>
             <div class="clearfix">
-                <a {{action "deleteBuild" buildToDelete}} class="right button small alert radius">{{t 'buttons.cancel'}}</a>
+                <a {{action "deleteBuild" buildToDelete}} class="right button small alert radius">{{t 'buttons.delete'}}</a>
                 <a {{action "closeConfirm"}} class="left">{{t 'buttons.cancel'}}</a>
             </div>
         </div>
