@@ -88,7 +88,7 @@ html, body, body > .ember-view, .ember-view > .row, .middle {
             margin-right: 10px;
         }
 
-        a[href^="/builds/"] {
+        a.right + a {
             padding: rem-calc(4 20);
             color: $topbar-link-color;
             display: block;
@@ -108,7 +108,7 @@ html, body, body > .ember-view, .ember-view > .row, .middle {
         }
 
         &:not(.empty-list):hover {
-            a[href^="/builds/"] {
+            a.right + a{
                 background-color: lighten($primary-color, 30%);
             }
 
