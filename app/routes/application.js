@@ -15,7 +15,18 @@ export default Ember.Route.extend({
   },
 
   actions: {
+    alertError(status){
+      this.controller.set('alertError', true);
+    },
+    hideError(status){
+      this.controller.set('alertError', false);
+    },
+
     error(error) {
+      if (error && error.errors[0].status === 500) {
+        this.send('alertError', 500);
+      }
+
       // In case of expired token or unauthorized user redirect to login
       if (error && error.errors[0].status === 401) {
         return this.transitionTo('login');

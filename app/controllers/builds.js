@@ -127,7 +127,6 @@ export default Ember.Controller.extend({
 
       this.set('loading', true);
       build.save().then(function(data){
-        console.log(data);
         self.set('closeForm', true);
         self.send('clearForm');
         self.send('checkObjectExists', 
@@ -212,7 +211,13 @@ export default Ember.Controller.extend({
     },
 
     'deleteBuild': function(build){
-      build.destroyRecord();
+      var self = this;
+      build.deleteRecord();
+      build.save().then(function(){
+      }, function(err){
+        build.rollback();
+        self.send('error', err);
+      }); 
       this.send('closeConfirm');
     },
 

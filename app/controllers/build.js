@@ -35,11 +35,15 @@ export default Ember.Controller.extend({
   actions: {
     cancel() {
       var build = this.get('model');
+      var self = this;
       build.set('action', 'cancel');
-      build.save();
+      build.save().then(function(){
+      }, function(err){
+        self.send('error', err);
+      }); 
     },
 
-    toggle_log(){
+    toggle_log() {
       if (this.get('log_contents')) {
         this.set('log_contents', null);
         return;

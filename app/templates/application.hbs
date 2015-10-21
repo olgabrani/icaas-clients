@@ -3,5 +3,8 @@
 	{{partial "top-bar"}}
 	{{outlet}}
 	{{partial "footer"}}
+    <div class="alert-error {{alertErrorCls}}">
+        INTERNAL ERROR  <a {{action "hideError"}}>{{fa-icon "close"}}</a>
+    </div>
 </div>
 

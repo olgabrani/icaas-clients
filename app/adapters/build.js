@@ -39,13 +39,12 @@ export default DS.RESTAdapter.extend({
   // Should be erased as soon as the error is compliant with Ember's 
   // expected format
   normalizeErrorResponse: function(status, headers, payload) {
-
     if (payload && typeof payload === 'object' && payload.errors) {
       return payload.errors;
     } else {
       return [
         {
-          status: payload.status,
+          status: payload.status || status,
           title: payload.message,
           details: payload.details
         }
