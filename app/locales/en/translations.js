@@ -51,7 +51,6 @@ export default {
       error: 'error',
 
     },
-    descr: 'Description',
     logs_full_path: 'Log file',
     started: 'Started',
     created: 'Created',
