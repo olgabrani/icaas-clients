@@ -1,18 +1,26 @@
 <div class="middle">
-    <form class="login">
-        <label for="token" class="right">{{t 'labels.token'}}</label>
-        <div class="input-with-error">
-            {{input value=token id="token"}}
-            <i class="login-info">
-                {{t "links.api_access.descr_aux"}} <a href={{settings.api_access_url}} target="_blank">{{t "links.api_access.descr"}}</a>.
-            </i>
-            {{#if error}}
-                <div class="alert-box alert">
-                    <a {{action 'hideErrors'}} title="Hide errors" class="close">{{fa-icon "fa-close"}}</a>
-                    {{errorMsg}}
-                </div>
-            {{/if}}
-        </div>
-        <button {{action 'tryLogin'}} class="small">{{t "buttons.login"}}</button>
-    </form>
+    <div class="login">
+        <p class="intro panel">
+            Welcome, in our Bitnami factory!<br>
+            Find a bitnami image with the application stack of your choice and ICaaS will make it easy for you to deploy a VM with it, through Cyclades.<br>
+            Just with a few clicks...
+            Just within a few minutes...
+        </p>
+        <form>
+            <label for="token" class="right">{{t 'labels.token'}}</label>
+            <div class="input-with-error">
+                {{input value=token id="token"}}
+                <i class="login-info">
+                    {{t "links.api_access.descr_aux"}} <a href={{settings.api_access_url}} target="_blank">{{t "links.api_access.descr"}}</a>.
+                </i>
+                {{#if error}}
+                    <div class="alert-box alert">
+                        <a {{action 'hideErrors'}} title="Hide errors" class="close">{{fa-icon "fa-close"}}</a>
+                        {{errorMsg}}
+                    </div>
+                {{/if}}
+            </div>
+            <button {{action 'tryLogin'}} class="small">{{t "buttons.login"}}</button>
+        </form>
+    </div>
 </div>

@@ -37,6 +37,7 @@ h2 .icon-disk-filled {
     padding-bottom: $footer-height;
     top: - ($header-height + $topbar-height);
     overflow: hidden;
+  // box-shadow: 2px 2px 8px #888888;
 }
 
 html, body, body > .ember-view, .ember-view > .row, .middle {
@@ -54,7 +55,7 @@ html, body, body > .ember-view, .ember-view > .row, .middle {
     background-color: $sidebar-bg-color;
     overflow: auto;
     height: 100%;
-    padding: 1.75rem 0;
+    padding: 0.75rem 0;
 
     li {
         padding: 0;
@@ -66,7 +67,7 @@ html, body, body > .ember-view, .ember-view > .row, .middle {
             line-height: rem-calc(22);
             border-radius: rem-calc(13);
             text-align: center;
-            margin: rem-calc(0 20 0 8);
+            margin: rem-calc(0 0 0 14);
         }
 
         .icon-disk-filled {
@@ -89,7 +90,7 @@ html, body, body > .ember-view, .ember-view > .row, .middle {
         }
 
         .build-item {
-            padding: rem-calc(4 0);
+            padding: rem-calc(4 14);
             color: $topbar-link-color;
             display: block;
             .wrap {

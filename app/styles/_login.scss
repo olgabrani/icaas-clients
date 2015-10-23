@@ -1,7 +1,17 @@
 $horizontal-dist: 1rem;
 .login {
-    margin: rem-calc(80) auto;
-    max-width: rem-calc(562);
+      margin: 3rem auto;
+      max-width: 35.125rem;
+
+      .intro {
+        background-color: lighten($info-color, 15%);
+        font-size: rem-calc(14);
+        padding: 1.5rem 1.5rem;
+        width: rem-calc(562);
+        width: 32rem;
+        margin: 0 auto 4rem;
+        border-width: 0;
+      }
 
     .input-with-error {
         width: rem-calc(400);
