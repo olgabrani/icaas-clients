@@ -3,7 +3,7 @@
 This application is the UI of [ICaaS](https://github.com/grnet/icaas), in the form of a web and a desktop client.
 The development of the clients is based on the framework Ember.js.
 
-## Development: Installation and requirements
+## Development of web client
 
 ### Prerequisites
 
@@ -53,7 +53,24 @@ Specify what it takes to deploy your app.
   * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
   * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
 
-### Copyright and license
+## Development of nw client
+
+ICaaS UI can either be deployed/used as a web client, or as a nw client.
+The commits for the nw client are placed in the branch feature-nw.
+
+### Installation
+Checkout the branch `feature-nw`, in the directory app and then run:
+* `npm install`
+* `bower install`
+
+### Running / Development
+ `ember nw`
+
+### Packaging
+`ember nw:package`
+
+
+## Copyright and license
 
 Copyright (C) 2015 GRNET S.A.
 
