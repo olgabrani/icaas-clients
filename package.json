@@ -1,6 +1,6 @@
 {
   "name": "icaas",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Small description for icaas goes here",
   "private": true,
   "directories": {
@@ -17,7 +17,7 @@
     "node": ">= 0.10.0"
   },
   "author": "",
-  "license": "MIT",
+  "license": "GPLv3",
   "devDependencies": {
     "broccoli-asset-rev": "^2.1.2",
     "ember-cli": "1.13.8",
