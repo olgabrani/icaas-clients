@@ -1,13 +1,18 @@
-<a {{action "showConfirmation" build}} class="right remove-sign" title="remove record">
-    {{fa-icon "fa-times"}}
-</a>
-{{#link-to "build" build.id}}
-    <i class="icon-disk-outline left"></i>
-    <i class="icon-disk-filled left"></i>
+{{#link-to "build" build.id class="build-item"}}
+    <a {{action "showConfirmation" build}} class="right remove-sign" title="remove record">
+        {{fa-icon "fa-times"}}
+    </a>
+    <span class="wrap">
 
-    <span class="wrap-text name">{{build.name}}</span>
+    <span class="wrap-text name">
+    <i class="icon-disk-outline left icon"></i>
+    <i class="icon-disk-filled left icon"></i>
+
+    {{build.name}}
+    </span>
     {{#if build.status}}
-        <i class=" build-status label {{tolowercase build.status}}">{{build.status}}</i>
+        <i class=" build-status label right {{tolowercase build.status}}">{{build.status}}</i>
     {{/if}}
+    </span>
 {{/link-to}}
 

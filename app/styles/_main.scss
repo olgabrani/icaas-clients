@@ -60,13 +60,13 @@ html, body, body > .ember-view, .ember-view > .row, .middle {
         padding: 0;
 
         .remove-sign {
-            display: inline-block;
+            // display: inline-block;
             width: rem-calc(22);
             height: rem-calc(22);
             line-height: rem-calc(22);
             border-radius: rem-calc(13);
             text-align: center;
-            margin: rem-calc(4 20 0 0);
+            margin: rem-calc(0 20 0 8);
         }
 
         .icon-disk-filled {
@@ -88,15 +88,23 @@ html, body, body > .ember-view, .ember-view > .row, .middle {
             margin-right: 10px;
         }
 
-        a.right + a {
-            padding: rem-calc(4 20);
+        .build-item {
+            padding: rem-calc(4 0);
             color: $topbar-link-color;
             display: block;
-
+            .wrap {
+                display: block;
+                overflow: hidden;
+            }
+            .name {
+                display: inline-block;
+            }
         }
-        a.active {
-            background-color: lighten($info-color, 10%);
-
+        .build-item.active {
+            background-color: lighten($primary-color, 30%);
+            .name, .icon {
+                color: white;
+            }
 
             .icon-disk-outline {
                 display: none;
@@ -108,15 +116,7 @@ html, body, body > .ember-view, .ember-view > .row, .middle {
         }
 
         &:not(.empty-list):hover {
-            a.right + a{
-                background-color: lighten($primary-color, 30%);
-            }
-
-            a:not(.remove-sign) {
-                i, span {
-                    color: white;
-                }
-            }
+            background-color: lighten($info-color, 10%);
 
             .remove-sign {
                 background-color: $sidebar-bg-color;
@@ -140,6 +140,8 @@ html, body, body > .ember-view, .ember-view > .row, .middle {
             vertical-align: text-bottom;
             height: 20px;
             margin-left: 6px;
+            margin-top: 2px;
+            width: rem-calc(82);
             &.error {
                 background-color: $error-color;
             }
