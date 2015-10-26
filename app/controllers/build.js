@@ -32,7 +32,17 @@ export default Ember.Controller.extend({
     }
   }.observes('model.isDeleted'),
 
+  showConfirm: false,
+
   actions: {
+    openConfirm(){
+      this.set('showConfirm', true);
+    },
+    
+    closeConfirm() {
+      this.set('showConfirm', false);
+    },
+
     cancel() {
       var build = this.get('model');
       var self = this;

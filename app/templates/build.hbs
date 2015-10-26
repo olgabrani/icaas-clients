@@ -27,8 +27,8 @@
     <hr>
 
     <div class="buttons clearfix">
-        {{#if isCreating}} 
-            <a class="button small alert left" {{action "cancel"}}>
+        {{#if isCreating}}
+            <a class="button small alert left" {{action "openConfirm"}}>
                 {{fa-icon "ban"}}<span>{{t "buttons.abort"}}</span>
             </a>
         {{/if}}
@@ -46,6 +46,17 @@
         {{#if log_contents}}
             <a class="button small info right" {{action "load_log"}}>{{fa-icon "refresh"}}</a>
         {{/if}}
+        {{#if showConfirm}}
+            <div class="alert-panel">
+                <p>{{t 'confirmation.build_abort_question'}}</p>
+                <p class="danger"><{{fa-icon "fa-warning" classNames="icon"}} {{t 'confirmation.cannot_undo_action'}}</p>
+                <div class="clearfix">
+                    <button {{action "cancel"}} class="right button small alert">{{t 'buttons.abort'}}</button>
+                    <a {{action "closeConfirm"}} class="left small button cancel">{{t 'buttons.cancel'}}</a>
+                </div>
+            </div>
+        {{/if}}
+
 
     </div>
     {{#if log_contents}}

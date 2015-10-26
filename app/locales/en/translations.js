@@ -61,6 +61,7 @@ export default {
     question: 'Are you sure you want to delete the build',
     info: 'which is in status',
     cannot_undo_action: 'The action cannot be undone.',
+    build_abort_question: 'Are you sure you want to abort the build?'
   },
   empty_build_list: 'No builds.',
   welcome: {

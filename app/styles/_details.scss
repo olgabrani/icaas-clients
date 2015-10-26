@@ -115,6 +115,17 @@
             animation-delay: .4s;
         }
     }
+    
+    .buttons {
+        position: relative;
+    }
+
+    .alert-panel {
+        top: auto;
+        bottom: rem-calc(75);
+        right: auto;
+        left: 0;
+    }
 
 }
 
