@@ -9,7 +9,7 @@
         {{/each}}
     </ul>
     {{#if showConfirm}}
-        <div class="alert-panel" style="top:{{confirmTop}};  left: {{confirmLeft}}">
+        <div class="alert-panel">
             <p>{{t 'confirmation.question'}} <strong>{{buildToDelete.name}}</strong>
             {{t 'confirmation.info'}} <strong class={{tolowercase buildToDelete.status}}>{{tolowercase buildToDelete.status}}</strong>?</p>
             <p class="danger"><{{fa-icon "fa-warning" classNames="icon"}} {{t 'confirmation.cannot_undo_action'}}</p>

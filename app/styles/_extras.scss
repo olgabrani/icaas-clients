@@ -17,8 +17,9 @@ pre {
         position: relative;
     }
     .alert-panel {
-        right: 10px;
-        padding-bottom: 0;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);   
     }
 
 }

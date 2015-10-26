@@ -1,8 +1,8 @@
 .alert-panel {
-    position: fixed;
+    position: absolute;
     top: 0;
     right: 0;
-    max-width: 300px;
+    width: 70%;
     padding: 10px 20px;
     background: $reveal-modal-bg;
     box-shadow: $reveal-box-shadow;
