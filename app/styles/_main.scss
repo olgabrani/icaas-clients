@@ -161,14 +161,14 @@ html, body, body > .ember-view, .ember-view > .row, .middle {
 
 .buttons {
     .alert {
-        background-color: lighten($alert-color, 30%);
+        background-color: lighten($alert-color, 5%);
     }
     .info:hover {
         background-color: $primary-color;
     }
      a {
         .fa {
-            margin-right: 3px;
+            margin-right: rem-calc(8);
         }
     }
 }

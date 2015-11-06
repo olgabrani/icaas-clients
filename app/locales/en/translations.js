@@ -15,7 +15,7 @@ export default {
   buttons: {
     login: 'Login',
     build: 'Build',
-    abort: 'Abort!',
+    abort: 'Abort',
     cancel: 'Cancel',
     user_guide: 'Help',
     builds_list: 'Builds',
@@ -58,10 +58,10 @@ export default {
     token: 'Token'
   },
   confirmation: {
-    question: 'Are you sure you want to delete the build',
+    question: 'Are you sure you want to <b>delete</b> the build',
     info: 'which is in status',
     cannot_undo_action: 'The action cannot be undone.',
-    build_abort_question: 'Are you sure you want to abort the build?'
+    build_abort_question: 'Are you sure you want to <b>abort</b> the build?'
   },
   empty_build_list: 'No builds.',
   welcome: {
