@@ -4,10 +4,15 @@
     <dt>{{t 'labels.status'}}</dt>
     <dd>
         {{build-status status=model.status}}
-        {{#if model.status_details}}
-            <span class="status-details">{{model.status_details}}</span>
-        {{/if}}
+            <span class="status-details">{{model.status_info}}</span>
     </dd>
+    {{#if isCreating}}
+        {{#if creation_real_progress}}
+            <span class="progress real-progress" style="width:{{creation_real_progress}}%;" ></span>
+        {{else}}
+            <span class="progress starting"></span>
+        {{/if}}
+    {{/if}}
     <hr>
     {{#if model.description}}
         <dt>{{t 'labels.descr'}}</dt><dd  class="wrap-text">{{model.description}}</dd>

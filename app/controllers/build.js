@@ -22,6 +22,17 @@ export default Ember.Controller.extend({
     return this.get('log_contents')? 'Hide':'Show';
   }.property('log_contents'),
 
+  creation_real_progress: undefined,
+
+  trackProgress: function() {
+    if(this.get('model.creation_progress') > 20) {
+      this.set('creation_real_progress', this.get('model.creation_progress'));
+    }
+    else {
+      this.set('creation_real_progress', '');
+    }
+}.observes('model.creation_progress'),
+
   watchModelChange: function(){
     this.set('log_contents', null);
   }.observes('model.id'),
@@ -31,6 +42,7 @@ export default Ember.Controller.extend({
       this.transitionTo('builds');
     }
   }.observes('model.isDeleted'),
+
 
   showConfirm: false,
 

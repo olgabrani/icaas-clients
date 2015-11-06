@@ -141,3 +141,34 @@
     opacity: .2;
   }
 }
+
+
+.progress {
+    display: block;
+    background-color: lighten($primary-color, 30%);;
+    height: rem-calc(6);
+    clear: both;
+    padding: 0;
+    margin-bottom: 0;
+    &.starting {
+        animation-name: init-progress;
+        animation-duration: 120s;
+        animation-timing-function: ease-out;
+        animation-fill-mode:forwards;
+    }
+    &.real-progress {
+        transition: width 5000ms ease-in-out;
+    }
+    & + hr {
+        margin-top: 0;
+    }
+}
+
+@keyframes init-progress {
+    0% {
+        width: 1%;
+    }
+    100% {
+        width: 20%;
+    }
+}
