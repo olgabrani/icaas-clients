@@ -6,8 +6,11 @@
     padding: rem-calc(16 24 0);
     position: relative;
 
-    h2 {
+    .build-header {
         margin-left: rem-calc(-7);
+        .icon {
+            font-size: 2rem;
+        }
     }
 
     // make it reusable

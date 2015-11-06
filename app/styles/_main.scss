@@ -93,10 +93,6 @@ html, body, body > .ember-view, .ember-view > .row, .middle {
             padding: rem-calc(4 14);
             color: $topbar-link-color;
             display: block;
-            .wrap {
-                display: block;
-                overflow: hidden;
-            }
             .name {
                 display: inline;
             }
@@ -177,9 +173,6 @@ html, body, body > .ember-view, .ember-view > .row, .middle {
     }
 }
 
-.wrap-text {
-    word-wrap: break-word
-}
 
 .content {
     padding: 50px 20px;
@@ -258,4 +251,14 @@ p.danger {
         text-align: center;
         margin-bottom: rem-calc(50);
     }
+}
+
+.wrap {
+    display: block;
+    overflow: hidden;
+}
+
+.wrap-text {
+    word-wrap: break-word;
+    overflow: hidden;
 }
