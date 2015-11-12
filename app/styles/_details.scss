@@ -88,34 +88,13 @@
 
         .icon {
             display: inline-block;
-            width: 19px;
-            height: 19px;
+            width: rem-calc(19);
+            height: rem-calc(19);
             border-radius: 10px;
-            background-color: $creating-icon-color;
             position: relative;
-            vertical-align: text-top;
-        }
-
-        .dot {
-            color: darken($primary-color, 10%);
-            font-size: rem-calc(25);
-            font-weight: bold;
-            margin-right: rem-calc(-6);
-            animation-name: blink;
-            animation-duration: 1.4s;
-            animation-iteration-count: infinite;
-            animation-fill-mode: both;
-            position: relative;
-            bottom: 16px;
-            left: 2px
-        }
-
-        .dot:nth-child(2) {
-            animation-delay: .2s;
-        }
-
-        .dot:nth-child(3) {
-            animation-delay: .4s;
+            font-size: rem-calc(18);
+            margin-right: 0;
+            color: darken($primary-color, 5%);
         }
     }
     
