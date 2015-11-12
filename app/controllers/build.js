@@ -25,7 +25,7 @@ export default Ember.Controller.extend({
   creation_real_progress: undefined,
 
   trackProgress: function() {
-    if(this.get('model.creation_progress') > 20) {
+    if(this.get('model.creation_progress') > 3) {
       this.set('creation_real_progress', this.get('model.creation_progress'));
     }
     else {

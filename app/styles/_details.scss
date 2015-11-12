@@ -146,32 +146,80 @@
 }
 
 
-.progress {
-    display: block;
-    background-color: lighten($primary-color, 30%);;
-    height: rem-calc(6);
-    clear: both;
-    padding: 0;
-    margin-bottom: 0;
-    &.starting {
-        animation-name: init-progress;
-        animation-duration: 120s;
-        animation-timing-function: ease-out;
-        animation-fill-mode:forwards;
+
+.wrap-meter {
+    width: 100%;
+    &.waiting {
+        .meter {
+            text-align: center;
+            width: 100%;
+            font-size: rem-calc(12);
+            font-weight: bold;
+            span {
+                background-color: #bdbdbd;
+            }
+        }
     }
-    &.real-progress {
-        transition: width 5000ms ease-in-out;
-    }
-    & + hr {
-        margin-top: 0;
+
+    &.moving {
+        padding-right: rem-calc(8);
+        padding-left: rem-calc(8);
+        .meter {
+            transition: width 5000ms ease-in-out;
+            span {
+                background-color: $info-color;
+            }
+        }
     }
 }
 
-@keyframes init-progress {
-    0% {
-        width: 1%;
-    }
-    100% {
-        width: 20%;
-    }
+.meter {
+    height: rem-calc(17);
+    position: relative;
+    background: transparent;
+    border-radius: 4px;
+    margin: rem-calc(10 0);
+
+}
+
+
+.meter > span {
+    display: block;
+    height: 100%;
+    border-radius: 4px;
+    padding: 1px;
+}
+
+
+.meter > span:after, .animate > span > span {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+    background-image: linear-gradient(
+    -45deg,
+    rgba(255, 255, 255, .2) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(255, 255, 255, .2) 50%,
+    rgba(255, 255, 255, .2) 75%,
+    transparent 75%,
+    transparent
+    );
+    z-index: 1;
+    background-size: 50px 50px;
+    animation: move 2s linear infinite;
+    border-radius: 4px;
+}
+
+.animate > span:after {
+  display: none;
+}
+
+@keyframes move {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 50px 50px;
+  }
 }

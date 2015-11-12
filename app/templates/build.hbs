@@ -7,16 +7,23 @@
     <dt>{{t 'labels.status'}}</dt>
     <dd>
         {{build-status status=model.status}}
-            <span class="status-details">{{model.status_info}}</span>
+        <span class="status-details">{{model.status_info}}&nbsp;</span>
     </dd>
-    {{#if isCreating}}
-        {{#if creation_real_progress}}
-            <span class="progress real-progress" style="width:{{creation_real_progress}}%;" ></span>
+        {{#if isCreating}}
+            <div class="wrap-meter right {{if creation_real_progress 'moving' 'waiting'}}">
+                {{#if creation_real_progress}}
+                    <div class="meter animate" style="width:{{creation_real_progress}}%">
+                        <span><span></span></span>
+                    </div>
+                {{else}}
+                    <div class="meter animate">
+                        <span style="width:100%"><span>Creating...</span></span>
+                    </div>
+                {{/if}}
+            </div>
         {{else}}
-            <span class="progress starting"></span>
+            <hr>
         {{/if}}
-    {{/if}}
-    <hr>
     {{#if model.description}}
         <dt>{{t 'labels.descr'}}</dt><dd  class="wrap-text">{{model.description}}</dd>
     {{/if}}
