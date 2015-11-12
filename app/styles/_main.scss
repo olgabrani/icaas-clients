@@ -64,10 +64,16 @@ html, body, body > .ember-view, .ember-view > .row, .middle {
             // display: inline-block;
             width: rem-calc(22);
             height: rem-calc(22);
-            line-height: rem-calc(22);
-            border-radius: rem-calc(13);
+            // line-height: rem-calc(22);
+            // border-radius: rem-calc(13);
             text-align: center;
             margin: rem-calc(0 0 0 14);
+            .fa-trash {
+                display: none;
+            }
+            .fa-trash-o {
+                display: inline-block;
+            }
         }
 
         .icon-disk-filled {
@@ -116,7 +122,14 @@ html, body, body > .ember-view, .ember-view > .row, .middle {
             background-color: lighten($info-color, 10%);
 
             .remove-sign {
-                background-color: $sidebar-bg-color;
+                // background-color: $sidebar-bg-color;
+                // color: $warning-color;
+                .fa-trash {
+                display: inline-block;
+            }
+            .fa-trash-o {
+                display: none;
+            }
             }
 
             .icon-disk-filled {
@@ -155,7 +168,7 @@ html, body, body > .ember-view, .ember-view > .row, .middle {
     }
 
     .remove-sign {
-        color: $alert-color;
+        color: $topbar-link-color;
     }
 }
 
