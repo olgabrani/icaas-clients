@@ -1,9 +1,11 @@
 # ICaaS UI
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+This application is the UI of [ICaaS](https://github.com/grnet/icaas), in the form of a web and a desktop client.
+The development of the clients is based on the framework Ember.js.
 
-## Prerequisites
+## Development: Installation and requirements
+
+### Prerequisites
 
 You will need the following things properly installed on your computer.
 
@@ -13,37 +15,37 @@ You will need the following things properly installed on your computer.
 * [Ember CLI](http://www.ember-cli.com/)
 * [PhantomJS](http://phantomjs.org/)
 
-## Installation
+### Installation
 
 * `git clone <repository-url>` this repository
 * change into the new directory
 * `npm install`
 * `bower install`
 
-## Running / Development
+### Running / Development
 
 * `ember server`
 * Visit your app at [http://localhost:4200](http://localhost:4200).
 
-### Code Generators
+#### Code Generators
 
 Make use of the many generators for code, try `ember help generate` for more details
 
-### Running Tests
+#### Running Tests
 
 * `ember test`
 * `ember test --server`
 
-### Building
+#### Building
 
 * `ember build` (development)
 * `ember build --environment production` (production)
 
-### Deploying
+#### Deploying
 
 Specify what it takes to deploy your app.
 
-## Further Reading / Useful Links
+### Further Reading / Useful Links
 
 * [ember.js](http://emberjs.com/)
 * [ember-cli](http://www.ember-cli.com/)
@@ -51,7 +53,7 @@ Specify what it takes to deploy your app.
   * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
   * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
 
-## Copyright and license
+### Copyright and license
 
 Copyright (C) 2015 GRNET S.A.
 

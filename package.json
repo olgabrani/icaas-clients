@@ -1,7 +1,7 @@
 {
   "name": "icaas",
   "version": "0.0.1",
-  "description": "Small description for icaas goes here",
+  "description": "This application consists the UI of ICaaS, as a web and desktop client",
   "private": true,
   "directories": {
     "doc": "doc",
