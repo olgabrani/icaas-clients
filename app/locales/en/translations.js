@@ -67,5 +67,6 @@ export default {
   welcome: {
     default: 'Welcome, user',
     logged_in: 'Welcome'
-  }
+  },
+  intro: 'Welcome, in our Bitnami factory!<br>Pick a bitnami image with the application stack of your choice and ICaaS will make it easy for you to deploy a VM with it, through Cyclades.<br>Just with a few clicks... Just within a few minutes...'
 };
