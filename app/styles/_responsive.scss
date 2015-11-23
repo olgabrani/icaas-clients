@@ -1,0 +1,18 @@
+@media #{$small-only}{
+    .sidebar, .main {
+        height: auto;
+    }
+    .middle {
+        overflow: auto;
+    }
+    .sidebar {
+        overflow: visible;
+        ul {
+            margin-bottom: 0;
+        }
+    }
+    .login button {
+        margin-top: 2rem;
+    }
+
+}

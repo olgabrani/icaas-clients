@@ -63,6 +63,9 @@ h1 {
     .logout {
         padding-right: 0;
     }
+    .search {
+        padding: 10px 0 0 10px;
+    }
 
     select {
         float: left;
@@ -70,6 +73,7 @@ h1 {
         width: rem-calc(165);
         height: 1.85rem;
         margin-right: 16px;
+        top: auto;
     }
 
     form {
@@ -139,7 +143,7 @@ h1 {
 
     .search-icon {
         position: absolute;
-        bottom: -12px;
+        bottom: 4px;
         left: 8px;
         color: darken($primary-color, 10%);
     }
@@ -148,7 +152,7 @@ h1 {
         display: inline-block;
         position: absolute;
         right: 8px;
-        bottom: -11px;
+        bottom: 6px;
         color: $alert-color;
         &.hide {
             display: none;
@@ -159,5 +163,6 @@ h1 {
         padding-right: 28px;
         padding-left: 28px;
         height: $topbar-input-height + rem-calc(2);
+        top: auto;
     }
 }
