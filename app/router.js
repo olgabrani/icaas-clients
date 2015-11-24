@@ -13,6 +13,7 @@ Router.map(function() {
   this.route('login');
   this.route('guide');
   this.route('not-found', { path: "*path"});
+  this.route('about', {});
 });
 
 export default Router;
