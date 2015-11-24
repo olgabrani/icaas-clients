@@ -13,12 +13,14 @@ export default {
     }
   },
   buttons: {
+    about: 'About',
     login: 'Login',
     build: 'Build',
     abort: 'Abort',
     cancel: 'Cancel',
     user_guide: 'Help',
     builds_list: 'Builds',
+    login: 'Log In',
     logout: 'Log Out',
     logs_show: 'Show Logs',
     logs_hide: 'Hide Logs',

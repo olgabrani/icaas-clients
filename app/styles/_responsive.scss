@@ -1,4 +1,7 @@
 @media #{$small-only}{
+    .top-bar {
+        height: auto;
+    }
     .sidebar, .main {
         height: auto;
     }

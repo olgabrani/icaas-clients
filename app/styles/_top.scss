@@ -60,6 +60,10 @@ h1 {
 
     @include horizontal-menu-border;
 
+    ul {
+        margin: 0;
+    }
+
     .logout {
         padding-right: 0;
     }
@@ -106,7 +110,12 @@ h1 {
                 color: $topbar-link-color-hover;
             }
         }
-
+        a.active {
+            background: lighten($info-color, 10%);
+            &:hover .fa, label {
+                color: $topbar-link-color;
+            }
+        }
         &.disabled {
             opacity: 0.5;
 

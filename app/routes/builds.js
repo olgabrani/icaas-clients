@@ -10,12 +10,6 @@ export default Ember.Route.extend({
     this._super();
     this.render('builds-tools', {
       into: 'application',
-      outlet: 'top-bar-right',
-      controller: 'builds',
-    });
-
-    this.render('application-tools', {
-      into: 'application',
       outlet: 'top-bar-left',
     });
   },
