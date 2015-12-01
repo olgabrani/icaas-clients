@@ -5,7 +5,8 @@ export default {
       descr_aux: 'You can find your account token'
     },
     copyright: {
-     descr: 'Copyright {{fa-icon "copyright"}} 2015 - 2016 GRNET',
+     descr: 'Copyright',
+     year: '2015',
      descr_aux: 'All rights reserved.',
     },
     terms: {
