@@ -1,4 +1,5 @@
 /* jshint node: true */
+var endpoints = require('./endpoints');
 
 module.exports = function(environment) {
   var ENV = {
@@ -34,19 +35,7 @@ module.exports = function(environment) {
   };
 
   if (environment === 'development') {
-    ENV.appSettings = {
-      'branding': {
-        STORAGE_LOGO_URL: 'https://example.com/static/branding/images/storage_logo.png'
-      },
-      auth_url: 'https://accounts.example.com/identity/v2.0',
-      service_url: 'http://example.com/icaas',
-      storage_url: 'https://pithos.example.com/object-store/v1',
-      compute_url: 'https://cyclades.example.com/',
-      storage_view_url: 'https://pithos.example.com/ui/view',
-      api_access_url: 'https://accounts.example.com/api_access',
-      copyright_url: 'https://www.grnet.gr/en',
-      terms_url: 'https://accounts.example.com/approval_terms'
-    }
+    ENV.appSettings = endpoints.development
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;
     // ENV.APP.LOG_TRANSITIONS = true;
@@ -67,19 +56,7 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-    ENV.appSettings = {
-      'branding': {
-        STORAGE_LOGO_URL: 'https://example.com/static/branding/images/storage_logo.png'
-      },
-      auth_url: 'https://accounts.example.com/identity/v2.0',
-      service_url: 'http://example.com/icaas',
-      storage_url: 'https://pithos.example.com/object-store/v1',
-      compute_url: 'https://cyclades.example.com/',
-      storage_view_url: 'https://pithos.example.com/ui/view',
-      api_access_url: 'https://accounts.example.com/api_access',
-      copyright_url: 'https://www.grnet.gr/en',
-      terms_url: 'https://accounts.example.com/approval_terms'
-    }
+    ENV.appSettings = endpoints.production;
   }
 
   return ENV;
