@@ -8,6 +8,10 @@
 /node_modules
 /bower_components
 
+# settings per deployment
+/config/endpoints.js
+
+
 # misc
 /.sass-cache
 /connect.lock
