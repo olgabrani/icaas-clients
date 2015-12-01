@@ -1,7 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
-  title: 'iCaaS',
+  title: 'ICaaS',
 
   beforeModel: function() {
     var c = this.get('cookie');

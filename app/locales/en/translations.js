@@ -14,7 +14,6 @@ export default {
   },
   buttons: {
     about: 'About',
-    login: 'Login',
     build: 'Build',
     abort: 'Abort',
     cancel: 'Cancel',
