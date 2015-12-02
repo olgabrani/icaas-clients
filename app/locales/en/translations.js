@@ -34,7 +34,8 @@ export default {
     build_name: 'When you will create a new machine,\nyou will find the image with this name\nin the tab "My images" or "Public".',
     project: 'Make sure that the project you will choose\nhas enough quota for a new machine.\nA machine will "build" your image\nand will be destroyed afterwards.',
     container: 'When the creation is completed, you will find the\nimage\'s files inside the container of your choice.\n\nMake sure that the container that you\'ll choose\nhas enough available space!',
-    public: 'Check it, if you want to share the image\nwith all the users of the service.'
+    public: 'Check it, if you want to share the image\nwith all the users of the service.',
+    warning_src: 'The Bitnami URL you have typed seems wrong. Visit the Help section for more details.'
   },
   labels: {
     url: 'Bitnami URL',

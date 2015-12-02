@@ -53,6 +53,17 @@ export default Ember.Controller.extend({
   showConfirm: false,
   buildToDelete: null,
 
+  warning_src: false,
+  watch_src: function(){
+    var re = new RegExp("^https:\/\/(?:downloads\.)?bitnami.com\/(?:.)+\.zip$");
+    var src = this.get('src') && this.get('src').trim();
+    if (src && src.length > 0) {
+      this.set('warning_src', !(re.test(src)));
+    } else {
+      this.set('warning_src', false);
+    }
+  }.observes('src'),
+
   actions: {
 
     'initCreateBuild': function() {

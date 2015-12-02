@@ -13,8 +13,12 @@
             <span class="css-tooltip css-tooltip-se"  aria-label={{t "help_texts.url"}}>
                 <i class="info-sign fa fa-info-circle"></i>
             </span>
+
             {{#error-msg err=errorCreation.src action="clearError"}}
                 {{input type="url" value=src id="src"}}
+                {{#if warning_src}}
+                    <em class="warning">{{t "help_texts.warning_src"}}</em>
+                {{/if}}
             {{/error-msg}}
         </label>
         <label for="name">

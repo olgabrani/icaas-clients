@@ -61,3 +61,9 @@ pre {
     font-size: rem-calc(14);
     color: $steel;
 }
+
+input + .warning {
+    position: relative;
+    top: -1rem;
+    color: $alert-color;
+}
