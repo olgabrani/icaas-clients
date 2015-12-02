@@ -24,6 +24,8 @@ You will need the following things properly installed on your computer.
 
 ### Running / Development
 
+* In the directory `config` create a new file with the name `endpoints.js`.
+  Copy the contents of the file `endpoints.js.example` in the new file and update the URLs to point to the APIs that the ICaaS client will use.
 * `ember server`
 * Visit your app at [http://localhost:4200](http://localhost:4200).
 
@@ -64,7 +66,10 @@ Checkout the branch `feature-nw`, in the directory app and then run:
 * `bower install`
 
 ### Running / Development
- `ember nw`
+
+* In the directory `config` create a new file with the name `endpoints.js`.
+  Copy the contents of the file `endpoints.js.example` in the new file and update the URLs to point to the APIs that the ICaaS client will use.
+* `ember nw`
 
 ### Packaging
 `ember nw:package`
