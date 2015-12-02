@@ -162,6 +162,7 @@ export default Ember.Controller.extend({
       this.set('project', null);
       this.set('image_name', null);
       this.set('description', null);
+      this.set('isPublic', false);
     },
 
     'hideErrors': function(){
